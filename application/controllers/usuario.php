@@ -5,7 +5,7 @@ class Usuario extends CI_Controller {
 		$alias = $_POST ['alias'];
 		$nombre = $_POST ['nombre'];
 		$apellido = $_POST ['apellido'];
-		$this->ciudad_model->crearUsuario($alias,$nombre,$apellido);
+		$this->usuario_model->crearUsuario($alias,$nombre,$apellido);
 	}
 	
 	public function editar() {		
