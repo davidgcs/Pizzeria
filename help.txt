@@ -1,0 +1,16 @@
+Para configurar este proyecto en cualquier m�quina se debe cambiar la ruta del proyecto en el directorio application/config/config.php. Tener cuidado también con el base_url.
+
+Los controladores son clases que heredan de CI_Controller y se almacenan en el directorio application/controllers
+ej: class MiClase extends CI_Controller{}
+
+Los modelos son clases que heredan de CI_Model y se almacenan en el directorio application/models
+ej: class MiClase extends CI_Model{}
+
+Las vistas son ficheros html que cuelgan desde el directorio views y son llamadas por el controlador.
+
+Para cargar vistas y modelos desde el controlador usaremos: $this -> load -> model / view ( modelo o vista deseados );
+
+ej: $controlador->load->view('templates/head');     $controlador es el controlador que llama a la vista, si lo llamamos desde el propio controlador usaremos $this
+
+Para cargar una pagina de inicio por defecto debemos cambiar este parametro dentro de application/config/routes.php:  $route['default_controller'] = 'home';
+Esto seleccionará el controlador por defecto cuando ejecutemos la aplicación. Para ello debera haber un controlador con dicho nombre, en este caso "home" en la carpeta controllers
