@@ -11,7 +11,7 @@ class Ciudad_model extends CI_Model {
 		
 		}
 		else{
-			//Notificar al usuario que el usuario ya existe
+			//Notificar al usuario que el usuario ya existe..
 		}
 	}
 	
