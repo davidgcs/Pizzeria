@@ -1,7 +1,7 @@
 <?php
 
 ?>
-<div id="container">
+<div class="container">
 	<h1>Contacto</h1>
 	<form id="formContacto" action="<?= base_url()?>empresa/enviarMail" method="post">
 	    <div>
