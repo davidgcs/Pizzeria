@@ -1,7 +1,7 @@
-<div class="container">
+<div class="container" style="margin: 5% 3%">
 	<h1>
 		<span class="glyphicon glyphicon-fire"></span>
-		UFFF. Esta página está aún en construcción 
+		    Esta página está aún en construcción
 		<span class="glyphicon glyphicon-fire"></span>
 	</h1>
 </div>

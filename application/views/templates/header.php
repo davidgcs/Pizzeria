@@ -6,10 +6,11 @@
                 <a href="#menu" class="menuToggle "><span>Menu</span></a>
                 <div id="menu">
                     <ul>
-                        <li><a href="index.html">Pizzas</a></li>
-                        <li><a href="generic.html">Hamburguesas</a></li>
-                        <li><a href="elements.html">Pastas</a></li>
-                        <li><a href="#">Bocatas</a></li>
+                        <li><a href="<?=base_url()?>">Inicio</a></li>
+                        <li><a href="<?=base_url()?>errores/e404">Pizzas</a></li>
+                        <li><a href="<?=base_url()?>errores/e404">Hamburguesas</a></li>
+                        <li><a href="<?=base_url()?>errores/e404">Pastas</a></li>
+                        <li><a href="<?=base_url()?>errores/e404">Bocatas</a></li>
                     </ul>
                 </div>
             </li>
