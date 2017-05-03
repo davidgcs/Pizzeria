@@ -1,5 +1,5 @@
 <?php
-class Ciudad_model extends CI_Model {
+class Usuario_model extends CI_Model {
 	
 	public function crearUsuario($alias,$nombre,$apellido) {
 		if(!existeUsuario($alias)){
