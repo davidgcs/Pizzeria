@@ -54,6 +54,14 @@ p{
     color: #1d242a;
 }
 
+#banner h2{
+    text-shadow: black 2px 2px;
+    font-size: 4em;
+}
+a.more.scrolly{
+    text-shadow: black 1px 1px;
+
+}
 
 
 
