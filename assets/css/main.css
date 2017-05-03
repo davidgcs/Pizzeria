@@ -86,7 +86,7 @@
 	.row.uniform > * > :last-child {
 		margin-bottom: 0;
 	}
-
+/*
 	.row.\30 \25 > * {
 		padding: 0 0 0 0em;
 	}
@@ -1389,12 +1389,12 @@
 
 	}
 
-/* Basic */
+/*Basic
 
 	@-ms-viewport {
 		width: device-width;
 	}
-
+*/
 	body {
 		background: #2e3842;
 	}
