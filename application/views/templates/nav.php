@@ -30,7 +30,11 @@
 		  <li><a href="<?=base_url()?>ciudad/borrar">Borrar</a></li>
 	     </ul>
       </li>
-      
+        <li>
+            <a href="empresa/contacto">
+                Contacto<span class="caret"></span>
+            </a>
+        </li>
       <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
            Usuario<span class="caret"></span>
