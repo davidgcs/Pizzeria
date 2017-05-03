@@ -3,6 +3,18 @@
     height: 60px;
 }
 
+#container {
+	margin: 7% 2%;
+}
+
+#formContacto div{
+	margin-bottom: 2%;
+}
+
+#formContacto #submit{
+	float: right;
+}
+
 @media screen and (max-width: 1680px) {
     #header img#logo_header{
         width: auto;
@@ -21,9 +33,27 @@
         width: auto;
         height: 44px;
     }
+    
+    #container {
+	margin: 10% 2%;
+	}
+}
+
+@media screen and (max-width: 600px) {
+    #header img#logo_header{
+        width: auto;
+        height: 44px;
+    }
+    
+    #container {
+	margin: 15% 2%;
+	}
 }
 
 p{
     color: #1d242a;
 }
+
+
+
 

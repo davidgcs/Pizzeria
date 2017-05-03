@@ -3631,7 +3631,7 @@
 
 	#main > header {
 		padding: 12em 0 10em 0 ;
-		background-image: url("../images/pizza2.jpg");
+		background-image: url("../images/pizza.jpg");
 		background-attachment: fixed;
 		background-position: center center;
 		background-repeat: no-repeat;
@@ -3796,7 +3796,7 @@
 
 	body.is-mobile.landing #banner,
 	body.is-mobile.landing .wrapper.style4 {
-		background-image: url("../images/pizza2.jpg");
+		background-image: url("../images/pizza.jpg");
 		background-position: center center;
 		background-repeat: no-repeat;
 		background-size: cover;
