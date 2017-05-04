@@ -26,6 +26,12 @@ class Empresa extends CI_Controller
 
         //mail('daniserra14@gmail.com', 'mensaje de '.$nombre.' ('.$email.')', $mensaje, $headers);
     }
+
+
+    public function acerca()
+    {
+        enmarcar($this, "empresa/acerca");
+    }
 }
 
 ?>
