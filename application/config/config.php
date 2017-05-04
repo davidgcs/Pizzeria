@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/pizzeria';
+$config['base_url'] = 'http://83.58.231.249/pizhub';
 
 /*
 |--------------------------------------------------------------------------

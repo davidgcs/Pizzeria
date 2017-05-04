@@ -32,27 +32,31 @@
         </div>
     </section>
 
-    <!-- Two -->
-    <section id="two" class="wrapper alt style2">
+    <!-- Carta -->
+    <section id="carta" class="wrapper alt style2">
         <section class="spotlight">
-            <div class="image"><img src="<?=base_url()?>assets/images/pic01.jpg" alt="" /></div><div class="content">
-                <h2>Magna primis lobortis<br />
-                    sed ullamcorper</h2>
-                <p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
+            <div class="image"><img src="<?=base_url()?>assets/images/carta_pizza.jpg" alt="Pizzas" /></div>
+            <div class="content">
+                <a href="<?=base_url()?>errores/e404"> <h2>Pizzas</h2></a>
+                <p>Nuestra especialidad, las mejores pizzas elaboradas con los mejores ingredientes al horno de leña.</p>
             </div>
         </section>
         <section class="spotlight">
-            <div class="image"><img src="<?=base_url()?>assets/images/pic02.jpg" alt="" /></div><div class="content">
-                <h2>Tortor dolore feugiat<br />
-                    elementum magna</h2>
-                <p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
+            <div class="image"><img src="<?=base_url()?>assets/images/carta_hamburguesa2.jpg" alt="Hamburguesas" /></div><div class="content">
+                <a href="<?= base_url() ?>errores/e404"><h2>Hamburguesas</h2></a>
+                <p>Deliciosas hamburguesas elaboradas con carne 100% de vacuno de ganadería gallega. Calidad premium <span class="glyphicon glyphicon-star"></span></p>
             </div>
         </section>
         <section class="spotlight">
-            <div class="image"><img src="<?=base_url()?>assets/images/pic03.jpg" alt="" /></div><div class="content">
-                <h2>Augue eleifend aliquet<br />
-                    sed condimentum</h2>
-                <p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
+            <div class="image"><img src="<?=base_url()?>assets/images/carta_sandwich.jpg" alt="Sandwiches" /></div><div class="content">
+                <a href="<?=base_url()?>errores/e404"><h2>Sandwiches</h2></a>
+                <p>Los sandwiches son tan tiernos y llenos de sabor que te harán repetir.</p>
+            </div>
+        </section>
+        <section class="spotlight">
+            <div class="image"><img src="<?=base_url()?>assets/images/carta_pasta.jpg" alt="Sandwiches" /></div><div class="content">
+                <a href="<?=base_url()?>errores/e404"><h2>Pastas</h2></a>
+                <p>Las pastas más frescas importadas de Italia y elaboradas al dente.</p>
             </div>
         </section>
     </section>

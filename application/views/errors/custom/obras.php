@@ -1,7 +1,7 @@
-<div class="container">
-	<h1>
-		<span class="glyphicon glyphicon-fire"></span>
-		    La página <?=$datos?> no se encuentra disponible.
-		<span class="glyphicon glyphicon-fire"></span>
-	</h1>
+<div class="container" style="margin: 5% 3%">
+    <h1>
+        <span class="glyphicon glyphicon-fire"></span>
+        Esta página está aún en construcción
+        <span class="glyphicon glyphicon-fire"></span>
+    </h1>
 </div>
