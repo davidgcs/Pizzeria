@@ -7,10 +7,10 @@
                 <div id="menu">
                     <ul>
                         <li><a href="<?=base_url()?>">Home</a></li>
-                        <li><a href="<?=base_url()?>error/e404">Pizzas</a></li>
-                        <li><a href="<?=base_url()?>error/e404">Hamburguesas</a></li>
-                        <li><a href="<?=base_url()?>error/e404">Pastas</a></li>
-                        <li><a href="<?=base_url()?>error/e404">Bocatas</a></li>
+                        <li><a href="<?=base_url()?>carta/pizza">Pizzas</a></li>
+                        <li><a href="<?=base_url()?>carta/hamburguesa">Hamburguesas</a></li>
+                        <li><a href="<?=base_url()?>carta/pasta">Pastas</a></li>
+                        <li><a href="<?=base_url()?>carta/bocata">Bocatas</a></li>
                     </ul>
                 </div>
             </li>
