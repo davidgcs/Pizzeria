@@ -3,7 +3,7 @@ h1 {
 }
 
 @import url('https://fonts.googleapis.com/css?family=Arima+Madurai:100,200,300,400,500,700,800,900');
-body {
+.acerca {
 	margin-top: 60px;
 	font-size: 14px;
 	font-family: 'Arima Madurai', cursive;
