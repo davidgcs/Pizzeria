@@ -15,16 +15,29 @@
 	float: right;
 }
 
+#mapa{
+    height: 500px;
+    width: 50%;
+}
+
 @media screen and (max-width: 1680px) {
     #header img#logo_header{
         width: auto;
         height: 52px;
+    }
+
+    #mapa{
+        height: 460px;
     }
 }
 @media screen and (max-width: 1280px) {
     #header img#logo_header{
         width: auto;
         height: 48px;
+    }
+
+    #mapa{
+        height: 380px;
     }
 }
 
@@ -37,7 +50,12 @@
     #container {
 	margin: 10% 2%;
 	}
+    #mapa{
+        height: 220px;
+        width: 85%;
+    }
 }
+
 
 @media screen and (max-width: 600px) {
     #header img#logo_header{
@@ -48,6 +66,10 @@
     #container {
 	margin: 15% 2%;
 	}
+    #mapa{
+        height: 180px;
+        width: 85%;
+    }
 }
 
 p{

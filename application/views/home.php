@@ -19,16 +19,11 @@
     <section id="one" class="wrapper style1 special">
         <div class="inner">
             <header class="major">
-                <h2>Arcu aliquet vel lobortis ata nisl<br />
-                    eget augue amet aliquet nisl cep donec</h2>
-                <p>Aliquam ut ex ut augue consectetur interdum. Donec amet imperdiet eleifend<br />
-                    fringilla tincidunt. Nullam dui leo Aenean mi ligula, rhoncus ullamcorper.</p>
+                <h2>Ven a vernos</h2>
+                <p>Podrás encontrarnos en San Fernando de Henares.<br>A solo 3 minutos del metro!</p>
             </header>
-            <ul class="icons major">
-                <li><span class="icon fa-diamond major style1"><span class="label">Lorem</span></span></li>
-                <li><span class="icon fa-heart-o major style2"><span class="label">Ipsum</span></span></li>
-                <li><span class="icon fa-code major style3"><span class="label">Dolor</span></span></li>
-            </ul>
+
+            <iframe id="mapa" src="https://www.google.es/maps/d/embed?mid=1aOiEJb4bkCTC9Qs3chjuVrWWQGo"></iframe>
         </div>
     </section>
 
