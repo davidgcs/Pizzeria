@@ -3,6 +3,9 @@
     height: 60px;
 }
 
+#header > a{
+    border: none;
+}
 .container {
 	margin: 7% 2%;
 }
