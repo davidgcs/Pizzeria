@@ -1,6 +1,6 @@
    $().ready(function(){
         $('[rel="tooltip"]').tooltip();
-
+       $('.acerca').prev().removeClass('alt');
     });
 
     function rotateCard(btn){
