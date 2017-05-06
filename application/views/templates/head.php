@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="<?=base_url()?>assets/css/main.css">
     <link rel="stylesheet" href="<?=base_url()?>assets/css/jquery-ui.min.css">
     <link rel="stylesheet" href="<?=base_url()?>assets/css/about.css">
+    <link rel="icon" href="<?=base_url()?>assets/images/url.jpg" />
     <script type="text/javascript" src="<?=base_url()?>assets/js/jquery.min.js"></script>
     <script type="text/javascript" src="<?=base_url()?>assets/js/jquery-ui.js"></script>
     <script type="text/javascript" src="<?=base_url()?>assets/js/about.js"></script>
