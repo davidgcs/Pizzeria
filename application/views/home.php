@@ -12,20 +12,9 @@
                 <li><a href="#" class="button special">PEDIR</a></li>
             </ul>
         </div>
-        <a href="#one" class="more scrolly">Más información</a>
+        <a href="#carta" class="more scrolly">Carta</a>
     </section>
 
-    <!-- One -->
-    <section id="one" class="wrapper style1 special">
-        <div class="inner">
-            <header class="major">
-                <h2>Ven a vernos</h2>
-                <p>Podrás encontrarnos en San Fernando de Henares.<br>A solo 3 minutos del metro!</p>
-            </header>
-
-            <iframe id="mapa" src="https://www.google.es/maps/d/embed?mid=1aOiEJb4bkCTC9Qs3chjuVrWWQGo"></iframe>
-        </div>
-    </section>
 
     <!-- Carta -->
     <section id="carta" class="wrapper alt style2">
@@ -54,6 +43,18 @@
                 <p>Las pastas más frescas importadas de Italia y elaboradas al dente.</p>
             </div>
         </section>
+    </section>
+
+    <!-- One -->
+    <section id="one" class="wrapper style1 special">
+        <div class="inner">
+            <header class="major">
+                <h2>Ven a vernos</h2>
+                <p>Podrás encontrarnos en San Fernando de Henares.<br>A solo 3 minutos del metro!</p>
+            </header>
+
+            <iframe id="mapa" src="https://www.google.es/maps/d/embed?mid=1aOiEJb4bkCTC9Qs3chjuVrWWQGo"></iframe>
+        </div>
     </section>
 
     <!-- Three -->
