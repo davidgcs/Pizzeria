@@ -7,7 +7,16 @@
                 <div id="menu">
                     <ul>
                         <li><a href="<?=base_url()?>">Inicio</a></li>
-                        <li><a href="<?=base_url()?>#carta" class="scrolly">Carta</a></li>
+
+                        <li><a href="<?php
+                            echo ($this->uri->segment(1)==""||$this->uri->segment(1)=="home")?"":base_url() //escribe solo el anchor si estamos en home
+                            ?>#carta" class="scrolly">Carta</a></li>
+
+                        <li><a href="<?php
+                            echo ($this->uri->segment(1)==""||$this->uri->segment(1)=="home")?"":base_url() //escribe solo el anchor si estamos en home
+                            ?>#one" class="scrolly">¿Dónde estamos? <?=$this->uri->segment(1)?></a></li>
+
+<!--                        <li><a href="--><?//=base_url()?><!--#carta" class="scrolly">Carta</a></li>-->
                         <li><a href="<?=base_url()?>errores/e404">Perfil</a></li>
                         <li><a href="<?=base_url()?>empresa/contacto">Contacto</a></li>
                         <li><a href="<?=base_url()?>empresa/acerca">Acerca de Nosotros</a></li>
