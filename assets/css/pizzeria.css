@@ -3,29 +3,23 @@
     height: 60px;
 }
 
+.container {
+    margin: 7% 2%;
+}
+
 #header i{
     position: absolute;
-    right: 0;
-    width: auto;
-    height: 50px;
-}
-
-.container {
-	margin: 7% 2%;
-}
-
-#formContacto div{
-	margin-bottom: 2%;
-}
-
-#formContacto #submit{
-	float: right;
+    right: 8%;
+    top: 10px;
+    font-size: 2em;
 }
 
 #mapa{
     height: 500px;
     width: 50%;
 }
+
+/*RESPONSIVE*/
 
 @media screen and (max-width: 1680px) {
     #header img#logo_header{
@@ -35,6 +29,16 @@
 
     #mapa{
         height: 460px;
+    }
+    #header i{
+        position: absolute;
+        right: 6%;
+        top: 10px;
+        font-size: 2em;
+    }
+    #header i{
+        right: 9%;
+        top: 10px;
     }
 }
 @media screen and (max-width: 1280px) {
@@ -46,20 +50,37 @@
     #mapa{
         height: 380px;
     }
+    #header i{
+        right: 11%;
+        top: 8px;
+    }
 }
+@media screen and (max-width: 980px) {
 
+    #header i{
+        right: 14%;
+        top: 8px;
+        font-size: 1.8em;
+    }
+
+}
 @media screen and (max-width: 736px) {
     #header img#logo_header{
         width: auto;
         height: 44px;
     }
-    
+
     #container {
 	margin: 10% 2%;
 	}
     #mapa{
         height: 220px;
         width: 85%;
+    }
+    #header i{
+        right: 10%;
+        top: 8px;
+        font-size: 1.8em;
     }
 }
 
@@ -69,7 +90,7 @@
         width: auto;
         height: 44px;
     }
-    
+
     #container {
 	margin: 15% 2%;
 	}
@@ -77,6 +98,19 @@
         height: 180px;
         width: 85%;
     }
+    #header i{
+        right: 12%;
+        top: 12px;
+        font-size: 1.5em;
+    }
+}
+
+#formContacto div{
+    margin-bottom: 2%;
+}
+
+#formContacto #submit{
+    float: right;
 }
 
 p{
