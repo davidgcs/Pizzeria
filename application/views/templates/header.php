@@ -16,5 +16,5 @@
             </li>
         </ul>
     </nav>
-    <i class="fa fa-user-circle"></i>
+    <a href="<?= base_url() ?>Usuario/login"><i class="fa fa-user-circle"></i></a>
 </header>

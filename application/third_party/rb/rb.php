@@ -753,7 +753,7 @@ class RPDO implements Driver
 	 *
 	 * @param string|object $dsn  database connection string
 	 * @param string        $user optional, usename to sign in
-	 * @param string        $pass optional, password for connection login
+	 * @param string        $pass optional, password for connection forms
 	 *
 	 * @return void
 	 */

@@ -19,7 +19,7 @@
     width: 50%;
 }
 
-/*RESPONSIVE*/
+/** RESPONSIVE **/
 
 @media screen and (max-width: 1680px) {
     #header img#logo_header{
@@ -29,12 +29,6 @@
 
     #mapa{
         height: 460px;
-    }
-    #header i{
-        position: absolute;
-        right: 6%;
-        top: 10px;
-        font-size: 2em;
     }
     #header i{
         right: 9%;

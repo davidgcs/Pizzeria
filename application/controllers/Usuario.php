@@ -13,6 +13,12 @@ class Usuario extends CI_Controller {
 	
 	public function logout() {	
 	}
-	
+
+	public function login(){
+	    enmarcar($this,"forms/login");
+    }
+    public  function registrar(){
+	    enmarcar($this,"errors/custom/obras.php");
+    }
 }
 ?>

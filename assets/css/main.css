@@ -1449,7 +1449,7 @@ a {
 	-webkit-transition: color 0.2s ease, border-bottom-color 0.2s ease;
 	-ms-transition: color 0.2s ease, border-bottom-color 0.2s ease;
 	transition: color 0.2s ease, border-bottom-color 0.2s ease;
-	border-bottom: dotted 1px;
+	/*border-bottom: dotted 1px;*/
 	color: inherit;
 	text-decoration: none;
 }
@@ -1542,7 +1542,7 @@ sup {
 
 hr {
 	border: 0;
-	border-bottom: solid 2px #fff;
+	/*border-bottom: solid 2px #fff;*/
 	margin: 3em 0;
 }
 
@@ -1620,7 +1620,7 @@ header.major {
 }
 
 header.major h2, header.major h3, header.major h4, header.major h5, header.major h6 {
-	border-bottom: solid 2px #fff;
+	/*border-bottom: solid 2px #fff;*/
 	display: inline-block;
 	padding-bottom: 1em;
 	position: relative;
