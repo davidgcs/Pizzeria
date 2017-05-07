@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="<?=base_url()?>assets/css/main.css">
     <link rel="stylesheet" href="<?=base_url()?>assets/css/jquery-ui.min.css">
     <link rel="stylesheet" href="<?=base_url()?>assets/css/about.css">
-    <link rel="icon" href="<?=base_url()?>assets/images/url.jpg" />
+    <link rel="icon" href="<?=base_url()?>assets/images/LogoCircular.png" />
 
 
     <!--SCRIPTS-->

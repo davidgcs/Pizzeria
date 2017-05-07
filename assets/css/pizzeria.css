@@ -13,8 +13,8 @@
 #header i{
     position: absolute;
     right: 8%;
-    top: 10px;
-    font-size: 2em;
+    top: 18px;
+    font-size: 1.3em;
 }
 
 #mapa{
@@ -35,7 +35,7 @@
     }
     #header i{
         right: 9%;
-        top: 10px;
+        top: 15px;
     }
 }
 @media screen and (max-width: 1280px) {
@@ -49,15 +49,14 @@
     }
     #header i{
         right: 11%;
-        top: 8px;
+        top: 15px;
     }
 }
 @media screen and (max-width: 980px) {
 
     #header i{
         right: 14%;
-        top: 8px;
-        font-size: 1.8em;
+        top: 13px;
     }
 
 }
@@ -76,7 +75,7 @@
     }
     #header i{
         right: 10%;
-        top: 8px;
+        top: 10px;
         font-size: 1.8em;
     }
 }
@@ -97,7 +96,7 @@
     }
     #header i{
         right: 12%;
-        top: 12px;
+        top: 13px;
         font-size: 1.5em;
     }
 }
