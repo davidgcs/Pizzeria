@@ -3,6 +3,13 @@
     height: 60px;
 }
 
+#header i{
+    position: absolute;
+    right: 0;
+    width: auto;
+    height: 50px;
+}
+
 .container {
 	margin: 7% 2%;
 }
@@ -89,5 +96,8 @@ a.more.scrolly{
     color: #21b2a6;
 }
 
-
+#perfil{
+    width: 80px;
+    height: 80px;
+}
 

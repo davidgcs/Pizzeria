@@ -7,7 +7,7 @@
                 <div id="menu">
                     <ul>
                         <li><a href="<?=base_url()?>">Inicio</a></li>
-                        <li><a href="#carta" class="scrolly">Carta</a></li>
+                        <li><a href="<?=base_url()?>#carta" class="scrolly">Carta</a></li>
                         <li><a href="<?=base_url()?>errores/e404">Perfil</a></li>
                         <li><a href="<?=base_url()?>empresa/contacto">Contacto</a></li>
                         <li><a href="<?=base_url()?>empresa/acerca">Acerca de Nosotros</a></li>
@@ -16,4 +16,5 @@
             </li>
         </ul>
     </nav>
+    <i class="fa fa-user"></i>
 </header>
