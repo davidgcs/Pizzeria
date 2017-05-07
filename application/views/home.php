@@ -46,7 +46,7 @@
     </section>
 
     <!-- One -->
-    <section id="one" class="wrapper style1 special">
+    <section id="localizacion" class="wrapper style1 special">
         <div class="inner">
             <header class="major">
                 <h2>Ven a vernos</h2>
@@ -56,8 +56,7 @@
             <iframe id="mapa" src="https://www.google.es/maps/d/embed?mid=1aOiEJb4bkCTC9Qs3chjuVrWWQGo"></iframe>
         </div>
     </section>
-
-    <!-- Three -->
+<!--
     <section id="three" class="wrapper style3 special">
         <div class="inner">
             <header class="major">
@@ -94,7 +93,7 @@
         </div>
     </section>
 
-    <!-- CTA -->
+
     <section id="cta" class="wrapper style4">
         <div class="inner">
             <header>
@@ -107,5 +106,5 @@
             </ul>
         </div>
     </section>
-    
+    -->
  </div>

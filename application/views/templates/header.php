@@ -14,7 +14,7 @@
 
                         <li><a href="<?php
                             echo ($this->uri->segment(1)==""||$this->uri->segment(1)=="home")?"":base_url() //escribe solo el anchor si estamos en home
-                            ?>#one" class="scrolly">¿Dónde estamos? <?=$this->uri->segment(1)?></a></li>
+                            ?>#localizacion" class="scrolly">¿Dónde estamos?</a></li>
 
 <!--                        <li><a href="--><?//=base_url()?><!--#carta" class="scrolly">Carta</a></li>-->
                         <li><a href="<?=base_url()?>errores/e404">Perfil</a></li>
