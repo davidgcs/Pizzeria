@@ -16,5 +16,5 @@
             </li>
         </ul>
     </nav>
-    <i class="fa fa-user"></i>
+    <i class="fa fa-user-circle"></i>
 </header>
