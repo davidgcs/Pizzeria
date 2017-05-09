@@ -17,8 +17,23 @@ class Usuario extends CI_Controller {
 	public function login(){
 	    enmarcar($this,"forms/login");
     }
-    public  function registrar(){
-	    enmarcar($this,"errors/custom/obras.php");
+    public function loginPost(){
+        //comprobar login en el modelo
+        //activar sesión
+        //llamar al home
     }
+    public  function registrar(){
+	    enmarcar($this,"forms/registro.php");
+    }
+
+    public  function registrarPost(){
+        //llamar al modelo
+        //comprobar usuario no existente
+            //si no existe crear el usuario
+                //iniciar la sesión
+            //si ya existe notificar al usuario
+                //no redirigir
+    }
+
 }
 ?>
