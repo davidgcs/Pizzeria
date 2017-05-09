@@ -5,7 +5,7 @@ class Carta extends CI_Controller
     public function index()
     {
         $datos['datos'] = "CARTA";
-        enmarcar($this, "errors/custom/obras",$datos);
+        enmarcar($this, base_url()."#carta",$datos);
     }
 
 
