@@ -64,6 +64,8 @@ class Usuario extends CI_Controller {
             else{
                 //redirigir a error de creación
                 //DONE                añadir en la sesión algo que informe de que se intento registrar sin existo
+                session_start();
+                $_SESSION['errorRegistro']=true;
                 enmarcar($this,"forms/registro.php");
             }
     }

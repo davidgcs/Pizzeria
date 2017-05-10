@@ -5,11 +5,13 @@
     <script>
         $(function() {
 
-            <?php if (isset($_GET['errorRegistro'])): ?>
+            <?php if (isset($_SESSION['errorRegistro'])): ?>
+            <?php session_destroy();?>
                 $("#errorRegistro").show();
-            <?php endif; ?>
+            <?php else: ?>
+                $("#errorRegistro").hide();
+            <?php endif;?>
 
-            $("#f2").hide();
             $("#btnSiguiente").click(function () {
 
                 //solo ejecutar el siguiente código si los campos de #f1 estan rellenos y son correctos.
@@ -35,7 +37,7 @@
     </script>
 
     <div class="login">
-        <h1>Resitro</h1>
+        <h1>Registro</h1>
         <form id="formRegistro" action="registrarPost" method="post">
             <div id="f1">
                 <input type="text" name="nombre" placeholder="Nombre" required="required"/>
@@ -44,7 +46,7 @@
                 <input type="email" name="email" placeholder="Correo electrónico" required="required"/>
                 <button type="button" id="btnSiguiente" class="btn btn-primary btn-block btn-large">Siguiente</button>
             </div>
-            <div id="f2">
+            <div id="f2" hidden>
                 <input type="text" name="u" placeholder="Alias" required="required"/>
                 <input type="password" id="contraseña1" name="p" placeholder="Contraseña" required="required"/>
                 <input type="password" id="contraseña2" placeholder="Repetir contraseña" required="required"/>
@@ -54,6 +56,6 @@
     </div>
 
     <div id="errorRegistro" hidden>
-        <h2>El correo electrónico o usuario ya están en uso. Intentalo de nuevo.</h2>
+        <h4>El correo electrónico o usuario ya están en uso. Intentalo de nuevo.</h4>
     </div>
 </div>
