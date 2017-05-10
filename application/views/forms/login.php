@@ -5,7 +5,7 @@
 
 <div class="login">
     <h1>Login</h1>
-    <form action="usuario/loginPost" method="post">
+    <form action="loginPost" method="post">
         <input type="text" name="u" placeholder="Usuario" required="required"/>
         <input type="password" name="p" placeholder="Contraseña" required="required"/>
         <button type="submit" class="btn btn-primary btn-block btn-large">Iniciar Sesión</button>
