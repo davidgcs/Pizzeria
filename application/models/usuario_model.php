@@ -25,11 +25,11 @@ class Usuario_model extends CI_Model {
 
 	public function login($usuario,$contraseña){
         if($this->existeUsuario($usuario)){
-            //Se encontró el alias!!
+            //Se encontró el alias!! devolvemos el alias
             return $this->comprobarContraseña("alias",$usuario,$contraseña);
         }
         else if($this->existeEmail($usuario)){
-            //Se encontró el email!!
+            //Se encontró el email!! devolvemos el alias
             return $this->comprobarContraseña("email",$usuario,$contraseña);
         }
         else{
@@ -48,7 +48,32 @@ class Usuario_model extends CI_Model {
 
     private function comprobarContraseña($tipoUsuario,$usuario,$contraseña){
         $pass =  R::findOne('usuario',"$tipoUsuario = '$usuario'")->password;
-        return md5($contraseña) == $pass ? true : false;
+        if(md5($contraseña) == $pass){ //contraseña correcta
+            if($tipoUsuario == "alias"){
+                return $usuario;
+            }
+            else if($tipoUsuario == "email"){
+                return $this->getUserAlias($usuario); //se le pasa el correo y recibe el alias
+            }
+        }
+        else{
+            return null;
+        }
+    }
+
+    private function getUserAlias($email){
+        return R::findOne('usuario', 'email = ?', [$email])->alias;
+    }
+
+    public function getPrimaryKeys(){
+        $usuarios = R::findAll("usuario");
+        $users = [];
+        foreach ($usuarios as $usuario){
+            $u['email'] = $usuario['email'];
+            $u['alias'] = $usuario['alias'];
+            array_push($users,$u);
+        }
+        return $users;
     }
 }
 ?>
