@@ -1,7 +1,10 @@
 <div class="container-fluid acerca">
     <div class="row">
         <div class="col-md-12">
-            <p>
+            <h1>
+                Sobre PizHub...
+            </h1>
+            <p class="aboutP">
                 Pizhub es un proyecto creado en 2017 por 3 compañeros de estudios. Tras un polémico debate en su clase
                 sobre las pizzas y más en concreto sobre los ingredientes que deberían o no llevar dichos manjares,
                 coincidieron en su opinión y decidieron ponerle solución al problema desarrollando y poniendo en
@@ -24,13 +27,13 @@
                     </div>
                 </blockquote>
             </div>
-            <p>
+            <p class="aboutP">
                 Para evitar todo tipo de conflicto, los 3 compañeros decidieron unir sus fuerzas contra la piña como
                 ingrediente, y así preservar el sabor y la entereza de las pizzas más históricas. El proyecto en
                 principio decidió omitir cualquier alusión al ingrediente prohibido, pero la lucha no iba a ser tan
                 fácil.
             </p>
-            <p>
+            <p class="aboutP">
                 Finalmente, y tras un breve estudio de mercado, el ingrediente prohibido se introdujo en el catálogo de
                 productos, firmando así una paz con los ananófilos y mostrando con ellos un gran gesto de respeto y
                 tolerancia con las minorías deficientes en el mundo pizzero.
@@ -52,7 +55,7 @@
                 </blockquote>
             </div>
 
-            <p>El gran esfuerzo que supuso añadir el ingrediente prohibido, conllevó un ligero aumento en el coste de
+            <p class="aboutP">El gran esfuerzo que supuso añadir el ingrediente prohibido, conllevó un ligero aumento en el coste de
                 los productos que lo portan, pero estamos seguros que si los clientes son capaces de llevarse semejante
                 aberración a la boca, no les importará pagar un pequeño sobrecargo por ello.
             </p>
@@ -61,7 +64,7 @@
                 Equipo Pizhub
             </h1>
             <div class="row">
-                <div class="col-md-3 col-md-offset-1">
+                <div class="col-md-4">
                     <div class="card-container">
                         <div class="card">
                             <div class="front">
@@ -80,11 +83,6 @@
                                         <p class="text-center">"I'm the new Sinatra, and since I made it here I can make
                                             it anywhere, yeah, they love me everywhere"</p>
                                     </div>
-                                    <div class="footer">
-                                        <div class="rating">
-                                            <i class="fa fa-mail-forward"></i> Auto Rotation
-                                        </div>
-                                    </div>
                                 </div>
                             </div> <!-- end front panel -->
                             <div class="back">
@@ -120,22 +118,12 @@
 
                                     </div>
                                 </div>
-                                <div class="footer">
-                                    <div class="social-links text-center">
-                                        <a href="http://deepak646.blogspot.in/" class="facebook"><i
-                                                    class="fa fa-facebook fa-fw"></i></a>
-                                        <a href="http://deepak646.blogspot.in/" class="google"><i
-                                                    class="fa fa-google-plus fa-fw"></i></a>
-                                        <a href="http://deepak646.blogspot.in/" class="twitter"><i
-                                                    class="fa fa-twitter fa-fw"></i></a>
-                                    </div>
-                                </div>
                             </div> <!-- end back panel -->
                         </div> <!-- end card -->
                     </div> <!-- end card-container -->
                 </div>
-                <div class="col-md-3">
-                    <div class="card-container manual-flip">
+                <div class="col-md-4">
+                    <div class="card-container">
                         <div class="card">
                             <div class="front">
                                 <div class="cover">
@@ -152,11 +140,6 @@
                                         <p class="text-center">"Lamborghini Mercy <br>Your chick she so thirsty <br>I'm
                                             in that two seat Lambo"</p>
                                     </div>
-                                    <div class="footer">
-                                        <button class="btn btn-simple" onclick="rotateCard(this)">
-                                            <i class="fa fa-mail-forward"></i> Manual Rotation
-                                        </button>
-                                    </div>
                                 </div>
                             </div> <!-- end front panel -->
                             <div class="back">
@@ -192,25 +175,11 @@
 
                                     </div>
                                 </div>
-                                <div class="footer">
-                                    <button class="btn btn-simple" rel="tooltip" title="Flip Card"
-                                            onclick="rotateCard(this)">
-                                        <i class="fa fa-reply"></i> Back
-                                    </button>
-                                    <div class="social-links text-center">
-                                        <a href="http://deepak646.blogspot.in/" class="facebook"><i
-                                                    class="fa fa-facebook fa-fw"></i></a>
-                                        <a href="http://deepak646.blogspot.in/" class="google"><i
-                                                    class="fa fa-google-plus fa-fw"></i></a>
-                                        <a href="http://deepak646.blogspot.in/" class="twitter"><i
-                                                    class="fa fa-twitter fa-fw"></i></a>
-                                    </div>
-                                </div>
-                            </div> <!-- end back panel -->
+                                                            </div> <!-- end back panel -->
                         </div> <!-- end card -->
                     </div> <!-- end card-container -->
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <div class="card-container">
                         <div class="card">
                             <div class="front">
@@ -228,9 +197,6 @@
                                         <p class="text-center">"I'm the new Sinatra, and since I made it here I can make
                                             it anywhere, yeah, they love me everywhere"</p>
                                     </div>
-                                    <div class="footer">
-                                        <i class="fa fa-mail-forward"></i> Auto Rotation
-                                    </div>
                                 </div>
                             </div> <!-- end front panel -->
                             <div class="back">
@@ -264,16 +230,6 @@
                                             </div>
                                         </div>
 
-                                    </div>
-                                </div>
-                                <div class="footer">
-                                    <div class="social-links text-center">
-                                        <a href="http://deepak646.blogspot.in/" class="facebook"><i
-                                                    class="fa fa-facebook fa-fw"></i></a>
-                                        <a href="http://deepak646.blogspot.in/" class="google"><i
-                                                    class="fa fa-google-plus fa-fw"></i></a>
-                                        <a href="http://deepak646.blogspot.in/" class="twitter"><i
-                                                    class="fa fa-twitter fa-fw"></i></a>
                                     </div>
                                 </div>
                             </div> <!-- end back panel -->
