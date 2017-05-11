@@ -67,7 +67,7 @@ footer{
 	text-align: center;
 }
 
-#errorRegistro{
+#errorRegistro, #error{
 	position: absolute;
 	top: 70%;
 	width: 100%;
