@@ -32,7 +32,7 @@ class Usuario_model extends CI_Model {
             return false;
         }
     }
-    private function existeUsuario($alias) {
+    public function existeUsuario($alias) {
         return R::findOne ( 'usuario', 'alias = ?', [$alias] ) != null ? true : false;
     }
     private function existeEmail($email){
