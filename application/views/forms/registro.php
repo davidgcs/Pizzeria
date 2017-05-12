@@ -6,12 +6,12 @@
         $(function() {
 
             $("#f2").hide();
-            $("#btnSiguiente").click(function () {
-
-                //solo ejecutar el siguiente código si los campos de #f1 estan rellenos y son correctos.
-                $("#f1").hide();
-                $("#f2").show();
-            });
+//            $("#btnSiguiente").click(function () {
+//
+//                //solo ejecutar el siguiente código si los campos de #f1 estan rellenos y son correctos.
+//                $("#f1").hide();
+//                $("#f2").show();
+//            });
         });
     </script>
 
