@@ -1,7 +1,3 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: padawan
- * Date: 12/05/2017
- * Time: 10:52
- */
+<div class="container">
+    <h1>¡Mensaje recibido!</h1>
+</div>
