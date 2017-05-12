@@ -14,7 +14,7 @@ h1{
 }
 
 #formContacto textarea{
-    resize: vertical;
+    resize: none;
 }
 footer{
     width: 100%;
