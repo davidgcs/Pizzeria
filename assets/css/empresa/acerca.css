@@ -2,14 +2,15 @@
     padding: 7% 15%;
 }
 
-.acerca p {
+.aboutP {
     color: #21b2a6;
 }
 .acerca h1 {
     text-align: center;
+    font-size: 1.75em;
+    text-shadow: black 2px 2px;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Arima+Madurai:100,200,300,400,500,700,800,900');
 
 .btn:hover,
 .btn:focus,
@@ -18,67 +19,67 @@
 }
 /* entire container, keeps perspective */
 .card-container {
-	  -webkit-perspective: 800px;
-   -moz-perspective: 800px;
-     -o-perspective: 800px;
-        perspective: 800px;
-        margin-bottom: 30px;
+    -webkit-perspective: 800px;
+    -moz-perspective: 800px;
+    -o-perspective: 800px;
+    perspective: 800px;
+    margin-bottom: 30px;
 }
 /* flip the pane when hovered */
 .card-container:not(.manual-flip):hover .card,
 .card-container.hover.manual-flip .card{
-	-webkit-transform: rotateY( 180deg );
--moz-transform: rotateY( 180deg );
- -o-transform: rotateY( 180deg );
+    -webkit-transform: rotateY( 180deg );
+    -moz-transform: rotateY( 180deg );
+    -o-transform: rotateY( 180deg );
     transform: rotateY( 180deg );
 }
 
 
 .card-container.static:hover .card,
 .card-container.static.hover .card {
-	-webkit-transform: none;
--moz-transform: none;
- -o-transform: none;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -o-transform: none;
     transform: none;
 }
 /* flip speed goes here */
 .card {
-	 -webkit-transition: -webkit-transform .5s;
-   -moz-transition: -moz-transform .5s;
-     -o-transition: -o-transform .5s;
-        transition: transform .5s;
--webkit-transform-style: preserve-3d;
-   -moz-transform-style: preserve-3d;
-     -o-transform-style: preserve-3d;
-        transform-style: preserve-3d;
-	position: relative;
+    -webkit-transition: -webkit-transform .5s;
+    -moz-transition: -moz-transform .5s;
+    -o-transition: -o-transform .5s;
+    transition: transform .5s;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    position: relative;
 }
 
 /* hide back of pane during swap */
 .front, .back {
-	-webkit-backface-visibility: hidden;
-   -moz-backface-visibility: hidden;
-     -o-backface-visibility: hidden;
-        backface-visibility: hidden;
-	position: absolute;
-	top: 0;
-	left: 0;
-	background-color: #FFF;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #FFF;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.14);
 }
 
 /* front pane, placed above back */
 .front {
-	z-index: 2;
+    z-index: 2;
 }
 
 /* back, initially hidden pane */
 .back {
-		-webkit-transform: rotateY( 180deg );
-   -moz-transform: rotateY( 180deg );
-     -o-transform: rotateY( 180deg );
-        transform: rotateY( 180deg );
-        z-index: 3;
+    -webkit-transform: rotateY( 180deg );
+    -moz-transform: rotateY( 180deg );
+    -o-transform: rotateY( 180deg );
+    transform: rotateY( 180deg );
+    z-index: 3;
 }
 
 .back .btn-simple{
@@ -95,12 +96,12 @@
     color: #444444;
 }
 .card-container, .front, .back {
-	width: 100%;
-	height: 420px;
-	border-radius: 4px;
-	-webkit-box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.16);
--moz-box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.16);
-box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.16);
+    width: 100%;
+    height: 420px;
+    border-radius: 4px;
+    -webkit-box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.16);
+    -moz-box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.16);
+    box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.16);
 }
 .card .cover{
     height: 105px;
@@ -135,13 +136,22 @@ box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.16);
 .card .back .content .main {
     height: 215px;
 }
+
+.card .content .main p {
+    color: #444444;
+    margin: 0 0 20px;
+    font-size: 13px;
+    line-height: 1.6;
+}
 .card .name {
-		font-family: 'Arima Madurai', cursive;
     font-size: 22px;
     line-height: 28px;
     margin: 10px 0 0;
     text-align: center;
     text-transform: capitalize;
+    color: #444444;
+    font-weight: 500;
+    letter-spacing: 0em;
 }
 .card h5{
     margin: 5px 0;
@@ -151,7 +161,7 @@ box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.16);
 .card .profession{
     color: #999999;
     text-align: center;
-    margin-bottom: 20px;
+    margin: 0 0 20px 0;
 }
 .card .footer {
     border-top: 1px solid #EEEEEE;
@@ -174,39 +184,53 @@ box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.16);
     height: 90px;
 }
 .card .motto{
-		font-family: 'Arima Madurai', cursive;
     border-bottom: 1px solid #EEEEEE;
     color: #999999;
     font-size: 14px;
     font-weight: 400;
     padding-bottom: 10px;
     text-align: center;
+    letter-spacing: 0;
+    text-transform: none;
 }
 
 .card .stats-container{
-	width: 100%;
-	margin-top: 50px;
+    width: 100%;
+    margin-top: 50px;
 }
 .card .stats{
-	display: block;
-	float: left;
-	width: 33.333333%;
-	text-align: center;
+    display: block;
+    float: left;
+    width: 33.333333%;
+    text-align: center;
 }
 
 .card .stats:first-child{
-	border-right: 1px solid #EEEEEE;
+    border-right: 1px solid #EEEEEE;
 }
 .card .stats:last-child{
-	border-left: 1px solid #EEEEEE;
+    border-left: 1px solid #EEEEEE;
 }
-.card .stats h4{
-		font-family: 'Arima Madurai', cursive;
-	font-weight: 300;
-	margin-bottom: 5px;
+
+.card .back .content .main h4 {
+    font-size: 18px;
+    color: #444444;
+    margin: 10px 0 10px;
+    font-weight: 500;
+    letter-spacing: 0;
+    text-transform: none;
+}
+
+.card .back .content .main .stats-container .stats h4 {
+    font-weight: 300;
+    margin-bottom: 5px;
+    letter-spacing: 0;
+    color: #444444;
+    line-height: 1.6;
+    font-size: 18px;
 }
 .card .stats p{
-	color: #777777;
+    color: #777777;
 }
 /*      Just for presentation        */
 
@@ -225,8 +249,8 @@ box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.16);
     margin: 0;
 }
 .space-30{
-	height: 30px;
-	display: block;
+    height: 30px;
+    display: block;
 }
 .space-50{
     height: 50px;
@@ -245,7 +269,7 @@ box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.16);
     color: #F74933;
 }
 
- pre.prettyprint{
+pre.prettyprint{
     background-color: #ffffff;
     border: 1px solid #999;
     margin-top: 20px;
@@ -256,13 +280,13 @@ box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.16);
     color: #05AE0E;
 }
 .tag, .pln, .kwd{
-     color: #3472F7;
+    color: #3472F7;
 }
 .atn{
-  color: #2C93FF;
+    color: #2C93FF;
 }
 .pln{
-   color: #333;
+    color: #333;
 }
 .com{
     color: #999;
@@ -353,5 +377,3 @@ box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.16);
     float: left;
     margin-right: 10px;
 }
-
-
