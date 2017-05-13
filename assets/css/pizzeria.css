@@ -8,6 +8,7 @@
 }
 .container {
     margin: 7% 2%;
+    width: 96%; /*-----PRUEBA-----*/
 }
 
 #header i{
@@ -100,15 +101,6 @@
         font-size: 1.5em;
     }
 }
-
-#formContacto div{
-    margin-bottom: 2%;
-}
-
-#formContacto #submit{
-    float: right;
-}
-
 p{
     color: #1d242a;
 }
@@ -129,5 +121,11 @@ a.more.scrolly{
 #perfil{
     width: 80px;
     height: 80px;
+}
+
+h1{
+    text-align: center;
+    font-size: 1.75em;
+    text-shadow: black 2px 2px;
 }
 

@@ -12,13 +12,27 @@ class Empresa extends CI_Controller
         enmarcar($this, 'empresa/contacto');
     }
 
-    public function enviarMail()
+    public function enviarMensaje()
     {
-        $nombre = $_POST['nombre'];
-        $email = $_POST['email'];
-        $mensaje = $_POST['mensaje'];
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
+            $remitente = $_POST['remitente'];
+            $email = $_POST['email'];
+            $mensaje = $_POST['mensaje'];
 
+            $this->load->model('empresa_model');
+            $this->empresa_model->guardarMensaje($mensaje, $remitente, $email);
+
+            header('Location: '.base_url().'empresa/mensajeEnviado');
+        }
+        else{
+            header('Location: '.base_url().'empresa/contacto');
+        }
+
+    }
+
+    public function mensajeEnviado(){
+        enmarcar($this, 'empresa/mensajeEnviado');
     }
 
 

@@ -41,6 +41,18 @@
                     });*/
                 }
             });
+
+            $("#alias").on("blur", function () {
+               var url_comprobarAlias = "<?=base_url()."usuario/compruebaAlias"?>"+"?alias="+$(this).val();
+               var coincide = false;
+               $.post(url_comprobarAlias, function (respuesta) {
+                   if (respuesta==="S"){
+                       $('#errorRegistro').show();
+                   } else {
+                       $('#errorRegistro').hide();
+                   }
+               });
+            });
         });
     </script>
 
@@ -55,7 +67,7 @@
                 <button type="button" id="btnSiguiente" class="btn btn-primary btn-block btn-large">Siguiente</button>
             </div>
             <div id="f2" hidden>
-                <input type="text" name="u" placeholder="Alias" required="required"/>
+                <input type="text" id="alias" name="u" placeholder="Alias" required="required"/>
                 <input type="password" id="contraseña1" name="p" placeholder="Contraseña" required="required"/>
                 <input type="password" id="contraseña2" placeholder="Repetir contraseña" required="required"/>
                 <button type="submit" id="btnRegistro" class="btn btn-primary btn-block btn-large">Registrarse</button>

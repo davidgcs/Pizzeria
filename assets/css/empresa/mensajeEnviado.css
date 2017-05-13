@@ -1,0 +1,23 @@
+.container{
+    vertical-align: middle;
+}
+h1{
+    font-size: 2em;
+    margin: 8% 0;
+}
+@media screen and (max-width: 736px){
+    h1{
+        font-size: 2em;
+        margin: 28% 0;
+    }
+}
+
+h3{
+    text-align: center;
+}
+
+footer{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}

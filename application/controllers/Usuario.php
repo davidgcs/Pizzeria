@@ -45,7 +45,7 @@ class Usuario extends CI_Controller {
             enmarcar($this,"forms/login");
         }
     }
-    public  function registrar(){
+    public function registrar(){
         $this->load->model('usuario_model');
         $usuariosExistentes = $this->usuario_model->getPrimaryKeys();
         $datos["registro"] = $usuariosExistentes;
@@ -80,6 +80,20 @@ class Usuario extends CI_Controller {
                 //DONE                añadir en la sesión algo que informe de que se intento registrar sin existo
                 header("location: registrar");
             }
+    }
+
+    public function compruebaAlias(){
+        extract($_REQUEST);
+        $alias = $_REQUEST['alias'];
+
+        //llamar al modelo
+        $this->load->model ( 'usuario_model' );
+        //llamar al metodo de crear usuario en el modelo (Este método ya comprueba que no exista)
+        if ($this->usuario_model->existeUsuario($alias)) {
+            echo "S";
+        } else {
+            echo "N";
+        }
     }
 
 }
