@@ -48,7 +48,7 @@ class Usuario extends CI_Controller {
     public  function registrar(){
         $this->load->model('usuario_model');
         $usuariosExistentes = $this->usuario_model->getPrimaryKeys();
-        $datos["login"] = $usuariosExistentes;
+        $datos["registro"] = $usuariosExistentes;
         //mandamos la lista de correos y usernames para comprobar antes de intentar registrar al usuario
 	    enmarcar($this,"forms/registro", $datos);
     }

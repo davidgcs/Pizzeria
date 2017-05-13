@@ -15,18 +15,26 @@
             $("#btnSiguiente").click(function () {
 
                 //solo ejecutar el siguiente código si los campos de #f1 estan rellenos y son correctos.
+
+
+                <?php /*foreach ($registro as $user): */?><!--
+                    <?php /*if ($user["email"] == $("#email")):*/?>
+                --><?php /*endforeach;*/?>
+
                 $("#f1").hide();
                 $("#f2").show();
             });
 
             $("#btnRegistro").click(function () {
+
                 if(($("#contraseña1").val()==$("#contraseña2").val())){
-                    console.log("pass correcta");
+                    console.log("pass repetida correctamente");
                 }
                 else {
-                    console.log("pass incorrecta");
+                    console.log("pass repetida incorrectamente");
                     $("#contraseña1,#contraseña2").val("");
 
+                    $("#errorContraseñas").show();
                     /* Evita el submit. No es necesario debido a que se borran antes los campos de contraseña y salta error en el required
                     $("#formRegistro").submit(function (e) {
                         e.preventDefault();
@@ -43,7 +51,7 @@
                 <input type="text" name="nombre" placeholder="Nombre" required="required"/>
                 <input type="text" name="apellidos" placeholder="Apellidos" required="required"/>
                 <input type="tel" name="tel" placeholder="Teléfono">
-                <input type="email" name="email" placeholder="Correo electrónico" required="required"/>
+                <input id="email" type="email" name="email" placeholder="Correo electrónico" required="required"/>
                 <button type="button" id="btnSiguiente" class="btn btn-primary btn-block btn-large">Siguiente</button>
             </div>
             <div id="f2" hidden>
@@ -57,5 +65,8 @@
 
     <div id="errorRegistro" hidden>
         <h4>El correo electrónico o usuario ya están en uso. Intentalo de nuevo.</h4>
+    </div>
+    <div id="errorContraseñas" hidden>
+        <h4>Las contraseñas no coinciden.</h4>
     </div>
 </div>
