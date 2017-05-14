@@ -10,7 +10,7 @@
 
                         <li><a href="<?php
                             echo ($this->uri->segment(1)==""||$this->uri->segment(1)=="home")?"":base_url() //escribe solo el anchor si estamos en home
-                            ?>#carta" class="scrolly">Carta <?=uri_string()?></a></li>
+                            ?>#carta" class="scrolly">Carta</a></li>
 
                         <li><a href="<?php
                             echo ($this->uri->segment(1)==""||$this->uri->segment(1)=="home")?"":base_url() //escribe solo el anchor si estamos en home

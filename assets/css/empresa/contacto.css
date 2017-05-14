@@ -20,7 +20,8 @@ footer{
     width: 100%;
     position: absolute;
     bottom: 0;
-    height: 200px;
+    padding-top: 70px!important;
+    height: 150px;
 }
 @media screen and (max-width: 736px){
     h1{
