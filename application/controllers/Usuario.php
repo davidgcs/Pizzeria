@@ -90,9 +90,9 @@ class Usuario extends CI_Controller {
         $this->load->model ( 'usuario_model' );
         //llamar al metodo de crear usuario en el modelo (Este método ya comprueba que no exista)
         if ($this->usuario_model->existeUsuario($alias)) {
-            echo "S";
+            devuelveDato("S");
         } else {
-            echo "N";
+            devuelveDato("N");
         }
     }
 

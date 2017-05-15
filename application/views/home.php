@@ -21,25 +21,25 @@
         <section class="spotlight">
             <div class="image"><img src="<?=base_url()?>assets/images/carta_pizza.jpg" alt="Pizzas" /></div>
             <div class="content">
-                <a href="<?=base_url()?>errores/e404"> <h2>Pizzas</h2></a>
+                <a href="<?=base_url()?>carta/pizza"> <h2>Pizzas</h2></a>
                 <p>Nuestra especialidad, las mejores pizzas elaboradas con los mejores ingredientes al horno de leña.</p>
             </div>
         </section>
         <section class="spotlight">
             <div class="image"><img src="<?=base_url()?>assets/images/carta_hamburguesa2.jpg" alt="Hamburguesas" /></div><div class="content">
-                <a href="<?= base_url() ?>errores/e404"><h2>Hamburguesas</h2></a>
+                <a href="<?= base_url() ?>carta/hamburguesa"><h2>Hamburguesas</h2></a>
                 <p>Deliciosas hamburguesas elaboradas con carne 100% de vacuno de ganadería gallega. Calidad premium <span class="glyphicon glyphicon-star"></span></p>
             </div>
         </section>
         <section class="spotlight">
             <div class="image"><img src="<?=base_url()?>assets/images/carta_sandwich.jpg" alt="Sandwiches" /></div><div class="content">
-                <a href="<?=base_url()?>errores/e404"><h2>Sandwiches</h2></a>
+                <a href="<?=base_url()?>carta/sandwich"><h2>Sandwiches</h2></a>
                 <p>Los sandwiches son tan tiernos y llenos de sabor que te harán repetir.</p>
             </div>
         </section>
         <section class="spotlight">
             <div class="image"><img src="<?=base_url()?>assets/images/carta_pasta.jpg" alt="Sandwiches" /></div><div class="content">
-                <a href="<?=base_url()?>errores/e404"><h2>Pastas</h2></a>
+                <a href="<?=base_url()?>carta/pasta"><h2>Pastas</h2></a>
                 <p>Las pastas más frescas importadas de Italia y elaboradas al dente.</p>
             </div>
         </section>

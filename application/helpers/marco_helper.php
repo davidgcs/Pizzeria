@@ -10,4 +10,8 @@ function enmarcar($controlador, $rutaVista, $datos = []) {
 	$controlador->load->view ( 'templates/footer', $datos );
 	$controlador->load->view ( 'templates/end' );
 }
+
+function devuelveDato($dato) {
+    echo $dato;
+}
 ?>
