@@ -19,14 +19,15 @@ class Usuario extends CI_Controller {
 	}
 
 	public function login(){
-session_start();
+	session_start();
 	    if (isset($_SESSION['logeado']) && $_SESSION["logeado"]==true){
 	        echo "<script>console.log('Sesión encontrada cargando perfil.')</script>";
             header("location: ".base_url()."perfil");
         }
         else {
             echo "<script>console.log('No encuentro la sesión.')</script>";
-            enmarcar($this, "forms/login");	
+            enmarcar($this, "forms/login");
+        }
     }
 
     /**
