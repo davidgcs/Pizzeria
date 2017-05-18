@@ -48,14 +48,15 @@
                $.post(url_comprobarAlias, function (respuesta) {
                    if (respuesta==="S"){
                        //$('#errorRegistro').show();
-                       $("#alias").addClass("yaExiste");
-                       $("#ialias").addClass("fa fa-times-circle").css("color", "red");
+                       $("#alias").addClass("campoIncorrecto");
+                       $("#ialias").addClass("fa fa-times-circle").removeClass("fa-check-circle").css("color", "rgba(224, 48, 48, 0.9)");
                        $("#ialias").show();
 
-                   } else {
+                   }
+                   else if (respuesta==="N"){
                        //$('#errorRegistro').hide();
-                       $("#alias").removeClass("yaExiste");
-                       $("#ialias").addClass("fa fa-check-circle").css("color", "green");
+                       $("#alias").removeClass("campoIncorrecto");
+                       $("#ialias").addClass("fa fa-check-circle").removeClass("fa-times-circle").css("color", "rgba(0, 185, 0, 0.86)");
                        $("#ialias").show();
                    }
                });
