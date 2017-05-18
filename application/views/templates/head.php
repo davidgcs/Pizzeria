@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="<?=base_url()?>assets/css/pizzeria.css">
     <link rel="stylesheet" href="<?=base_url()?>assets/css/main.css">
     <link rel="stylesheet" href="<?=base_url()?>assets/css/jquery-ui.min.css">
-    <?php if(file_exists(base_url()."assets/css/".uri_string().".css")):?>
+    <?php if(file_exists("assets/css/".uri_string().".css")):?>
     <link rel="stylesheet" href="<?=base_url()."assets/css/".uri_string().".css"?>"> <!-- CSS de la página actual-->
     <?php endif;?>
     <link rel="icon" href="<?=base_url()?>assets/images/LogoCircular.png" />
