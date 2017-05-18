@@ -42,16 +42,42 @@
                 }
             });
 
-            $("#alias").on("blur", function () {
+            $("#alias").on("keyup", function () {
                var url_comprobarAlias = "<?=base_url()."usuario/compruebaAlias"?>"+"?alias="+$(this).val();
                var coincide = false;
                $.post(url_comprobarAlias, function (respuesta) {
                    if (respuesta==="S"){
-                       $('#errorRegistro').show();
+                       //$('#errorRegistro').show();
+                       $("#alias").addClass("yaExiste");
+                       $("#ialias").addClass("fa fa-times-circle").css("color", "red");
+                       $("#ialias").show();
+
                    } else {
-                       $('#errorRegistro').hide();
+                       //$('#errorRegistro').hide();
+                       $("#alias").removeClass("yaExiste");
+                       $("#ialias").addClass("fa fa-check-circle").css("color", "green");
+                       $("#ialias").show();
                    }
                });
+            });
+
+            $("#email").on("keyup", function () {
+                var url_comprobarMail = "<?=base_url()."usuario/compruebaMail"?>"+"?email="+$(this).val();
+                var coincide = false;
+                $.post(url_comprobarMail, function (respuesta) {
+                    if (respuesta==="S"){
+                        //$('#errorRegistro').show();
+                        $("#email").addClass("yaExiste");
+                        $("#imail").addClass("fa fa-times-circle").css("color", "red");
+                        $("#imail").show();
+
+                    } else {
+                        //$('#errorRegistro').hide();
+                        $("#email").removeClass("yaExiste");
+                        $("#imail").addClass("fa fa-check-circle").css("color", "green");
+                        $("#imail").show();
+                    }
+                });
             });
         });
     </script>
@@ -63,10 +89,12 @@
                 <input type="text" name="nombre" placeholder="Nombre" required="required"/>
                 <input type="text" name="apellidos" placeholder="Apellidos" required="required"/>
                 <input type="tel" name="tel" placeholder="Teléfono">
+                <i id="imail"></i>
                 <input id="email" type="email" name="email" placeholder="Correo electrónico" required="required"/>
                 <button type="button" id="btnSiguiente" class="btn btn-primary btn-block btn-large">Siguiente</button>
             </div>
             <div id="f2" hidden>
+                <i id="ialias"></i>
                 <input type="text" id="alias" name="u" placeholder="Alias" required="required"/>
                 <input type="password" id="contraseña1" name="p" placeholder="Contraseña" required="required"/>
                 <input type="password" id="contraseña2" placeholder="Repetir contraseña" required="required"/>

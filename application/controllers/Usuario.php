@@ -11,11 +11,22 @@ class Usuario extends CI_Controller {
 	public function editar() {		
 	}
 	
-	public function logout() {	
+	public function logout() {
+	session_start();
+        $_SESSION['logeado']=false;
+        session_destroy();
+        header("location: " . base_url());
 	}
 
 	public function login(){
-        enmarcar($this,"forms/login");
+session_start();
+	    if (isset($_SESSION['logeado']) && $_SESSION["logeado"]==true){
+	        echo "<script>console.log('Sesión encontrada cargando perfil.')</script>";
+            header("location: ".base_url()."perfil");
+        }
+        else {
+            echo "<script>console.log('No encuentro la sesión.')</script>";
+            enmarcar($this, "forms/login");	
     }
 
     /**
@@ -34,9 +45,9 @@ class Usuario extends CI_Controller {
             //llamar al home
             session_start();
             $_SESSION['logeado']=true;
-            $_SESSION['usuarioActual']=$usuario; //indicamos cual es el alias del usuario de la sesión actual.
+            $_SESSION['usuarioActual']=$aliasLogin; //indicamos cual es el alias del usuario de la sesión actual.
             $_SESSION['errorLogin']=false;
-            enmarcar($this,"home");
+            header("location: " . base_url());
         }
         else{ //fallo al logearse
             session_start();
@@ -46,11 +57,7 @@ class Usuario extends CI_Controller {
         }
     }
     public function registrar(){
-        $this->load->model('usuario_model');
-        $usuariosExistentes = $this->usuario_model->getPrimaryKeys();
-        $datos["registro"] = $usuariosExistentes;
-        //mandamos la lista de correos y usernames para comprobar antes de intentar registrar al usuario
-	    enmarcar($this,"forms/registro", $datos);
+        enmarcar($this,"forms/registro");
     }
 
     public  function registrarPost(){
@@ -68,10 +75,6 @@ class Usuario extends CI_Controller {
         $usuarioCreado = $this->usuario_model->crearUsuario($nombre,$apellidos,$telefono,$email,$alias,$contraseña);
             //si no existe crear el usuario
             if ($usuarioCreado){
-                //iniciar la sesión
-                session_start();
-                $_SESSION['logeado']=true;
-                $_SESSION['usuarioActual']=$alias;
                 enmarcar($this,"forms/registroOk.php");
             }
             //si ya existe notificar al usuario
@@ -88,8 +91,22 @@ class Usuario extends CI_Controller {
 
         //llamar al modelo
         $this->load->model ( 'usuario_model' );
-        //llamar al metodo de crear usuario en el modelo (Este método ya comprueba que no exista)
+        //comprobamos alias
         if ($this->usuario_model->existeUsuario($alias)) {
+            devuelveDato("S");
+        } else {
+            devuelveDato("N");
+        }
+    }
+
+    public function compruebaMail(){
+        extract($_REQUEST);
+        $email = $_REQUEST['email'];
+
+        //llamar al modelo
+        $this->load->model ( 'usuario_model' );
+        //comprobamos email
+        if ($this->usuario_model->existeEmail($email)) {
             devuelveDato("S");
         } else {
             devuelveDato("N");

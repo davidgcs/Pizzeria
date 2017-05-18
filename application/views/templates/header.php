@@ -1,3 +1,4 @@
+<?php if(!isset($_SESSION)) session_start();?>
 <header id="header" class="alt">
     <a href="<?=base_url()?>"><img src="<?= base_url() ?>assets/images/LogoPizHubTransp.png" alt="PizHub" id="logo_header"></a>
     <nav id="nav">
@@ -17,13 +18,16 @@
                             ?>#localizacion" class="scrolly">¿Dónde estamos?</a></li>
 
 <!--                        <li><a href="--><?//=base_url()?><!--#carta" class="scrolly">Carta</a></li>-->
-                        <li><a href="<?=base_url()?>Usuario/login">Perfil</a></li>
+                        <li><a href="<?=base_url()?>usuario/login">Perfil</a></li>
                         <li><a href="<?=base_url()?>empresa/contacto">Contacto</a></li>
                         <li><a href="<?=base_url()?>empresa/acerca">Acerca de Nosotros</a></li>
+                        <?php if(isset($_SESSION['logeado']) && $_SESSION["logeado"]==true):?>
+                            <li><a href="<?=base_url()?>usuario/logout">Salir </a></li>
+                        <?php endif;?>
                     </ul>
                 </div>
             </li>
         </ul>
     </nav>
-    <a href="<?= base_url() ?>Usuario/login"><i class="fa fa-user-circle"></i></a>
+    <h5 id="saludo"><?php if(isset($_SESSION['logeado']) && $_SESSION["logeado"]==true) echo $_SESSION["usuarioActual"]?></h5> <a href="<?= base_url() ?>usuario/login"><i class="<?php echo (isset($_SESSION['logeado']) && $_SESSION["logeado"]==true) ? 'fa fa-user-circle' : 'fa fa-sign-in';?>"></i></a>
 </header>
