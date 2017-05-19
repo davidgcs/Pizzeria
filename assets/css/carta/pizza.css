@@ -1,0 +1,16 @@
+#pizzaContainer li{
+    list-style: none;
+    display: inline-block;
+    width: 30%;
+    height: auto;
+}
+#pizzaContainer li img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#pizzaContainer{
+    width: 100%;
+    text-align: center;
+}
