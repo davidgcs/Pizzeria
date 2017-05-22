@@ -77,7 +77,7 @@
                                 </div>
                                 <div class="content">
                                     <div class="main">
-                                        <h3 class="name">Inna Corman</h3>
+                                        <h3 class="name">Daniel Dominguez</h3>
                                         <p class="profession">Product Manager</p>
 
                                         <p class="text-center">"I'm the new Sinatra, and since I made it here I can make
@@ -135,7 +135,7 @@
                                 </div>
                                 <div class="content">
                                     <div class="main">
-                                        <h3 class="name">Andrew Mike</h3>
+                                        <h3 class="name">David Gomez</h3>
                                         <p class="profession">Web Developer</p>
                                         <p class="text-center">"Lamborghini Mercy <br>Your chick she so thirsty <br>I'm
                                             in that two seat Lambo"</p>
@@ -192,40 +192,38 @@
                                 </div>
                                 <div class="content">
                                     <div class="main">
-                                        <h3 class="name">John Marvel</h3>
-                                        <p class="profession">CEO</p>
-                                        <p class="text-center">"I'm the new Sinatra, and since I made it here I can make
-                                            it anywhere, yeah, they love me everywhere"</p>
+                                        <h3 class="name">Daniel Muñoz</h3>
+                                        <p class="profession">Backend</p>
+                                        <p class="text-center">"Siempre quise crear mi propio negocio y aquí estoy, cumpliendo mi sueño con un resultado increíble."</p>
                                     </div>
                                 </div>
                             </div> <!-- end front panel -->
                             <div class="back">
                                 <div class="header">
-                                    <h5 class="motto">"To be or not to be, this is my awesome motto!"</h5>
+                                    <h5 class="motto">"Lo que no te mata te hace más hater."</h5>
                                 </div>
                                 <div class="content">
                                     <div class="main">
-                                        <h4 class="text-center">Job Description</h4>
-                                        <p class="text-center">Web design, Adobe Photoshop, HTML5, CSS3, Corel and many
-                                            others...</p>
+                                        <h4 class="text-center">Descripción del puesto</h4>
+                                        <p class="text-center">Desarrollo web backend en PHP, Javascript, AJAX, MySQL y más</p>
 
                                         <div class="stats-container">
                                             <div class="stats">
                                                 <h4>235</h4>
                                                 <p>
-                                                    Followers
+                                                    Seguidores
                                                 </p>
                                             </div>
                                             <div class="stats">
                                                 <h4>114</h4>
                                                 <p>
-                                                    Following
+                                                    Siguiento
                                                 </p>
                                             </div>
                                             <div class="stats">
                                                 <h4>35</h4>
                                                 <p>
-                                                    Projects
+                                                    Proyectos
                                                 </p>
                                             </div>
                                         </div>
