@@ -11,96 +11,12 @@
     width: 96%; /*-----PRUEBA-----*/
 }
 
-#header i{
-    position: absolute;
-    right: 8%;
-    top: 18px;
-    font-size: 1.3em;
-}
-
 #mapa{
     height: 500px;
     width: 50%;
 }
 
-/** RESPONSIVE **/
 
-@media screen and (max-width: 1680px) {
-    #header img#logo_header{
-        width: auto;
-        height: 52px;
-    }
-
-    #mapa{
-        height: 460px;
-    }
-    #header i{
-        right: 9%;
-        top: 15px;
-    }
-}
-@media screen and (max-width: 1280px) {
-    #header img#logo_header{
-        width: auto;
-        height: 48px;
-    }
-
-    #mapa{
-        height: 380px;
-    }
-    #header i{
-        right: 11%;
-        top: 15px;
-    }
-}
-@media screen and (max-width: 980px) {
-
-    #header i{
-        right: 14%;
-        top: 13px;
-    }
-
-}
-@media screen and (max-width: 736px) {
-    #header img#logo_header{
-        width: auto;
-        height: 44px;
-    }
-
-    #container {
-	margin: 10% 2%;
-	}
-    #mapa{
-        height: 220px;
-        width: 85%;
-    }
-    #header i{
-        right: 10%;
-        top: 10px;
-        font-size: 1.8em;
-    }
-}
-
-
-@media screen and (max-width: 600px) {
-    #header img#logo_header{
-        width: auto;
-        height: 44px;
-    }
-
-    #container {
-	margin: 15% 2%;
-	}
-    #mapa{
-        height: 180px;
-        width: 85%;
-    }
-    #header i{
-        right: 12%;
-        top: 13px;
-        font-size: 1.5em;
-    }
-}
 p{
     color: #1d242a;
 }
@@ -129,3 +45,120 @@ h1{
     text-shadow: black 2px 2px;
 }
 
+#header i{
+    position: absolute;
+    right: 8%;
+    top: 18px;
+    font-size: 1.3em;
+}
+
+#header #saludo{
+    position: absolute;
+    right: 12%;
+    top: 15px;
+    text-shadow: black 2px 2px;
+}
+
+
+/** RESPONSIVE **/
+
+@media screen and (max-width: 1680px) {
+    #header img#logo_header{
+        width: auto;
+        height: 52px;
+    }
+
+    #mapa{
+        height: 460px;
+    }
+    #header i{
+        right: 9%;
+        top: 15px;
+    }
+}
+@media screen and (max-width: 1280px) {
+    #header img#logo_header{
+        width: auto;
+        height: 48px;
+    }
+
+    #mapa{
+        height: 380px;
+    }
+
+    #header #saludo{
+        right:14%;
+    }
+
+    #header i{
+        right: 11%;
+        top: 15px;
+    }
+}
+@media screen and (max-width: 980px) {
+
+    #header #saludo{
+        right:18%;
+    }
+
+    #header i{
+        right: 14%;
+        top: 13px;
+    }
+
+}
+@media screen and (max-width: 736px) {
+    #header img#logo_header{
+        width: auto;
+        height: 44px;
+    }
+
+    #container {
+        margin: 10% 2%;
+    }
+    #mapa{
+        height: 220px;
+        width: 85%;
+    }
+    #header #saludo{
+        font-size: 1.2em;
+        top: 10px;
+        right: 16%;
+    }
+    #header i{
+        right: 10%;
+        top: 10px;
+        font-size: 1.8em;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #header img#logo_header{
+        width: auto;
+        height: 44px;
+    }
+
+    #container {
+        margin: 15% 2%;
+    }
+    #mapa{
+        height: 180px;
+        width: 85%;
+    }
+    #header #saludo{
+        right: 18%;
+    }
+    #header i{
+        right: 12%;
+        top: 13px;
+        font-size: 1.5em;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #header #saludo{
+        right: 21%;
+        font-size: 1em;
+        top: 13px;
+    }
+}
