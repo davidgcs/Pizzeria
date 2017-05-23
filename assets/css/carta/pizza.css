@@ -13,4 +13,56 @@
 #pizzaContainer{
     width: 100%;
     text-align: center;
+    margin-bottom: 0;
+}
+
+div.imagenTitulo{
+    position: relative;
+    width: 335px;
+    height: 335px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.imagenTitulo h5{
+    position: absolute;
+    top: 46%;
+    bottom: 50%;
+    width: 100%;
+    pointer-events: none !important;
+    text-shadow: 2px 2px #2e3842;
+    font-size: 1em;
+}
+
+#bannerPizza{
+    height: 160px;
+    width: 100%;
+    position: absolute;
+    bottom: 100px;
+    left: 0;
+    text-align: center;
+}
+
+.container{
+    position: relative;
+    margin-bottom: 20px;
+}
+
+#p10{
+    margin-bottom: 180px;
+}
+
+#cerrarPubli{
+    width: 800px;
+    color: #de0c0c;
+    position: relative;
+    margin:auto;
+}
+
+#cerrarPubli i{
+    position: absolute;
+    right: 0;
+    top: -190px;
+    cursor: pointer;
 }
