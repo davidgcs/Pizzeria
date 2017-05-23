@@ -1,3 +1,19 @@
+<style>
+    .anim1{
+        transform:translate(-200px,-50px);
+    }
+    .anim2{
+        transform:translate(350px,-150px);
+    }
+    .anim3{
+        transform:translate(50px,50px);
+    }
+    .anim4{
+        transform:translate(-150px,-180px);
+        transform: scale(.25);
+    }
+</style>
+
 <script type="text/javascript">
     $(document).ready(function () {
         $("#pizzaContainer li img").hover(function () {
@@ -16,7 +32,38 @@
         $("#cerrarPubli i").click(function () {
             $("#bannerPizza").hide();
         });
+
+        cont = 1;
+        $("#btnMover").on("mouseenter",function () {
+            if(cont<=4) {
+                console.log("muevo boton. I = " + cont);
+                $("#btnMover").addClass("anim" + cont);
+
+                cont=cont+1;
+            }
+        });
+
+        $("#inputCaptcha").keypress(function(e) {
+            if(e.which == 13) {
+                if($("#inputCaptcha").val().toLowerCase() == "alt f4" || $("#inputCaptcha").val().toLowerCase() == "alt + f4" || $("#inputCaptcha").val().toLowerCase() == "alt+f4" || $("#inputCaptcha").val().toLowerCase() == "altf4"){
+                    alert("Está bien, tú ganas...");
+                    $("#captcha").hide();
+                }
+                else{
+                    $("#inputCaptcha").val("");
+                }
+            }
+        });
     });
+
+    function addPizza(numPizza) {
+        switch (numPizza){
+            case 10:
+                document.getElementById("captcha").style.visibility = "visible";
+                document.getElementById("inputCaptcha").focus();
+                break;
+        }
+    }
 
 </script>
 <div class="container">
@@ -93,6 +140,11 @@
                 <button id="btnMover" type="button" onclick="addPizza(10)">Añadir</button>
             </li>
         </ul>
+    </div>
+    <div id="captcha">
+        <label id="textoCaptcha">Vaya, esto es algo inusual. Tenemos que comprobar que de verdad no eres un robot...</label>
+        <input id="inputCaptcha" type="text">
+        <img src="<?= base_url() ?>assets/images/captcha.PNG" alt="">
     </div>
     <div id="bannerPizza">
         <a href="<?= base_url() ?>"><img src="<?= base_url() ?>assets/images/publi.png" alt=""></a>

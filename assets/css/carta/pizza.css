@@ -44,6 +44,30 @@ div.imagenTitulo h5{
     text-align: center;
 }
 
+#captcha{
+    height: 360px;
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    visibility: hidden;
+    bottom: -200px;
+    left: 20px;
+}
+
+#inputCaptcha {
+    width: 144px;
+    height: 16px;
+    position: absolute;
+    right: 900px;
+    top: 145px;
+    color: black;
+    font-size: 0.6em;
+}
+
+#textoCaptcha{
+    color: #FFF;
+}
+
 .container{
     position: relative;
     margin-bottom: 20px;
