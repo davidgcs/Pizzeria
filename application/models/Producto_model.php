@@ -2,15 +2,16 @@
 
 class Producto_model extends CI_Model
 {
-    public function crearProducto($nombre, $tipo, $precio, $referencia)
+    public function crearProducto($nombre, $tipo, $precio, $nref, $imgsrc)
     {
-        if (!$this->existeProducto($referencia)) {
+        if (!$this->existeProducto($nref)) {
 
             $producto = R::dispense("producto");
             $producto->nombre = $nombre;
             $producto->tipo = $tipo;
             $producto->precio = $precio;
-            $producto->referencia = $referencia;
+            $producto->referencia = $nref;
+            $producto->imgsrc = $imgsrc;
 
             R::store($producto);
             return true;
@@ -20,14 +21,14 @@ class Producto_model extends CI_Model
         }
     }
 
-    public function existeProducto($referencia)
+    public function existeProducto($nref)
     {
-        return R::findOne('producto', 'referencia = ?', [$referencia]) != null ? true : false;
+        return R::findOne('producto', 'referencia = ?', [$nref]) != null ? true : false;
     }
 
-    public function getProducto($referencia)
+    public function getProducto($nref)
     {
-        return R::load("producto", "referencia = ?", $referencia);
+        return R::load("producto", "referencia = ?", $nref);
     }
 
     public function getProductos(){
@@ -39,23 +40,23 @@ class Producto_model extends CI_Model
         return R::findAll("producto", "tipo = ?", [$tipo]);
     }
 
-    public function setPrecio($referencia, $precio)
+    public function setPrecio($nref, $precio)
     {
-        $producto = R::load("producto", "referencia = ?", $referencia);
+        $producto = R::load("producto", "referencia = ?", $nref);
         $producto->precio = $precio;
         R::store($producto);
     }
 
-    public function setNombre($referencia, $nombre)
+    public function setNombre($nref, $nombre)
     {
-        $producto = R::load("producto", "referencia = ?", $referencia);
+        $producto = R::load("producto", "referencia = ?", $nref);
         $producto->nombre = $nombre;
         R::store($producto);
     }
 
-    public function borrarProducto($referencia)
+    public function borrarProducto($nref)
     {
-        $producto = R::load("producto", $referencia);
+        $producto = R::load("producto", $nref);
         R::trash($producto);
     }
 }
