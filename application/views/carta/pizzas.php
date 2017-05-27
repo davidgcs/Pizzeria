@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <style>
     .anim1{
         transform:translate(-200px,-50px);
@@ -56,8 +60,24 @@
         });
     });
 
+    indexPedido = 0;
     function addPizza(numPizza) {
         switch (numPizza){
+            case 1:
+                //pizza personalizada. Mostrar ingredientes.
+                break;
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+            case 6:
+            case 7:
+            case 8:
+            case 9:
+            <?php
+                    //se deben pasar las variables indexpedido y numpizza al php
+                $_SESSION[pedido][indexPedido] = numPizza;
+            ?>
             case 10:
                 document.getElementById("captcha").style.visibility = "visible";
                 document.getElementById("inputCaptcha").focus();
