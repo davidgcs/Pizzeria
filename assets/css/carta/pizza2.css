@@ -1,0 +1,41 @@
+.pizzaColumna li {
+    list-style: none;
+    text-align: center;
+}
+
+.imagenTitulo {
+    position: relative;
+    margin-bottom: -5%;
+}
+
+.imagenTitulo h5 {
+    position: absolute;
+    top: 46%;
+    bottom: 50%;
+    width: 100%;
+    pointer-events: none !important;
+    text-shadow: 2px 2px #2e3842;
+    font-size: 1em;
+}
+
+.imagenTitulo img {
+    width: 80%;
+}
+
+.pizzaColumna {
+    width: 33.33333%;
+    float: left;
+}
+
+@media (max-width: 1080px) {
+    .pizzaColumna {
+        width: 50%;
+    }
+}
+
+@media (max-width: 720px) {
+    .pizzaColumna {
+        width: 93%;
+        padding-left: 7%;
+    }
+}
