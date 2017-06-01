@@ -7,12 +7,21 @@
             $(this).attr("src", text.replace(".png", "_t.png"));
             //console.log("mousein " + $(this).attr("src"));
             $(this).next().show();
+            $(this).next().next().show();
+
         }, function () {
             //mouseout
             var text = $(this).attr("src");
             $(this).attr("src", text.replace("_t.png", ".png"));
             //console.log("mouseoute " + $(this).attr("src"));
             $(this).next().hide();
+            $(this).next().next().hide();
+        });
+        var diabX = $("#pizdiab").get
+
+        //boton piña
+        $("#pizdiab").hover( function () {
+
         });
     });
 </script>
@@ -22,9 +31,10 @@
             <li class="pizza" id="<?= $pizza['nref'] ?>">
                 <div class="imagenTitulo" style="">
                     <img src="<?= base_url() ?>assets/images/<?= $pizza['imgsrc'] ?>" alt="<?= $pizza['nombre'] ?>">
-                    <h5 hidden>PERSONALIZADA</h5>
+                    <h5 hidden><?= $pizza['nombre'] ?></h5>
+                    <p hidden><?= $pizza['descri'] ?></p>
                 </div>
-                <button type="button" onclick="addPizza(<?= $pizza['nref'] ?>)">Añadir</button>
+                <button id="<?= $pizza['nref'] ?>">Añadir</button>
             </li>
         </div>
     <?php endforeach; ?>

@@ -42,6 +42,14 @@ div.imagenTitulo h5{
     bottom: 100px;
     left: 0;
     text-align: center;
+    display: none;
+}
+#captchaContainer{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 312px;
+    height: 124px;
 }
 
 #captcha{
@@ -58,8 +66,8 @@ div.imagenTitulo h5{
     width: 144px;
     height: 16px;
     position: absolute;
-    right: 900px;
-    top: 145px;
+    top: 94px;
+    left: 27px;
     color: black;
     font-size: 0.6em;
 }

@@ -10,12 +10,23 @@
 
 .imagenTitulo h5 {
     position: absolute;
-    top: 46%;
+    top: 40%;
     bottom: 50%;
     width: 100%;
     pointer-events: none !important;
     text-shadow: 2px 2px #2e3842;
     font-size: 1em;
+}
+.imagenTitulo p {
+    position: absolute;
+    top: 48%;
+    bottom: 50%;
+    width: 100%;
+    pointer-events: none !important;
+    text-shadow: 0.5px 0.5px #2e3842;
+    font-size: 1em;
+    color: white;
+    letter-spacing: 0;
 }
 
 .imagenTitulo img {

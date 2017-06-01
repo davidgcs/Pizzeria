@@ -1,5 +1,5 @@
 <?php
-
+if (!isset($_SESSION))
 session_start();
 ?>
 
@@ -38,7 +38,7 @@ session_start();
             $("#bannerPizza").hide();
         });
 
-        cont = 1;
+        cont = 0;
         $("#btnMover").on("mouseenter",function () {
             if(cont<=4) {
                 console.log("muevo boton. I = " + cont);
@@ -59,6 +59,14 @@ session_start();
                 }
             }
         });
+
+        mostrado = false;
+        $("#p10 button").hover( function () {
+            if (!mostrado) {
+                $("#bannerPizza").show();
+                mostrado = true;
+            }
+        });
     });
 
     indexPedido = 0;
@@ -77,8 +85,9 @@ session_start();
             case 9:
             <?php
                     //se deben pasar las variables indexpedido y numpizza al php
-                $_SESSION[pedido][indexPedido] = numPizza;
+                //$_SESSION[pedido][indexPedido] = numPizza;
             ?>
+            break;
             case 10:
                 document.getElementById("captcha").style.visibility = "visible";
                 document.getElementById("inputCaptcha").focus();
@@ -164,8 +173,10 @@ session_start();
     </div>
     <div id="captcha">
         <label id="textoCaptcha">Vaya, esto es algo inusual. Tenemos que comprobar que de verdad no eres un robot...</label>
-        <input id="inputCaptcha" type="text">
-        <img src="<?= base_url() ?>assets/images/captcha.PNG" alt="">
+        <div id="captchaContainer">
+            <img src="<?= base_url() ?>assets/images/captcha.PNG" alt="">
+            <input id="inputCaptcha" type="text">
+        </div>
     </div>
     <div id="bannerPizza">
         <a href="<?= base_url() ?>"><img src="<?= base_url() ?>assets/images/publi.png" alt=""></a>

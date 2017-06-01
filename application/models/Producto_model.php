@@ -2,7 +2,7 @@
 
 class Producto_model extends CI_Model
 {
-    public function crearProducto($nombre, $tipo, $precio, $nref, $imgsrc)
+    public function crearProducto($nombre, $tipo, $precio, $nref, $descri, $imgsrc)
     {
         if (!$this->existeProducto($nref)) {
 
@@ -11,6 +11,7 @@ class Producto_model extends CI_Model
             $producto->tipo = $tipo;
             $producto->precio = $precio;
             $producto->referencia = $nref;
+            $producto->descri = $descri;
             $producto->imgsrc = $imgsrc;
 
             R::store($producto);
@@ -23,12 +24,12 @@ class Producto_model extends CI_Model
 
     public function existeProducto($nref)
     {
-        return R::findOne('producto', 'referencia = ?', [$nref]) != null ? true : false;
+        return R::findOne('producto', 'nref = ?', [$nref]) != null ? true : false;
     }
 
     public function getProducto($nref)
     {
-        return R::load("producto", "referencia = ?", $nref);
+        return R::load("producto", "nref = ?", $nref);
     }
 
     public function getProductos(){
@@ -42,15 +43,22 @@ class Producto_model extends CI_Model
 
     public function setPrecio($nref, $precio)
     {
-        $producto = R::load("producto", "referencia = ?", $nref);
+        $producto = R::load("producto", "nref = ?", $nref);
         $producto->precio = $precio;
         R::store($producto);
     }
 
     public function setNombre($nref, $nombre)
     {
-        $producto = R::load("producto", "referencia = ?", $nref);
+        $producto = R::load("producto", "nref = ?", $nref);
         $producto->nombre = $nombre;
+        R::store($producto);
+    }
+
+    public function setDescri($nref, $descri)
+    {
+        $producto = R::load("producto", "nref = ?", $nref);
+        $producto->descri = $descri;
         R::store($producto);
     }
 
