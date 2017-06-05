@@ -41,7 +41,7 @@ session_start();
         cont = 0;
         $("#btnMover").on("mouseenter",function () {
             if(cont<=4) {
-                console.log("muevo boton. I = " + cont);
+                //console.log("muevo boton. I = " + cont);
                 $("#btnMover").addClass("anim" + cont);
 
                 cont=cont+1;
@@ -84,7 +84,7 @@ session_start();
             case 8:
             case 9:
             <?php
-                    //se deben pasar las variables indexpedido y numpizza al php
+                //se deben pasar las variables indexpedido y numpizza al php
                 //$_SESSION[pedido][indexPedido] = numPizza;
             ?>
             break;

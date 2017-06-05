@@ -10,7 +10,7 @@ class Producto_model extends CI_Model
             $producto->nombre = $nombre;
             $producto->tipo = $tipo;
             $producto->precio = $precio;
-            $producto->referencia = $nref;
+            $producto->nref = $nref;
             $producto->descri = $descri;
             $producto->imgsrc = $imgsrc;
 
