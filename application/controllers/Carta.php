@@ -12,39 +12,32 @@ class Carta extends CI_Controller
     public function pizza()
     {
         $this->load->model('producto_model');
-        $datos['pizza'] = $this->producto_model->getProductosTipo("pizza");
-        enmarcar($this, "carta/pizzas", $datos);
-    }
-
-    public function pizza2()
-    {
-        $this->load->model('producto_model');
         $datos['body']['pizza'] = $this->producto_model->getProductosTipo("pizza");
-        enmarcar($this, "carta/pizza2", $datos);
+        enmarcar($this, "carta/pizzas", $datos);
     }
 
     public function hamburguesa()
     {
         $this->load->model('producto_model');
-        $datos['hamburguesa'] = $this->producto_model->getProductosTipo("hamburguesa");
+        $datos['body']['hamburguesa'] = $this->producto_model->getProductosTipo("hamburguesa");
         enmarcar($this, "carta/hamburguesas", $datos);
     }
 
     public function sandwich()
     {
         $this->load->model('producto_model');
-        $datos['sandwich'] = $this->producto_model->getProductosTipo("sandwich");
+        $datos['body']['sandwich'] = $this->producto_model->getProductosTipo("sandwich");
         enmarcar($this, "carta/sandwiches", $datos);
     }
 
     public function pasta()
     {
         $this->load->model('producto_model');
-        $datos['pasta'] = $this->producto_model->getProductosTipo("pasta");
+        $datos['body']['pasta'] = $this->producto_model->getProductosTipo("pasta");
         enmarcar($this, "carta/pastas", $datos);
     }
 
-    public function crearPizza()
+    public function crearProductos()
     {
         $this->load->model('producto_model');
         $this->producto_model->crearProducto('PERSONALIZADA', 'pizza', "12", "pizpers", "Crea la pizza a tu gusto.", "pizza5.png");

@@ -1,0 +1,55 @@
+.productoTitulo {
+    font-size: 34px;
+}
+.productoColumna li {
+    list-style: none;
+    text-align: center;
+}
+
+.imagenTitulo {
+    position: relative;
+    margin-bottom: -5%;
+}
+
+.imagenTitulo h5 {
+    position: absolute;
+    top: 40%;
+    bottom: 50%;
+    width: 100%;
+    pointer-events: none !important;
+    text-shadow: 2px 2px #2e3842;
+    font-size: 1em;
+}
+.imagenTitulo p {
+    position: absolute;
+    top: 48%;
+    bottom: 50%;
+    width: 100%;
+    pointer-events: none !important;
+    text-shadow: 0.5px 0.5px #2e3842;
+    font-size: 1em;
+    color: white;
+    letter-spacing: 0;
+}
+
+.imagenTitulo img {
+    width: 80%;
+}
+
+.productoColumna {
+    width: 33.33333%;
+    float: left;
+}
+
+@media (max-width: 1080px) {
+    .productoColumna {
+        width: 50%;
+    }
+}
+
+@media (max-width: 720px) {
+    .productoColumna {
+        width: 93%;
+        padding-left: 7%;
+    }
+}
