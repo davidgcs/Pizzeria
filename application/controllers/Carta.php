@@ -5,7 +5,7 @@ class Carta extends CI_Controller
     public function index()
     {
         $datos['datos'] = "CARTA";
-        enmarcar($this, base_url() . "#carta", $datos);
+        header("Location: ".base_url() . "#carta");
     }
 
 
@@ -59,7 +59,7 @@ class Carta extends CI_Controller
         $this->producto_model->crearProducto('VEGETAL', 'hamburguesa', "4", "hamvege", "¿Te apetece cuidar la línea y comerte además una hamburguesa?", "dummy.png");
         $this->producto_model->crearProducto('BOLOGNESA', 'pasta', "8", "pasbolo", "Deliciosa pasta al dente, con una espectacular salsa bolognesa.", "dummy.png");
         $this->producto_model->crearProducto('CARBONARA', 'pasta', "7", "pascarb", "Descripcion de la pasta carbonara", "dummy.png");
-        $this->producto_model->crearProducto('PESTO', 'pasta', "7.5", "paspest", "Descripcion d ela pasta pesto", "dummy.png");
+        $this->producto_model->crearProducto('PESTO', 'pasta', "7.5", "paspest", "Descripcion de la pasta pesto", "dummy.png");
     }
 }
 
