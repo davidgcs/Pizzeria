@@ -13,10 +13,8 @@ class Carta extends CI_Controller
     {
         $this->load->model('producto_model');
         $datos['body']['pizza'] = $this->producto_model->getProductosTipo("pizza");
-        $datos['head']['css'] = array("assets/css/carta/producto.css");
-        $datos['head']['css'] = array("assets/css/carta/banner.css");
-        $datos['head']['js'] = array("assets/js/carta/producto.js");
-        $datos['head']['js'] = array("assets/js/carta/banner.js");
+        $datos['head']['css'] = array("assets/css/carta/producto.css", "assets/css/carta/banner.css");
+        $datos['head']['js'] = array("assets/js/carta/producto.js", "assets/js/carta/banner.js");
         enmarcar($this, "carta/pizzas", $datos);
     }
 
