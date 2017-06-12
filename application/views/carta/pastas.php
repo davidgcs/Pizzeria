@@ -1,5 +1,9 @@
-<link rel="stylesheet" href="<?= base_url() ?>assets/css/carta/producto.css">
-<script type="text/javascript" src="<?= base_url() ?>assets/js/carta/producto.js"></script>
+<?php
+if(!isset($_SESSION)){
+    session_start();
+    $_SESSION['carrito']=[];
+}
+?>
 <div class="container">
     <h1 class="productoTitulo">ELIGE TU PASTA</h1>
     <?php foreach ($body['pasta'] as $producto) : ?>
