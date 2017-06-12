@@ -35,11 +35,17 @@ if(!isset($_SESSION)){
     <?php endforeach; ?>
 </div>
 <script>
-    function addCarrito(id){
-//        $.ajax({
-//            url: "test.html"
-//        }).success(data){
-//
-//        }
+    function addCarrito(nref){
+        console.log(nref.id);
+        $.ajax({
+            method: "POST",
+            url: "<?=base_url()?>carrito/addToCart",
+            data: {nref: nref.id}
+        }).done(function(msg){
+            console.log("done: "+msg)
+        }).success(function(msg){
+            console.log("success: "+msg);
+        });
     }
+    console.log(<?= json_encode($_SESSION)?>);
 </script>

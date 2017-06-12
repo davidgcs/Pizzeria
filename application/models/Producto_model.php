@@ -29,7 +29,7 @@ class Producto_model extends CI_Model
 
     public function getProducto($nref)
     {
-        return R::load("producto", "nref = ?", $nref);
+        return R::find("producto", "nref = ?", array($nref));
     }
 
     public function getProductos(){
