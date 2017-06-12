@@ -1,3 +1,17 @@
+<<<<<<< HEAD
+=======
+<?php
+if(!isset($_SESSION)){
+    session_start();
+    $_SESSION['carrito']=[];
+}
+?>
+<link rel="stylesheet" href="<?= base_url() ?>assets/css/carta/producto.css">
+<link rel="stylesheet" href="<?= base_url() ?>assets/css/carta/banner.css">
+<script type="text/javascript" src="<?= base_url() ?>assets/js/carta/producto.js"></script>
+<script type="text/javascript" src="<?= base_url() ?>assets/js/carta/banner.js"></script>
+
+>>>>>>> 7e13ac10a8367a73aff3a1914bfd27cdc3937702
 <div class="container">
     <h1 class="productoTitulo">ELIGE TU PIZZA</h1>
     <?php foreach ($body['pizza'] as $producto) : ?>
@@ -8,7 +22,7 @@
                     <h5 hidden><?= $producto['nombre'] ?></h5>
                     <p hidden><?= $producto['descri'] ?></p>
                 </div>
-                <button id="btn<?= $producto['nref'] ?>">Añadir</button>
+                <button onclick="addCarrito(<?= $producto['nref'] ?>)" id="btn<?= $producto['nref'] ?>">Añadir</button>
             </li>
             <?php if ($producto['nref'] === "pizdiab") {
                 //ponemos banner en la pizza diabolica ?>
@@ -28,3 +42,12 @@
         </div>
     <?php endforeach; ?>
 </div>
+<script>
+    function addCarrito(id){
+//        $.ajax({
+//            url: "test.html"
+//        }).success(data){
+//
+//        }
+    }
+</script>

@@ -48,15 +48,19 @@
                $.post(url_comprobarAlias, function (respuesta) {
                    if (respuesta==="S"){
                        //$('#errorRegistro').show();
+                       $("#alias").removeClass("campoCorrecto");
                        $("#alias").addClass("campoIncorrecto");
                        $("#ialias").addClass("fa fa-times-circle").removeClass("fa-check-circle").css("color", "rgba(224, 48, 48, 0.9)");
+                       $("#error").show().children("h4").html("Ese alias ya está en uso");
                        $("#ialias").show();
 
                    }
                    else if (respuesta==="N"){
                        //$('#errorRegistro').hide();
                        $("#alias").removeClass("campoIncorrecto");
+                       $("#alias").addClass("campoCorrecto");
                        $("#ialias").addClass("fa fa-check-circle").removeClass("fa-times-circle").css("color", "rgba(0, 185, 0, 0.86)");
+                       $("#error").hide().children("h4").html("");
                        $("#ialias").show();
                    }
                });
@@ -68,13 +72,15 @@
                 $.post(url_comprobarMail, function (respuesta) {
                     if (respuesta==="S"){
                         //$('#errorRegistro').show();
-                        $("#email").addClass("yaExiste");
+                        $("#email").removeClass("campoCorrecto");
+                        $("#email").addClass("campoIncorrecto");
                         $("#imail").addClass("fa fa-times-circle").css("color", "red");
                         $("#imail").show();
 
                     } else {
                         //$('#errorRegistro').hide();
-                        $("#email").removeClass("yaExiste");
+                        $("#email").removeClass("campoIncorrecto");
+                        $("#email").addClass("campoCorrecto");
                         $("#imail").addClass("fa fa-check-circle").css("color", "green");
                         $("#imail").show();
                     }
@@ -104,10 +110,7 @@
         </form>
     </div>
 
-    <div id="errorRegistro" hidden>
-        <h4>El correo electrónico o usuario ya están en uso. Intentalo de nuevo.</h4>
-    </div>
-    <div id="errorContraseñas" hidden>
-        <h4>Las contraseñas no coinciden.</h4>
+    <div id="error" hidden>
+        <h4></h4>
     </div>
 </div>

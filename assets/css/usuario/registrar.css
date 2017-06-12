@@ -90,6 +90,13 @@ i#ialias {
 .campoIncorrecto{
     border-color: red !important;
 }
+.campoCorrecto{
+    border-color: #41ba18 !important;
+}
+
+#error h4{
+    color: red!important;
+}
 
 @media screen and (max-width: 1680px){
     i#ialias {

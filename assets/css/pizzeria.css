@@ -51,12 +51,36 @@ h1{
     top: 18px;
     font-size: 1.3em;
 }
+#header a.cartIcon i{
+    position: absolute;
+    right: 22%;
+    top: 0;
+    padding: 15px;
+    font-size: 1.3em;
+    background-color: rgba(0,0,0,0);
+}
 
 #header #saludo{
     position: absolute;
     right: 12%;
     top: 20px;
     text-shadow: black 2px 2px;
+}
+#header .cart{
+    height: 0;
+    background-color: wheat;
+    /* overflow: hidden; */
+    line-height: 1.5;
+    padding: 0;
+    position: absolute;
+    right: 10px;
+    top: 100%;
+    width: 300px;
+    z-index: 12000;
+}
+.iconClicked{
+    color: #23527c!important;
+    background-color: wheat!important;
 }
 
 
