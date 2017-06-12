@@ -1,7 +1,3 @@
-<link rel="stylesheet" href="<?= base_url() ?>assets/css/carta/producto.css">
-<link rel="stylesheet" href="<?= base_url() ?>assets/css/carta/banner.css">
-<script type="text/javascript" src="<?= base_url() ?>assets/js/carta/producto.js"></script>
-<script type="text/javascript" src="<?= base_url() ?>assets/js/carta/banner.js"></script>
 <div class="container">
     <h1 class="productoTitulo">ELIGE TU PIZZA</h1>
     <?php foreach ($body['pizza'] as $producto) : ?>

@@ -1,27 +1,33 @@
 <!DOCTYPE html >
 <html>
 <head>
-	<meta charset="utf-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!--STYLES-->
-	<link rel="stylesheet" href="<?=base_url()?>assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="<?=base_url()?>assets/css/pizzeria.css">
-    <link rel="stylesheet" href="<?=base_url()?>assets/css/main.css">
-    <link rel="stylesheet" href="<?=base_url()?>assets/css/jquery-ui.min.css">
-    <?php if(file_exists("assets/css/".uri_string().".css")):?>
-    <link rel="stylesheet" href="<?=base_url()."assets/css/".uri_string().".css"?>"> <!-- CSS de la página actual-->
-    <?php endif;?>
-    <link rel="icon" href="<?=base_url()?>assets/images/LogoCircular.png" />
-
+    <link rel="stylesheet" href="<?= base_url() ?>assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?= base_url() ?>assets/css/pizzeria.css">
+    <link rel="stylesheet" href="<?= base_url() ?>assets/css/main.css">
+    <link rel="stylesheet" href="<?= base_url() ?>assets/css/jquery-ui.min.css">
+    <link rel="icon" href="<?= base_url() ?>assets/images/LogoCircular.png"/>
+    <!-- HOJAS PASADAS EN $datos-->
+    <?php
+    if (isset($head))
+        foreach ($head['css'] as $css) : ?>
+            <link rel="stylesheet" href="<?= base_url() . $css ?>">
+        <?php endforeach; ?>
 
     <!--SCRIPTS-->
-    <script type="text/javascript" src="<?=base_url()?>assets/js/jquery.min.js"></script>
-    <script type="text/javascript" src="<?=base_url()?>assets/js/jquery-ui.js"></script>
-    <script type="text/javascript" src="<?=base_url()?>assets/js/about.js"></script>
-    <script type="text/javascript" src="<?=base_url()?>assets/js/pizzeria.js"></script>
+    <script type="text/javascript" src="<?= base_url() ?>assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="<?= base_url() ?>assets/js/jquery-ui.js"></script>
+    <script type="text/javascript" src="<?= base_url() ?>assets/js/about.js"></script>
+    <script type="text/javascript" src="<?= base_url() ?>assets/js/pizzeria.js"></script>
+    <!-- HOJAS PASADAS EN $datos-->
+    <?php
+    if  (isset($head))
+        foreach ($head['js'] as $js) : ?>
+            <script type="text/javascript" src="<?= base_url() . $js  ?>"></script>
+        <?php endforeach; ?>
 
-
-	<title>PizHub</title>
+    <title>PizHub</title>
 </head>
 <body class="landing" onload="<?= (isset($head['onload']) ? $head['onload'] : '') ?>">

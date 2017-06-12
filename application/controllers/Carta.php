@@ -13,6 +13,10 @@ class Carta extends CI_Controller
     {
         $this->load->model('producto_model');
         $datos['body']['pizza'] = $this->producto_model->getProductosTipo("pizza");
+        $datos['head']['css'] = array("assets/css/carta/producto.css");
+        $datos['head']['css'] = array("assets/css/carta/banner.css");
+        $datos['head']['js'] = array("assets/js/carta/producto.js");
+        $datos['head']['js'] = array("assets/js/carta/banner.js");
         enmarcar($this, "carta/pizzas", $datos);
     }
 
@@ -20,6 +24,8 @@ class Carta extends CI_Controller
     {
         $this->load->model('producto_model');
         $datos['body']['hamburguesa'] = $this->producto_model->getProductosTipo("hamburguesa");
+        $datos['head']['css'] = array("assets/css/carta/producto.css");
+        $datos['head']['js'] = array("assets/js/carta/producto.js");
         enmarcar($this, "carta/hamburguesas", $datos);
     }
 
@@ -27,6 +33,8 @@ class Carta extends CI_Controller
     {
         $this->load->model('producto_model');
         $datos['body']['sandwich'] = $this->producto_model->getProductosTipo("sandwich");
+        $datos['head']['css'] = array("assets/css/carta/producto.css");
+        $datos['head']['js'] = array("assets/js/carta/producto.js");
         enmarcar($this, "carta/sandwiches", $datos);
     }
 
@@ -34,6 +42,8 @@ class Carta extends CI_Controller
     {
         $this->load->model('producto_model');
         $datos['body']['pasta'] = $this->producto_model->getProductosTipo("pasta");
+        $datos['head']['css'] = array("assets/css/carta/producto.css");
+        $datos['head']['js'] = array("assets/js/carta/producto.js");
         enmarcar($this, "carta/pastas", $datos);
     }
 
