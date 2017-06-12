@@ -15,6 +15,7 @@ class Producto_model extends CI_Model
             $producto->imgsrc = $imgsrc;
 
             R::store($producto);
+            R::close();
             return true;
         } else {
             //Notificar que el producto ya existe...
@@ -46,6 +47,7 @@ class Producto_model extends CI_Model
         $producto = R::load("producto", "nref = ?", $nref);
         $producto->precio = $precio;
         R::store($producto);
+        R::close();
     }
 
     public function setNombre($nref, $nombre)
@@ -60,11 +62,18 @@ class Producto_model extends CI_Model
         $producto = R::load("producto", "nref = ?", $nref);
         $producto->descri = $descri;
         R::store($producto);
+        R::close();
     }
 
     public function borrarProducto($nref)
     {
         $producto = R::load("producto", $nref);
         R::trash($producto);
+    }
+
+    public function getPrecio($nref)
+    {
+        $producto = R::load("producto", $nref);
+        return $producto->precio;
     }
 }
