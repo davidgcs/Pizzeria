@@ -27,7 +27,7 @@ if(!isset($_SESSION)){
                     </div>
                 </div>
                 <div id="bannerProducto">
-                    <a href="<?= base_url() ?>"><img src="<?= base_url() ?>assets/images/publi2.png" alt=""></a>
+                    <a href="<?= base_url() ?>"><img src="<?= base_url() ?>assets/images/publi.png" alt=""></a>
                     <div id="cerrarPubli"><i class="fa fa-times" aria-hidden="true"></i></div>
                 </div>
             <?php } ?>

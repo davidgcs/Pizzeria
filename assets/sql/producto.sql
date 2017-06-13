@@ -26,7 +26,7 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `producto`
 --
 
-CREATE TABLE `producto` (
+CREATE OR REPLACE TABLE `producto` (
   `id` int(11) UNSIGNED NOT NULL,
   `nombre` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tipo` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
