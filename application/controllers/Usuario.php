@@ -58,7 +58,8 @@ class Usuario extends CI_Controller {
         }
     }
     public function registrar(){
-        enmarcar($this,"forms/registro");
+        $datos['head']['css']=array("assets/css/usuario/registrar.css");
+        enmarcar($this,"forms/registro", $datos);
     }
 
     public  function registrarPost(){

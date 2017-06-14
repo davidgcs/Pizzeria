@@ -16,13 +16,11 @@
 
                 //solo ejecutar el siguiente código si los campos de #f1 estan rellenos y son correctos.
 
+                if(camposCorrectos()) {
+                    $("#f1").hide();
+                    $("#f2").show();
+                }
 
-                <?php /*foreach ($registro as $user): */?><!--
-                    <?php /*if ($user["email"] == $("#email")):*/?>
-                --><?php /*endforeach;*/?>
-
-                $("#f1").hide();
-                $("#f2").show();
             });
 
             $("#btnRegistro").click(function () {
@@ -86,6 +84,49 @@
                     }
                 });
             });
+            function camposCorrectos(){
+                $cond = true;
+
+
+                if($("#nombre").val()==""){
+                    $("#nombre").addClass("error");
+                    $cond = false;
+                }
+                else{
+                    console.log("remove class");
+                    $("#nombre").removeClass("error");
+                }
+
+
+                if($("#apellidos").val()==""){
+                    $("#apellidos").addClass("error");
+                    $cond = false;
+                }
+                else{
+                    $("#apellidos").removeClass("error");
+                }
+
+
+                if($("#email").val()==""){
+                    $("#email").addClass("error");
+                    $cond = false;
+                }
+                else{
+                    $("#email").removeClass("error");
+                }
+
+
+                if($("#telefono").val()=="" || !($.isNumeric($("#telefono").val())) || $("#telefono").val().length<9){
+                    $("#telefono").addClass("error");
+                    $cond = false;
+                }
+                else{
+                    $("#telefono").removeClass("error");
+                }
+
+
+                return $cond;
+            }
         });
     </script>
 
@@ -93,9 +134,9 @@
         <h1>Registro</h1>
         <form id="formRegistro" action="registrarPost" method="post">
             <div id="f1">
-                <input type="text" name="nombre" placeholder="Nombre" required="required"/>
-                <input type="text" name="apellidos" placeholder="Apellidos" required="required"/>
-                <input type="tel" name="tel" placeholder="Teléfono">
+                <input id="nombre" type="text" name="nombre" placeholder="Nombre" required="required"/>
+                <input id="apellidos" type="text" name="apellidos" placeholder="Apellidos" required="required"/>
+                <input id="telefono" type="tel" name="tel" placeholder="Teléfono" maxlength="9">
                 <i id="imail"></i>
                 <input id="email" type="email" name="email" placeholder="Correo electrónico" required="required"/>
                 <button type="button" id="btnSiguiente" class="btn btn-primary btn-block btn-large">Siguiente</button>
