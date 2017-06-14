@@ -11,7 +11,7 @@
     <link rel="icon" href="<?= base_url() ?>assets/images/LogoCircular.png"/>
     <!-- HOJAS PASADAS EN $datos-->
     <?php
-    if (isset($head))
+    if (isset($head['css']))
         foreach ($head['css'] as $css) : ?>
             <link rel="stylesheet" href="<?= base_url() . $css ?>">
         <?php endforeach; ?>
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="<?= base_url() ?>assets/js/pizzeria.js"></script>
     <!-- HOJAS PASADAS EN $datos-->
     <?php
-    if  (isset($head))
+    if  (isset($head['js']))
         foreach ($head['js'] as $js) : ?>
             <script type="text/javascript" src="<?= base_url() . $js  ?>"></script>
         <?php endforeach; ?>

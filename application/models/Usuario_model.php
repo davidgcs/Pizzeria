@@ -150,5 +150,9 @@ class Usuario_model extends CI_Model {
         R::store($pizhub);
         R::close();
     }
+
+    public function getPerfil($alias){
+        return R::findOne("usuario", "alias = ?", array($alias));
+    }
 }
 ?>

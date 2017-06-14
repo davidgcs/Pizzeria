@@ -26,7 +26,7 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `usuario`
 --
 
-CREATE TABLE `usuario` (
+CREATE OR REPLACE TABLE `usuario` (
   `id` int(11) UNSIGNED NOT NULL,
   `nombre` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `apellidos` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,

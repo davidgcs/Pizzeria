@@ -1,5 +1,5 @@
 #avatar{
-    background-image: url('http://i.cdn.turner.com/cnn/2010/WORLD/americas/08/30/paulo.coelho.brazil/t1larg.paulo.coelho.afp.gi.jpg');
+    background-image: url('../../images/LogoCircular.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -7,9 +7,4 @@
     height: 250px;
     border: 1px solid skyblue;
     border-radius: 50%;
-}
-
-#cambiarAvatar{
-    margin-top: 20px;
-    width: 250px;
 }
