@@ -67,47 +67,14 @@ class Usuario_model extends CI_Model {
         return $users;
     }
 
-    //FUNCIONES ADMINISTRACION
-    public function loginADM($usuario, $contraseña)
-    {
-        if ($this->esAdministrador($usuario) || $this->esEmpleado($usuario)) {
-            if ($this->existeUsuario($usuario)) {
-                //Se encontró el alias!! devolvemos el alias
-                return $this->comprobarContraseña("alias", $usuario, $contraseña);
-            } else if ($this->existeEmail($usuario)) {
-                //Se encontró el email!! devolvemos el alias
-                return $this->comprobarContraseña("email", $usuario, $contraseña);
-            } else {
-                //no se encuentra el alias ni el correo en la bbdd
-                return false;
-            }
-        } else {
-            return false;
-        }
-    }
-
     public function esAdministrador($alias)
     {
-        //compruebo alias
-        $usuario = R::findOne('usuario', 'alias = ? and es_admin = ?', [$alias, true]) != null ? true : false;
-        if (!$usuario) {
-            //si el alias no coincide compruebo email
-            return R::findOne('usuario', 'email = ? and es_admin = ?', [$alias, true]) != null ? true : false;
-        } else {
-            return $usuario;
-        }
+        return R::findOne('usuario', 'alias = ? and es_admin = ?', [$alias, true]) != null ? true : false;
     }
 
     public function esEmpleado($alias)
     {
-        //compruebo alias
-        $usuario = R::findOne('usuario', 'alias = ? and es_empleado = ?', [$alias, true]) != null ? true : false;
-        if (!$usuario) {
-            //si el alias no coincide compruebo email
-            return R::findOne('usuario', 'email = ? and es_empleado = ?', [$alias, true]) != null ? true : false;
-        } else {
-            return $usuario;
-        }
+        return R::findOne('usuario', 'alias = ? and es_empleado = ?', [$alias, true]) != null ? true : false;
     }
 
     //creacion de usuarios admin/admin, empleado/empleado y pizhub/pizhub

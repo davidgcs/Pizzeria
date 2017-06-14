@@ -4,7 +4,20 @@ class Admin extends CI_Controller
 {
     public function index()
     {
-        header("location:" . base_url() . "admin/login");
+        session_start();
+        if (isset($_SESSION['logeadoADM']) && $_SESSION["logeadoADM"] == true) {
+            if ($_SESSION['es_admin'] == true) {
+                $datos['head']['css'] = array("assets/css/admin/admin.css");
+                $datos['head']['js'] = array("assets/js/admin/admin.js");
+                enmarcar($this, "admin/administracion", $datos);
+            } elseif ($_SESSION['es_empleado'] == true) {
+                $datos['head']['css'] = array("assets/css/admin/admin.css");
+                $datos['head']['js'] = array("assets/js/admin/admin.js");
+                enmarcar($this, "admin/empleado", $datos);
+            }
+        } else {
+            header("location: " . base_url(). "usuario/login");
+        }
     }
 
     public function logout()
@@ -19,7 +32,7 @@ class Admin extends CI_Controller
     {
         session_start();
         if (isset($_SESSION['logeadoADM']) && $_SESSION["logeadoADM"] == true) {
-            //hay sesion iniciada, segun sea empleado o admin mandamos a una u otra vista
+            //hay sesion como admin iniciada, según sea empleado o admin mandamos a una u otra vista
             if ($_SESSION['es_admin'] == true) {
                 $datos['head']['css'] = array("assets/css/admin/admin.css");
                 $datos['head']['js'] = array("assets/js/admin/admin.js");
@@ -30,7 +43,7 @@ class Admin extends CI_Controller
                 enmarcar($this, "admin/empleado", $datos);
             }
         } else {
-            //no hay sesion iniciada
+            //no hay sesion iniciada de admin, vemos si es inicio de sesion de usuario normal
             enmarcar($this, "admin/login");
         }
     }
@@ -42,7 +55,7 @@ class Admin extends CI_Controller
         $contraseña = $_POST['p'];
         //llamar al modelo
         $this->load->model('usuario_model');
-        //comprobar usuario
+        //comprobar usuario admin
         $aliasLogin = $this->usuario_model->loginADM($usuario, $contraseña);
         if ($aliasLogin) { //Login correcto
             //activar sesión de administracion y llamar a su respectiva vista
