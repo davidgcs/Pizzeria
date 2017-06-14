@@ -1,0 +1,11 @@
+.sidebar-nav {
+    background-color: #484848;
+}
+/*cabeceras sidebars*/
+.sidebar-nav h5 b{
+    color: #ff0000;
+}
+nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+    color: #fff;
+    background-color: #808080;
+}

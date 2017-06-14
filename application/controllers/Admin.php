@@ -21,9 +21,13 @@ class Admin extends CI_Controller
         if (isset($_SESSION['logeadoADM']) && $_SESSION["logeadoADM"] == true) {
             //hay sesion iniciada, segun sea empleado o admin mandamos a una u otra vista
             if ($_SESSION['es_admin'] == true) {
-                enmarcar($this, "admin/administracion");
+                $datos['head']['css'] = array("assets/css/admin/admin.css");
+                $datos['head']['js'] = array("assets/js/admin/admin.js");
+                enmarcar($this, "admin/administracion", $datos);
             } elseif ($_SESSION['es_empleado'] == true) {
-                enmarcar($this, "admin/empleado");
+                $datos['head']['css'] = array("assets/css/admin/admin.css");
+                $datos['head']['js'] = array("assets/js/admin/admin.js");
+                enmarcar($this, "admin/empleado", $datos);
             }
         } else {
             //no hay sesion iniciada
@@ -48,10 +52,16 @@ class Admin extends CI_Controller
             $_SESSION['es_admin'] = $this->usuario_model->esAdministrador($usuario);
             $_SESSION['es_empleado'] = $this->usuario_model->esEmpleado($usuario);
             $_SESSION['errorLogin'] = false;
-
-            header("location: " . base_url() . "admin/login");
+            if ($_SESSION['es_empleado'] == true) {
+                $datos['head']['css'] = array("assets/css/admin/empleado.css");
+                $datos['head']['js'] = array("assets/js/admin/empleado.js");
+                enmarcar($this, "admin/empleado", $datos);
+            } else if ($_SESSION['es_admin'] == true) {
+                $datos['head']['css'] = array("assets/css/admin/admin.css");
+                $datos['head']['js'] = array("assets/js/admin/admin.js");
+                enmarcar($this, "admin/administracion", $datos);
+            }
         } else { //fallo al logearse
-
             session_start();
             $_SESSION['logeadoADM'] = false;
             $_SESSION['errorLogin'] = true;

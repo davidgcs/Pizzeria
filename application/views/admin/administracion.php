@@ -25,7 +25,7 @@
         <div class="col-md-4">
             <!-- It can be fixed with bootstrap affix http://getbootstrap.com/javascript/#affix-->
             <div id="sidebar" class="well sidebar-nav">
-                <h5 style="color: red"><i class="glyphicon glyphicon-home"></i>
+                <h5><i class="glyphicon glyphicon-home"></i>
                     <small><b style="color: red">PANEL DE ADMINISTRACION</b></small>
                 </h5>
                 <ul class="nav nav-pills nav-stacked">
