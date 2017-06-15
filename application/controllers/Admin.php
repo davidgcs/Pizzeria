@@ -19,6 +19,11 @@ class Admin extends CI_Controller
             } else {
                 header("Location: " . base_url() . "usuario/login");
             }
+<<<<<<< HEAD
+=======
+        } else {
+            header("Location: " . base_url(). "usuario/login");
+>>>>>>> 42a28926b55e1efed1876fbe4378fde4134551db
         }
     }
 

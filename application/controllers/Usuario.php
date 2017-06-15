@@ -20,7 +20,7 @@ class Usuario extends CI_Controller
         session_start();
         $_SESSION['logeado'] = false;
         session_destroy();
-        header("location: " . base_url());
+        header("Location: " . base_url());
     }
 
     public function login()
@@ -29,22 +29,19 @@ class Usuario extends CI_Controller
         //comprobamos login de admin
         if (isset($_SESSION['logeadoADM']) && $_SESSION["logeadoADM"] == true) {
             //hay sesion como admin iniciada, según sea empleado o admin mandamos a una u otra vista
-            header("location: " . base_url() . "admin");
+            header("Location: " . base_url() . "admin");
         } else {
             //no hay sesion iniciada de admin, vemos si es inicio de sesion de usuario normal
             if (isset($_SESSION['logeado']) && $_SESSION["logeado"] == true) {
-                header("location: " . base_url() . "perfil");
+                $_SESSION['logeadoADM'] = false;
+                header("Location: " . base_url() . "perfil");
             } else {
-                enmarcar($this, "forms/login");
+                $datos['head']['css'] = array("assets/css/usuario/login_style.css");
+                enmarcar($this, "forms/login", $datos);
             }
         }
-
-
     }
 
-    /**
-     *
-     */
     public function loginPost()
     {
         //recoger variables del post
@@ -66,12 +63,12 @@ class Usuario extends CI_Controller
             if ($_SESSION['es_empleado'] == true || $_SESSION['es_admin'] == true) {
                 $_SESSION['logeado'] = false;
                 $_SESSION['logeadoADM'] = true;
-                header("Location: ".base_url()."admin");
+                header("Location: " . base_url() . "admin");
             } else {
                 //login de cliente
                 $_SESSION['logeado'] = true;
-                $_SESSION['logeadoADM'] = true;
-                header("location: " . base_url() . "perfil");
+                $_SESSION['logeadoADM'] = false;
+                header("Location: " . base_url() . "perfil");
             }
         } else { //fallo al logearse
             session_start();
@@ -80,13 +77,15 @@ class Usuario extends CI_Controller
             $_SESSION['errorLogin'] = true;
             $datos['body']['usu'] = $usuario;
             $datos['body']['pass'] = $contraseña;
+            $datos['head']['css'] = array("assets/css/usuario/login_style.css");
             enmarcar($this, "forms/login", $datos);
         }
     }
 
     public function registrar()
     {
-        $datos['head']['css'] = array("assets/css/usuario/registrar.css");
+        $datos['head']['css'] = array("assets/css/usuario/login_style.css");
+        array_push($datos['head']['css'], "assets/css/usuario/registrar.css");
         enmarcar($this, "forms/registro", $datos);
     }
 
@@ -111,7 +110,7 @@ class Usuario extends CI_Controller
         else {
             //redirigir a error de creación
             //DONE                añadir en la sesión algo que informe de que se intento registrar sin existo
-            header("location: registrar");
+            header("Location: registrar");
         }
     }
 
