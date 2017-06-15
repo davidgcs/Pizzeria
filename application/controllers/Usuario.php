@@ -20,7 +20,7 @@ class Usuario extends CI_Controller
         session_start();
         $_SESSION['logeado'] = false;
         session_destroy();
-        header("location: " . base_url());
+        header("Location: " . base_url());
     }
 
     public function login()
@@ -42,9 +42,6 @@ class Usuario extends CI_Controller
         }
     }
 
-    /**
-     *
-     */
     public function loginPost()
     {
         //recoger variables del post
@@ -66,7 +63,7 @@ class Usuario extends CI_Controller
             if ($_SESSION['es_empleado'] == true || $_SESSION['es_admin'] == true) {
                 $_SESSION['logeado'] = false;
                 $_SESSION['logeadoADM'] = true;
-                header("Location: ".base_url()."admin");
+                header("Location: " . base_url() . "admin");
             } else {
                 //login de cliente
                 $_SESSION['logeado'] = true;
@@ -113,7 +110,7 @@ class Usuario extends CI_Controller
         else {
             //redirigir a error de creación
             //DONE                añadir en la sesión algo que informe de que se intento registrar sin existo
-            header("location: registrar");
+            header("Location: registrar");
         }
     }
 
