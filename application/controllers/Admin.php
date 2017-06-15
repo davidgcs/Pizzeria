@@ -16,7 +16,7 @@ class Admin extends CI_Controller
                 enmarcar($this, "admin/empleado", $datos);
             }
         } else {
-            header("location: " . base_url(). "usuario/login");
+            header("Location: " . base_url(). "usuario/login");
         }
     }
 
@@ -25,7 +25,7 @@ class Admin extends CI_Controller
         session_start();
         $_SESSION['logeadoADM'] = false;
         session_destroy();
-        header("location: " . base_url());
+        header("Location: " . base_url());
     }
 
     public function login()

@@ -38,7 +38,9 @@ class Empresa extends CI_Controller
 
     public function acerca()
     {
-        enmarcar($this, "empresa/acerca");
+        $datos['head']['css'] = array("assets/css/empresa/acerca.css");
+        $datos['head']['js'] = array("assets/js/empresa/acerca.js");
+        enmarcar($this, "empresa/acerca", $datos);
     }
 }
 
