@@ -43,8 +43,6 @@ if(!isset($_SESSION)){
             data: {nref: nref.id}
         }).done(function(msg){
             console.log("done: "+msg)
-        }).success(function(msg){
-            console.log("success: "+msg);
         });
     }
     console.log(<?= json_encode($_SESSION)?>);
