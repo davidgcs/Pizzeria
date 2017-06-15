@@ -76,4 +76,9 @@ class Producto_model extends CI_Model
         $producto = R::load("producto", $nref);
         return $producto->precio;
     }
+
+    public function getDatosPanel()
+    {
+        return R:: findAll("producto");
+    }
 }

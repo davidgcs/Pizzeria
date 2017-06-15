@@ -10,19 +10,30 @@
  *  -registrar nuevos
  *  -borrar productos (informes recibidos)
  *
- * gestion de almacen
+ * gestión de usuarios
+ *  -alta usuarios (empleados y clientes)
+ *  -baja usuarios (empleados y clientes) con bloqueo
+ *
+ * gestion de almacen (TODO)
  *  -añadir stock de ingredientes existentes
  *  -registrar nuevo ingrediente al almacen
  *  -eliminar ingredientes (informes recibidos)
  *
- * gestión de usuarios
- *  -alta usuarios (empleados y clientes)
- *  -baja usuarios (empleados y clientes) con bloqueo
  */
+echo "<br><br>";
+foreach ($panel as $tipoDato => $contenidoDato) {
+    echo "<br>$tipoDato<br>";
+    foreach ($contenidoDato as $lineaContenido){
+        echo "<br>Linea de $tipoDato<br>";
+        foreach ($lineaContenido as $dato) {
+            echo $dato;
+        }
+    }
+}
 ?>
 <div class="container">
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-4 panelADM">
             <!-- It can be fixed with bootstrap affix http://getbootstrap.com/javascript/#affix-->
             <div id="sidebar" class="well sidebar-nav">
                 <h5><i class="glyphicon glyphicon-home"></i>
@@ -43,7 +54,7 @@
             </div>
         </div>
         <div class="col-md-8">
-            <!-- Content Here -->
+            <table class="ta"></table>
         </div>
     </div>
 </div>

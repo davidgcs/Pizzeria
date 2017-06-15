@@ -121,5 +121,10 @@ class Usuario_model extends CI_Model {
     public function getPerfil($alias){
         return R::findOne("usuario", "alias = ?", array($alias));
     }
+
+    public function getDatosPanel()
+    {
+        return R:: getAll( "select id, alias, email, nombre, apellidos, telefono, es_empleado from usuario where es_admin = 0");
+    }
 }
 ?>

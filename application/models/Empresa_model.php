@@ -9,5 +9,10 @@ class Empresa_model extends CI_Model {
 
         return $id;
     }
+
+    public function getDatosPanel()
+    {
+        return R:: findAll("mensaje");
+    }
 }
 ?>

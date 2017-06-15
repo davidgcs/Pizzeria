@@ -57,4 +57,9 @@ class Pedido_model extends CI_Model
             return false;
         }
     }
+
+    public function getDatosPanel()
+    {
+        return R:: findAll("pedido");
+    }
 }
