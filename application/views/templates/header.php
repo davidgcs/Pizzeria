@@ -49,9 +49,8 @@
                     var $cartItem = $("<div class='cartItem' id='cartItem" + productoId + "'></div>");
                     $cartItem.append("<img src='" + baseUrl + "assets/images/" + producto.imgsrc + "' alt='" + producto.nombre + "'>");
                     $cartItem.append("<span class='ciNombre'>" + producto.nombre.toLowerCase() + "</span>");
-                    $cartItem.append("<span class='ciPrecio'>" + producto.precio + "€ </span>");
-                    $cartItem.append("<span class='ciPrecio'>" + producto.precio + "€ </span>");
                     $cartItem.append("<span class='ciCantidad'>"+addedCarrito[productoId]+"</span>");
+                    $cartItem.append("<span class='ciPrecio'>" + producto.precio + "€ </span>");
 
                     $cartItem.append("<button class='deleteCart btn btn-danger'>Borrar</button>");
 

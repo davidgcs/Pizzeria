@@ -96,13 +96,14 @@ h1{
     text-transform: capitalize;
     position: absolute;
     top: 36%;
+    left: 30%;
 }
 #header .cart span.ciPrecio{
-    left: 60%;
+    left: 80%;
 }
 
 #header .cart span.ciCantidad{
-    left: 80%;
+    left: 60%;
 }
 
 #header .cart button.deleteCart{
@@ -110,7 +111,7 @@ h1{
     position: absolute;
     width: 70%;
     top: 25%;
-    /*left: 0;*/
+    left: 27%;
 }
 
 .iconClicked{
