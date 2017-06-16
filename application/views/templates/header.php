@@ -53,6 +53,8 @@
                     $cartItem.append("<span class='ciPrecio'>" + producto.precio + "€ </span>");
                     $cartItem.append("<span class='ciCantidad'>"+addedCarrito[productoId]+"</span>");
 
+                    $cartItem.append("<button class='deleteCart btn btn-danger'>Borrar</button>");
+
                     $cartItem.appendTo("#cart");
                 }
                 else{
@@ -60,7 +62,15 @@
                     $("#cartItem"+productoId+" .ciCantidad").html(addedCarrito[productoId]);
                 }
             });
-
+            $(".cartItem").hover(function(){
+                $(this).find("img").css("visibility","hidden");
+                $(this).find("span").css("visibility","hidden");
+                $(this).find("button.deleteCart").css("visibility","visible");
+            }, function(){
+                $(this).find("img").css("visibility","visible");
+                $(this).find("span").css("visibility","visible");
+                $(this).find("button.deleteCart").css("visibility","hidden");
+            });
             console.log(addedCarrito);
         });
     </script>

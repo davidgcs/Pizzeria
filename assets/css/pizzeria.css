@@ -105,6 +105,14 @@ h1{
     left: 80%;
 }
 
+#header .cart button.deleteCart{
+    visibility: hidden;
+    position: absolute;
+    width: 80%;
+    top: 30%;
+    left: 12%;
+}
+
 .iconClicked{
     color: #23527c!important;
     background-color: wheat!important;
