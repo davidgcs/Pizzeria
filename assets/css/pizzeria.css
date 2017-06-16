@@ -108,9 +108,9 @@ h1{
 #header .cart button.deleteCart{
     visibility: hidden;
     position: absolute;
-    width: 80%;
-    top: 30%;
-    left: 12%;
+    width: 70%;
+    top: 25%;
+    /*left: 0;*/
 }
 
 .iconClicked{

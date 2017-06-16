@@ -63,11 +63,11 @@
                 }
             });
             $(".cartItem").hover(function(){
-                $(this).find("img").css("visibility","hidden");
+//                $(this).find("img").css("visibility","hidden");
                 $(this).find("span").css("visibility","hidden");
                 $(this).find("button.deleteCart").css("visibility","visible");
             }, function(){
-                $(this).find("img").css("visibility","visible");
+//                $(this).find("img").css("visibility","visible");
                 $(this).find("span").css("visibility","visible");
                 $(this).find("button.deleteCart").css("visibility","hidden");
             });
