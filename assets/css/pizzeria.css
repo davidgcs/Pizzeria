@@ -79,12 +79,37 @@ h1{
     position: absolute;
     right: 100px;
     top: 100%;
-    z-index: 12000;
+    z-index: 120;
 }
+#header .cart .cartItem{
+    display: block;
+    position: relative;
+    border-bottom: 2px solid black;
+}
+#header .cart img{
+    width: 100px;
+    height: 100px;
+}
+
+#header .cart span{
+    color: #000;
+    text-transform: capitalize;
+    position: absolute;
+    top: 36%;
+}
+#header .cart span.ciPrecio{
+    left: 60%;
+}
+
+#header .cart span.ciCantidad{
+    left: 80%;
+}
+
 .iconClicked{
     color: #23527c!important;
     background-color: wheat!important;
 }
+
 
 
 /** RESPONSIVE **/

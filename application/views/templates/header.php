@@ -30,18 +30,38 @@
         </ul>
     </nav>
     <a class="cartIcon" href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-    <div class="cart">
+    <div class="cart" id="cart">
 
     </div>
     <h5 id="saludo"><?php if(isset($_SESSION['logeado']) && $_SESSION["logeado"]==true) echo $_SESSION["usuarioActual"]?></h5> <a href="<?= base_url() ?>usuario/login"><i class="<?php echo (isset($_SESSION['logeado']) && $_SESSION["logeado"]==true) ? 'fa fa-user-circle' : 'fa fa-sign-in';?>"></i></a>
     <script>
-        var productos=<?= json_encode(isset($_SESSION['carrito'])?$_SESSION['carrito']:[])?>;
-        console.log(productos);
-        $(productos).each(function(ind, el){
-            $(el).each(function(i,obj){
-                console.log(obj)
+        $(document).ready(function() {
+            var productos =<?= json_encode(isset($_SESSION['carrito']) ? $_SESSION['carrito'] : [])?>;
+            var baseUrl = "<?=base_url()?>";
+            var addedCarrito = {};
+            console.log(productos);
+            $(productos).each(function (ind, el) {
+                var producto = el[Object.keys(el)[0]];
+                var productoId = producto.id;
+                if(addedCarrito[productoId] === undefined){
+                    addedCarrito[productoId] = 1;
+
+                    var $cartItem = $("<div class='cartItem' id='cartItem" + productoId + "'></div>");
+                    $cartItem.append("<img src='" + baseUrl + "assets/images/" + producto.imgsrc + "' alt='" + producto.nombre + "'>");
+                    $cartItem.append("<span class='ciNombre'>" + producto.nombre.toLowerCase() + "</span>");
+                    $cartItem.append("<span class='ciPrecio'>" + producto.precio + "€ </span>");
+                    $cartItem.append("<span class='ciPrecio'>" + producto.precio + "€ </span>");
+                    $cartItem.append("<span class='ciCantidad'>"+addedCarrito[productoId]+"</span>");
+
+                    $cartItem.appendTo("#cart");
+                }
+                else{
+                    addedCarrito[productoId] += 1;
+                    $("#cartItem"+productoId+" .ciCantidad").html(addedCarrito[productoId]);
+                }
             });
 
-        })
+            console.log(addedCarrito);
+        });
     </script>
 </header>
