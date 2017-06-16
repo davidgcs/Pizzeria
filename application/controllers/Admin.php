@@ -4,11 +4,14 @@ class Admin extends CI_Controller
 {
     public function index()
     {
+
         session_start();
         if (isset($_SESSION['logeadoADM']) && $_SESSION["logeadoADM"] == true) {
             if ($_SESSION['es_admin'] == true) {
                 $datos['head']['css'] = array("assets/css/admin/admin.css");
+                array_push($datos['head']['css'], "assets/css/admin/gijgo.min.css");
                 $datos['head']['js'] = array("assets/js/admin/admin.js");
+                array_push($datos['head']['js'], "assets/js/admin/gijgo.min.js");
                 $datos['panel'] = $this->getDatosPanel("admin");
                 enmarcar($this, "admin/administracion", $datos);
             } elseif ($_SESSION['es_empleado'] == true) {
@@ -16,9 +19,9 @@ class Admin extends CI_Controller
                 $datos['head']['js'] = array("assets/js/admin/admin.js");
                 $datos['panel'] = $this->getDatosPanel("empleado");
                 enmarcar($this, "admin/empleado", $datos);
-            } else {
-                header("Location: " . base_url() . "usuario/login");
             }
+        } else {
+            header("Location: " . base_url() . "usuario/login");
         }
     }
 
@@ -55,6 +58,6 @@ class Admin extends CI_Controller
         $this->load->model("usuario_model");
         $this->usuario_model->creaUsuariosTest();
 
-        header("location: " . base_url() . "admin/login");
+        //header("location: " . base_url() . "admin/login");
     }
 }

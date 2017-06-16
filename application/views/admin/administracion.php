@@ -20,20 +20,20 @@
  *  -eliminar ingredientes (informes recibidos)
  *
  */
-echo "<br><br>";
+//echo "<br><br>";
 foreach ($panel as $tipoDato => $contenidoDato) {
-    echo "<br>$tipoDato<br>";
-    foreach ($contenidoDato as $lineaContenido){
-        echo "<br>Linea de $tipoDato<br>";
+    // echo "<br>$tipoDato<br>";
+    foreach ($contenidoDato as $lineaContenido) {
+        //   echo "<br>Linea de $tipoDato<br>";
         foreach ($lineaContenido as $dato) {
-            echo $dato;
+
         }
     }
 }
 ?>
 <div class="container">
     <div class="row">
-        <div class="col-md-4 panelADM">
+        <div class="col-md-3 panelADM">
             <!-- It can be fixed with bootstrap affix http://getbootstrap.com/javascript/#affix-->
             <div id="sidebar" class="well sidebar-nav">
                 <h5><i class="glyphicon glyphicon-home"></i>
@@ -49,12 +49,12 @@ foreach ($panel as $tipoDato => $contenidoDato) {
                 </h5>
                 <ul class="nav nav-pills nav-stacked">
                     <li><a href="#">List</a></li>
-                    <li><a href="<?=base_url()?>admin/logout" style="color: red">LOGOUT</a></li>
+                    <li><a href="<?= base_url() ?>admin/logout" style="color: red">LOGOUT</a></li>
                 </ul>
             </div>
         </div>
-        <div class="col-md-8">
-            <table class="ta"></table>
+        <div class="col-md-9">
+            <table id="grid"></table>
         </div>
     </div>
 </div>

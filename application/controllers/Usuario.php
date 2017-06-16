@@ -37,6 +37,7 @@ class Usuario extends CI_Controller
                 header("Location: " . base_url() . "perfil");
             } else {
                 $datos['head']['css'] = array("assets/css/usuario/login_style.css");
+                //$datos['head']['js'] = array("assets/js/usuario/prefixfree.min.js");
                 enmarcar($this, "forms/login", $datos);
             }
         }
@@ -78,6 +79,8 @@ class Usuario extends CI_Controller
             $datos['body']['usu'] = $usuario;
             $datos['body']['pass'] = $contraseña;
             $datos['head']['css'] = array("assets/css/usuario/login_style.css");
+            //$datos['head']['js'] = array("assets/js/usuario/prefixfree.min.js");
+
             enmarcar($this, "forms/login", $datos);
         }
     }
@@ -85,6 +88,7 @@ class Usuario extends CI_Controller
     public function registrar()
     {
         $datos['head']['css'] = array("assets/css/usuario/login_style.css");
+        //$datos['head']['js'] = array("assets/js/usuario/prefixfree.min.js");
         array_push($datos['head']['css'], "assets/css/usuario/registrar.css");
         enmarcar($this, "forms/registro", $datos);
     }

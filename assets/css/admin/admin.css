@@ -1,5 +1,8 @@
+body, input, select, textarea {
+    color: #3c3c3c;
+}
 .sidebar-nav {
-    background-color: #484848;
+    background: #272727;
 }
 /*cabeceras sidebars*/
 .sidebar-nav h5 b{
