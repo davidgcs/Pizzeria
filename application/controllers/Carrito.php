@@ -8,6 +8,8 @@ class Carrito extends CI_Controller{
     public function addToCart(){
         if(!isset($_SESSION)){
             session_start();
+        }
+        if(!isset($_SESSION['carrito'])){
             $_SESSION['carrito']=[];
         }
 
@@ -16,7 +18,7 @@ class Carrito extends CI_Controller{
         $this->load->model('producto_model');
         $producto = $this->producto_model->getProducto($nref);
 
-        array_push($_SESSION['carrito'],$producto);
+        array_push($_SESSION['carrito'], $producto);
         echo $nref;
     }
 }

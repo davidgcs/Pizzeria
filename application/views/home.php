@@ -8,9 +8,6 @@
             <p>La pizzería de tus sueños <br>
             También pizzas con piña <br>
             Desgraciadamente</p>
-            <ul class="actions">
-                <li><a href="#" class="button special">PEDIR</a></li>
-            </ul>
         </div>
         <a href="#carta" class="more scrolly">Carta</a>
     </section>
