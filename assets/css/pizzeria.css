@@ -103,6 +103,7 @@ a.cartIcon:hover, a.cartIcon:focus {
     position: absolute;
     top: 36%;
     left: 30%;
+    animation-duration: 500ms;
 }
 #header .cart span.ciPrecio{
     left: 80%;
@@ -118,6 +119,7 @@ a.cartIcon:hover, a.cartIcon:focus {
     width: 70%;
     top: 25%;
     left: 30%;
+    animation-duration: 500ms;
 }
 
 .iconClicked{
