@@ -40,27 +40,35 @@
             var baseUrl = "<?=base_url()?>";
             var addedCarrito = {};
             console.log(productos);
-            $(productos).each(function (ind, el) {
-                var producto = el[Object.keys(el)[0]];
-                var productoId = producto.id;
-                if(addedCarrito[productoId] === undefined){
-                    addedCarrito[productoId] = 1;
+            if(productos == []){
+                var $cartItem = $("<div class='cartItem' id='cartItem" + productoId + "'></div>");
+                $cartItem.append("<img src='" + baseUrl + "assets/images/" + producto.imgsrc + "' alt='" + producto.nombre + "'>");
 
-                    var $cartItem = $("<div class='cartItem' id='cartItem" + productoId + "'></div>");
-                    $cartItem.append("<img src='" + baseUrl + "assets/images/" + producto.imgsrc + "' alt='" + producto.nombre + "'>");
-                    $cartItem.append("<span class='ciNombre'>" + producto.nombre.toLowerCase() + "</span>");
-                    $cartItem.append("<span class='ciCantidad'>"+addedCarrito[productoId]+"</span>");
-                    $cartItem.append("<span class='ciPrecio'>" + producto.precio + "€ </span>");
+                $cartItem.appendTo("#cart");
+            }
+            else {
+                $(productos).each(function (ind, el) {
+                    var producto = el[Object.keys(el)[0]];
+                    var productoId = producto.id;
+                    if (addedCarrito[productoId] === undefined) {
+                        addedCarrito[productoId] = 1;
 
-                    $cartItem.append("<button class='deleteCart btn btn-danger'>Borrar</button>");
+                        var $cartItem = $("<div class='cartItem' id='cartItem" + productoId + "'></div>");
+                        $cartItem.append("<img src='" + baseUrl + "assets/images/" + producto.imgsrc + "' alt='" + producto.nombre + "'>");
+                        $cartItem.append("<span class='ciNombre'>" + producto.nombre.toLowerCase() + "</span>");
+                        $cartItem.append("<span class='ciCantidad'>" + addedCarrito[productoId] + "</span>");
+                        $cartItem.append("<span class='ciPrecio'>" + producto.precio + "€ </span>");
 
-                    $cartItem.appendTo("#cart");
-                }
-                else{
-                    addedCarrito[productoId] += 1;
-                    $("#cartItem"+productoId+" .ciCantidad").html(addedCarrito[productoId]);
-                }
-            });
+                        $cartItem.append("<button class='deleteCart btn btn-danger'>Borrar</button>");
+
+                        $cartItem.appendTo("#cart");
+                    }
+                    else {
+                        addedCarrito[productoId] += 1;
+                        $("#cartItem" + productoId + " .ciCantidad").html(addedCarrito[productoId]);
+                    }
+                });
+            }
             $(".cartItem").hover(function(){
 //                $(this).find("img").css("visibility","hidden");
                 $(this).find("span").css("visibility","hidden");
