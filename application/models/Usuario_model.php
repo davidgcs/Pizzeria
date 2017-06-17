@@ -44,7 +44,7 @@ class Usuario_model extends CI_Model
         return R::findOne('usuario', 'alias = ?', [$alias]) != null ? true : false;
     }
 
-    private function existeEmail($email)
+    public function existeEmail($email)
     {
         return R::findOne('usuario', 'email = ?', [$email]) != null ? true : false;
     }
