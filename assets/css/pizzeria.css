@@ -1,3 +1,6 @@
+.btn-primary:focus, .btn-primary.focus {
+    background-color: #4c7bd5 !important;
+}
 #header img#logo_header{
     width: auto;
     height: 60px;

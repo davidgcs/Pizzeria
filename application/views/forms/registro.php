@@ -16,7 +16,6 @@
                     $("#f1").hide();
                     $("#f2").show();
                 }
-
             });
 
             $("#btnRegistro").click(function () {
@@ -29,10 +28,6 @@
                     $("#contraseña1,#contraseña2").val("");
 
                     $("#errorContraseñas").show();
-                    /* Evita el submit. No es necesario debido a que se borran antes los campos de contraseña y salta error en el required
-                    $("#formRegistro").submit(function (e) {
-                        e.preventDefault();
-                    });*/
                 }
             });
 
@@ -89,7 +84,6 @@
                     $cond = false;
                 }
                 else{
-                    console.log("remove class");
                     $("#nombre").removeClass("error");
                 }
 
@@ -103,12 +97,21 @@
                 }
 
 
-                if($("#email").val()==""){
+                if($("#email").val()=="") {
+                    console.log("error email vacio");
                     $("#email").addClass("error");
                     $cond = false;
-                }
-                else{
-                    $("#email").removeClass("error");
+                }else{
+                    var caract = new RegExp(/^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/);
+                    var emailText = $("#email").val();
+                    if (caract.test(emailText) == false){
+                        console.log("error email texto");
+                        $("#email").addClass("error");
+                        $cond = false;
+                    }
+                    else{
+                        $("#email").removeClass("error");
+                    }
                 }
 
 

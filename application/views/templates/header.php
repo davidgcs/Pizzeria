@@ -17,7 +17,7 @@
                             echo ($this->uri->segment(1)==""||$this->uri->segment(1)=="home")?"":base_url() //escribe solo el anchor si estamos en home
                             ?>#localizacion" class="scrolly">¿Dónde estamos?</a></li>
 
-<!--                        <li><a href="--><?//=base_url()?><!--#carta" class="scrolly">Carta</a></li>-->
+                        <!--<li><a href="--><?//=base_url()?><!--#carta" class="scrolly">Carta</a></li>-->
                         <li><a href="<?=base_url()?>usuario/login">Perfil</a></li>
                         <li><a href="<?=base_url()?>empresa/contacto">Contacto</a></li>
                         <li><a href="<?=base_url()?>empresa/acerca">Acerca de Nosotros</a></li>
@@ -39,7 +39,7 @@
         console.log(productos);
         $(productos).each(function(ind, el){
             $(el).each(function(i,obj){
-                console.log(obj)
+                console.log("carrito: " + obj)
             });
 
         })
