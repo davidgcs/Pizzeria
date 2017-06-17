@@ -233,3 +233,9 @@ a.cartIcon:hover, a.cartIcon:focus {
         top: 13px;
     }
 }
+
+@media screen and (max-height: 625px) {
+    #footer{
+        padding: 0 !important;
+    }
+}
