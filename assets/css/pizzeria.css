@@ -71,23 +71,26 @@ h1{
     top: 20px;
     text-shadow: black 2px 2px;
 }
+a.cartIcon:hover, a.cartIcon:focus {
+    color: #FFF !important;
+}
 #header .cart{
     height: 500px;
     width: 400px;
     display: none;
-    background-color: wheat;
-    /* overflow: hidden; */
+    background-color: #23527c;
     line-height: 1.5;
-    padding: 0;
     position: absolute;
     right: 100px;
     top: 100%;
     z-index: 120;
+    padding: 20px;
+    border-radius: 20px;
 }
 #header .cart .cartItem{
     display: block;
     position: relative;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.28);
 }
 #header .cart img{
     width: 100px;
@@ -95,7 +98,7 @@ h1{
 }
 
 #header .cart span{
-    color: #000;
+    color: #FFF;
     text-transform: capitalize;
     position: absolute;
     top: 36%;
@@ -118,8 +121,7 @@ h1{
 }
 
 .iconClicked{
-    color: #23527c!important;
-    background-color: wheat!important;
+    background-color: #23527c!important;
 }
 
 
