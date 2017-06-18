@@ -96,6 +96,7 @@ class Usuario_model extends CI_Model
     {
         //borrar todos
         R::wipe('usuario');
+        R::wipe("ingredientes");
 
         $usuario = R::dispense("usuario");
         $usuario["nombre"] = "admin";
@@ -207,21 +208,79 @@ class Usuario_model extends CI_Model
         $pizhub->esAdmin = false;
 
         R::store($pizhub);
+
+        $ingredientes = R::dispense("ingredientes");
+        $ingredientes['nombre']="peperoni";
+        $ingredientes['cantidad']= 85;
+        R::store($ingredientes);
+
+        $ingredientes = R::dispense("ingredientes");
+        $ingredientes['nombre']="york";
+        $ingredientes['cantidad']= 85;
+        R::store($ingredientes);
+
+        $ingredientes = R::dispense("ingredientes");
+        $ingredientes['nombre']="salchichas";
+        $ingredientes['cantidad']= 85;
+        R::store($ingredientes);
+
+        $ingredientes = R::dispense("ingredientes");
+        $ingredientes['nombre']="carne";
+        $ingredientes['cantidad']= 85;
+        R::store($ingredientes);
+
+        $ingredientes = R::dispense("ingredientes");
+        $ingredientes['nombre']="pollo";
+        $ingredientes['cantidad']= 85;
+        R::store($ingredientes);
+
+        $ingredientes = R::dispense("ingredientes");
+        $ingredientes['nombre']="champiñones";
+        $ingredientes['cantidad']= 85;
+        R::store($ingredientes);
+
+        $ingredientes = R::dispense("ingredientes");
+        $ingredientes['nombre']="doble de queso";
+        $ingredientes['cantidad']= 85;
+        R::store($ingredientes);
+
+        $ingredientes = R::dispense("ingredientes");
+        $ingredientes['nombre']="aceitunas";
+        $ingredientes['cantidad']= 85;
+        R::store($ingredientes);
+
+        $ingredientes = R::dispense("ingredientes");
+        $ingredientes['nombre']="atún";
+        $ingredientes['cantidad']= 85;
+        R::store($ingredientes);
+
+        $ingredientes = R::dispense("ingredientes");
+        $ingredientes['nombre']="bacon";
+        $ingredientes['cantidad']= 85;
+        R::store($ingredientes);
+
+        $ingredientes = R::dispense("ingredientes");
+        $ingredientes['nombre']="Salsa BBQ";
+        $ingredientes['cantidad']= 85;
+        R::store($ingredientes);
+
+        $ingredientes = R::dispense("ingredientes");
+        $ingredientes['nombre']="piña";
+        $ingredientes['cantidad']= 1;
+        R::store($ingredientes);
+
         R::close();
     }
 
-    public function getPerfil($alias)
-    {
+    public function getPerfil($alias){
         return R::findOne("usuario", "alias = ?", array($alias));
     }
 
-    public function getUserId($alias)
-    {
+    public function getUserId($alias){
         return R::findOne("usuario", "alias = ?", array($alias))["id"];
     }
 
-    public function getDatosPanel()
-    {
+    public function getDatosPanel(){
         return R:: getAll("select id, alias, email, nombre, apellidos, telefono, es_empleado from usuario where es_admin = 0");
     }
 
@@ -252,6 +311,10 @@ class Usuario_model extends CI_Model
         $user["ciudad"]=$newCiudad;
         $user["cp"]=$newCP;
         R::store($user);
+    }
+
+    public function getIngredientes(){
+        return R::findAll("ingredientes");
     }
 
 }
