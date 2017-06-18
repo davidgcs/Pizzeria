@@ -13,9 +13,10 @@ class Usuario_model extends CI_Model
             $usuario["email"] = $email;
             $usuario["alias"] = $alias;
             $usuario["password"] = md5($contraseña);
-            $usuario["direccion"] = "";
+            $usuario["calle"] = "";
+            $usuario["numero"] = "";
+            $usuario["ciudad"] = "";
             $usuario["cp"] = "";
-            $usuario["localidad"] = "";
             R::store($usuario);
             R::close();
             return true;
@@ -103,9 +104,10 @@ class Usuario_model extends CI_Model
         $usuario["email"] = "admin@pizhub.es";
         $usuario["alias"] = "admin";
         $usuario["password"] = md5("admin");
-        $usuario["direccion"] = "";
-        $usuario["cp"] = "";
-        $usuario["localidad"] = "";
+        $usuario["calle"] = "Falsa";
+        $usuario["numero"] = "123";
+        $usuario["cp"] = "28123";
+        $usuario["ciudad"] = "Madrid";
         $usuario->esAdmin = true;
         $usuario->esEmpleado = false;
 
@@ -118,9 +120,10 @@ class Usuario_model extends CI_Model
         $empleado["email"] = "empleado@pizhub.es";
         $empleado["alias"] = "empleado";
         $empleado["password"] = md5("empleado");
-        $empleado["direccion"] = "";
-        $empleado["cp"] = "";
-        $empleado["localidad"] = "";
+        $empleado["calle"] = "alta";
+        $empleado["numero"] = "2";
+        $empleado["cp"] = "21111";
+        $empleado["ciudad"] = "a";
         $empleado->esEmpleado = true;
         $empleado->esAdmin = false;
 
@@ -133,9 +136,10 @@ class Usuario_model extends CI_Model
         $pizhub["email"] = "pizhub@pizhub.es";
         $pizhub["alias"] = "pizhub";
         $pizhub["password"] = md5("pizhub");
-        $pizhub["direccion"] = "";
-        $pizhub["cp"] = "";
-        $pizhub["localidad"] = "";
+        $pizhub["calle"] = "rara";
+        $pizhub["numero"] = "288";
+        $pizhub["cp"] = "28800";
+        $pizhub["ciudad"] = "rotodosiana";
         $pizhub->esEmpleado = false;
         $pizhub->esAdmin = false;
 
@@ -148,9 +152,10 @@ class Usuario_model extends CI_Model
         $pizhub["email"] = "rico@pizhub.es";
         $pizhub["alias"] = "rico";
         $pizhub["password"] = md5("pizhub");
-        $pizhub["direccion"] = "";
-        $pizhub["cp"] = "";
-        $pizhub["localidad"] = "";
+        $pizhub["calle"] = "esquina";
+        $pizhub["numero"] = "90";
+        $pizhub["cp"] = "27458";
+        $pizhub["ciudad"] = "ficticia";
         $pizhub->esEmpleado = false;
         $pizhub->esAdmin = false;
         R::store($pizhub);
@@ -163,9 +168,10 @@ class Usuario_model extends CI_Model
         $pizhub["email"] = "pobre@pizhub.es";
         $pizhub["alias"] = "pobre";
         $pizhub["password"] = md5("pizhub");
-        $pizhub["direccion"] = "";
-        $pizhub["cp"] = "";
-        $pizhub["localidad"] = "";
+        $pizhub["calle"] = "larga";
+        $pizhub["numero"] = "9999";
+        $pizhub["cp"] = "99900";
+        $pizhub["ciudad"] = "carmín";
         $pizhub->esEmpleado = false;
         $pizhub->esAdmin = false;
         R::store($pizhub);
@@ -178,9 +184,10 @@ class Usuario_model extends CI_Model
         $pizhub["email"] = "triste@pizhub.es";
         $pizhub["alias"] = "triste";
         $pizhub["password"] = md5("pizhub");
-        $pizhub["direccion"] = "";
-        $pizhub["cp"] = "";
-        $pizhub["localidad"] = "";
+        $pizhub["calle"] = "Falsa";
+        $pizhub["numero"] = "55";
+        $pizhub["cp"] = "28813";
+        $pizhub["ciudad"] = "Serracines";
         $pizhub->esEmpleado = false;
         $pizhub->esAdmin = false;
         R::store($pizhub);
@@ -192,9 +199,10 @@ class Usuario_model extends CI_Model
         $pizhub["email"] = "pizhub@pizhub.es";
         $pizhub["alias"] = "feliz";
         $pizhub["password"] = md5("pizhub");
-        $pizhub["direccion"] = "";
-        $pizhub["cp"] = "";
-        $pizhub["localidad"] = "";
+        $pizhub["calle"] = "Falsa";
+        $pizhub["numero"] = "321";
+        $pizhub["cp"] = "28845";
+        $pizhub["ciudad"] = "Ajalvir";
         $pizhub->esEmpleado = false;
         $pizhub->esAdmin = false;
 
@@ -207,10 +215,45 @@ class Usuario_model extends CI_Model
         return R::findOne("usuario", "alias = ?", array($alias));
     }
 
+    public function getUserId($alias)
+    {
+        return R::findOne("usuario", "alias = ?", array($alias))["id"];
+    }
+
     public function getDatosPanel()
     {
         return R:: getAll("select id, alias, email, nombre, apellidos, telefono, es_empleado from usuario where es_admin = 0");
     }
+
+    public function editPersonalInfo($aliasUsuarioActual,$newNombre,$newApellidos,$newTelefono){
+        $user = R::load("usuario",$this->getUserId($aliasUsuarioActual));
+        $user["nombre"]=$newNombre;
+        $user["apellidos"]=$newApellidos;
+        $user["telefono"]=$newTelefono;
+        R::store($user);
+    }
+
+    public function editPassword($aliasUsuarioActual,$oldPassword,$newPassword,$newPasswordR){
+        $user = R::load("usuario",$this->getUserId($aliasUsuarioActual));
+        if(md5($oldPassword)==$user["password"] && $newPassword == $newPasswordR){
+            $user["password"]=$newPassword;
+            R::store($user);
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    public function editDirection($aliasUsuarioActual,$newCalle,$newNumero,$newCiudad,$newCP){
+        $user = R::load("usuario",$this->getUserId($aliasUsuarioActual));
+        $user["calle"]=$newCalle;
+        $user["numero"]=$newNumero;
+        $user["ciudad"]=$newCiudad;
+        $user["cp"]=$newCP;
+        R::store($user);
+    }
+
 }
 
 ?>
