@@ -149,4 +149,35 @@
             </div>
         </form>
     </div>
+    <!--PEDIDOS-->
+    <div id="dialogPed" class="gj-display-none dialogAdmin">
+        <input type="hidden" id="idPed"/>
+        <form>
+            <div>
+                <label for="estadoPed" id="labelPed" class="labelSelect">Estado:</label>
+                <select id="estadoPed" class="selectAuto">
+                    <option value="registrado">Registrado</option>
+                    <option value="asignado">Asignado</option>
+                    <option value="preparado">Preparado</option>
+                    <option value="cerrado">Cerrado</option>
+                </select>
+            </div>
+            <div class="gj-margin-top-10" id="botonesDialog">
+                <button type="button" id="btnSavePed" class="btn">Guardar</button>
+            </div>
+        </form>
+    </div>
+    <!--MENSAJES-->
+    <div id="detallesMensaje" class="modal">
+        <div class="container" style="border-bottom:1px solid white">
+            <h2 id="fechaMensaje"></h2>
+            <button type="button" class="close">X</button>
+        </div>
+        <hr>
+        <ul class="container details">
+            <li><p id="remitenteMen"><span class="glyphicon glyphicon-user"></span></p></li>
+            <li><p id="mailMen"><span class="glyphicon glyphicon-envelope"></span></p></li>
+            <li><p id="textoMen"><span class="glyphicon glyphicon-pencil"></span></p></li>
+        </ul>
+    </div>
 </div>

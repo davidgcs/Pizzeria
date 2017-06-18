@@ -12,6 +12,7 @@ class Admin extends CI_Controller
                 array_push($datos['head']['css'], "assets/css/admin/admin.css");
                 $datos['head']['js'] = array("assets/js/admin/gijgo.min.js");
                 array_push($datos['head']['js'], "assets/js/admin/admin.js");
+                array_push($datos['head']['js'], "assets/js/admin/empleado.js");
                 //$datos['panel'] = $this->getDatosPanel("admin");
                 enmarcar($this, "admin/administracion", $datos);
             } elseif ($_SESSION['es_empleado'] == true) {
@@ -183,7 +184,7 @@ class Admin extends CI_Controller
         $idEmpleado = $this->usuario_model->getIdAlias($_SESSION['usuarioActual']);
 
         extract($_REQUEST);
-        $idPedido = $_REQUEST['idPedido'];
+        $idPedido = $_REQUEST['id'];
         $estado = $_REQUEST['estado'];
 
         $this->load->model("pedido_model");
@@ -226,6 +227,6 @@ class Admin extends CI_Controller
         extract($_REQUEST);
         $id = $_REQUEST['id'];
         $this->load->model("empresa_model");
-        devuelveDato($this->empresa_model->borraMensaje($id));
+        $this->empresa_model->borraMensaje($id);
     }
 }
