@@ -12,6 +12,9 @@ if(!isset($_SESSION)){
     h4{
         color: #2e3842 !important;
     }
+    .precio{
+        top: 58% !important;
+    }
 </style>
 <div class="container">
     <h1 class="productoTitulo">ELIGE TU PIZZA</h1>
@@ -22,6 +25,7 @@ if(!isset($_SESSION)){
                     <img src="<?= base_url() ?>assets/images/<?= $producto['imgsrc'] ?>" alt="<?= $producto['nombre'] ?>">
                     <h5 hidden><?= $producto['nombre'] ?></h5>
                     <p hidden><?= $producto['descri'] ?></p>
+                    <p class="precio" hidden><?= $producto['precio'] ?> €</p>
                 </div>
                 <?php if($producto['nref']=="pizpers"):?>
                     <button id="btn<?= $producto['nref'] ?>" data-toggle="modal" data-target="#myModal">Añadir</button>

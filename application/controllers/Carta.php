@@ -59,17 +59,18 @@ class Carta extends CI_Controller
         $this->producto_model->crearProducto('IBÉRICA', 'pizza', "16", "piziber", "El auténtico sabor de la tierra.", "pizza7.png");
         $this->producto_model->crearProducto('BARBACOA', 'pizza', "15", "pizbarb", "Delicioso combinado de carnes con una salsa única.", "pizza8.png");
         $this->producto_model->crearProducto('CARBONARA', 'pizza', "15", "pizcarb", "Pizza con sabor a pasta... ¿Qué más se puede pedir?", "pizza9.png");
-        $this->producto_model->crearProducto('DIABOLICA', 'pizza', "666", "pizdiab", "ERROR 404. Inteligencia not found.", "pizza10.png");
-        $this->producto_model->crearProducto('MIXTO', 'sandwich', "3.5", "sanjamo", "El clásico sándwich, jamón y queso.", "dummy.png");
-        $this->producto_model->crearProducto('VEGETAL', 'sandwich', "3.2", "sanvege", "El sándwich más saludable.", "dummy.png");
-        $this->producto_model->crearProducto('COMPLETO', 'sandwich', "4", "sancomp", "Para bocas grandes, todas es todas.", "dummy.png");
-        $this->producto_model->crearProducto('COMPLETA', 'hamburguesa', "5.5", "hamcomp", "¿Serás capaz de hincarle el diente? ¿Y a la hamburguesa también?", "dummy.png");
-        $this->producto_model->crearProducto('POLLO CRUJIENTE', 'hamburguesa', "5", "hampoll", "Disfruta del crujiente pollo deshaciéndose en tu boca...", "dummy.png");
-        $this->producto_model->crearProducto('DOBLE', 'hamburguesa', "7", "hamdobl", "¿Eres un glotón? Esta es tu hamburguesa.", "dummy.png");
-        $this->producto_model->crearProducto('VEGETAL', 'hamburguesa', "4", "hamvege", "¿Te apetece cuidar la línea y comerte además una hamburguesa?", "dummy.png");
-        $this->producto_model->crearProducto('BOLOGNESA', 'pasta', "8", "pasbolo", "Deliciosa pasta al dente, con una espectacular salsa bolognesa.", "dummy.png");
-        $this->producto_model->crearProducto('CARBONARA', 'pasta', "7", "pascarb", "Descripcion de la pasta carbonara", "dummy.png");
-        $this->producto_model->crearProducto('PESTO', 'pasta', "7.5", "paspest", "Descripcion de la pasta pesto", "dummy.png");
+        $this->producto_model->crearProducto('DIABOLICA', 'pizza', "666", "pizdiab", "ERROR 404. Not found.", "pizza10.png");
+        $this->producto_model->crearProducto('MIXTO', 'sandwich', "3.5", "sanjamo", "El clásico sándwich, jamón y queso.", "sandwichmixto.png");
+        $this->producto_model->crearProducto('VEGETAL', 'sandwich', "3.2", "sanvege", "El sándwich más saludable.", "sandwichvegetal.png");
+        $this->producto_model->crearProducto('COMPLETO', 'sandwich', "4", "sancomp", "Para bocas grandes, todas es todas.", "sandwichcompleto.png");
+        $this->producto_model->crearProducto('COMPLETA', 'hamburguesa', "5.5", "hamcomp", "¿Serás capaz de hincarle el diente? ¿Y a la hamburguesa también?", "hamburguesacompleta.png");
+        $this->producto_model->crearProducto('POLLO CRUJIENTE', 'hamburguesa', "5", "hampoll", "Disfruta del crujiente pollo deshaciéndose en tu boca...", "hamburguesapollo.png");
+        $this->producto_model->crearProducto('DOBLE', 'hamburguesa', "7", "hamdobl", "¿Eres un glotón? Esta es tu hamburguesa.", "hamburguesadoble.png");
+        $this->producto_model->crearProducto('VEGETAL', 'hamburguesa', "4", "hamvege", "¿Te apetece cuidar la línea y comerte además una hamburguesa?", "hamburguesavegetal.png");
+        $this->producto_model->crearProducto('BOLOGNESA', 'pasta', "8", "pasbolo", "Deliciosa pasta al dente, con una espectacular salsa bolognesa.", "pastabolognesa.png");
+        $this->producto_model->crearProducto('CARBONARA', 'pasta', "7", "pascarb", "Descripcion de la pasta carbonara", "pastacarbonara.png");
+        $this->producto_model->crearProducto('PESTO', 'pasta', "7.5", "paspest", "Descripcion de la pasta pesto", "pastapesto.png");
+
     }
 }
 
