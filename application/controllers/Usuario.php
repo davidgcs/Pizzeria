@@ -109,7 +109,8 @@ class Usuario extends CI_Controller
         $usuarioCreado = $this->usuario_model->crearUsuario($nombre, $apellidos, $telefono, $email, $alias, $contraseña);
         //si no existe crear el usuario
         if ($usuarioCreado) {
-            enmarcar($this, "forms/registroOk.php");
+            $datos['head']['css'] = array("assets/css/usuario/login_style.css");
+            enmarcar($this, "forms/login", $datos);
         } //si ya existe notificar al usuario
         else {
             //redirigir a error de creación
