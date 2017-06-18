@@ -91,6 +91,10 @@ if(!isset($_SESSION)){
             var productoId = producto[pIndex].id;
             console.log(productoId);
 
+            $("#header .cart .pagar .cartTotal").html(
+                parseInt($("#header .cart .pagar .cartTotal").html())+parseInt(producto[pIndex].precio)
+            );
+
             if ($("#header .cart #cartItem"+productoId).length === 0) {
                 addedCarrito[productoId] = 1;
 
@@ -104,6 +108,7 @@ if(!isset($_SESSION)){
                 $cartItem.append("<button class='deleteCart btn btn-danger'>Eliminar</button>");
 
                 $cartItem.appendTo("#cart");
+
             }
             else {
                 addedCarrito[productoId] = parseInt($("#header .cart #cartItem"+productoId+" .ciCantidad").html().split("x")[1]);
@@ -127,6 +132,9 @@ if(!isset($_SESSION)){
                 $(this).parent(".cartItem").fadeOut(500,function(){
                     console.log(nref);
                     $(this).remove();
+                    $("#header .cart .pagar .cartTotal").html(
+                        parseInt($("#header .cart .pagar .cartTotal").html())-parseInt($(this).find("span.ciPrecio").html().split("€")[0])
+                    );
                     $("#header .cart").stop().slideDown();
                     if($("#header .cart").find(".cartItem").length === 0){
                         $("#header .cart .cartEmpty").show();

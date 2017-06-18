@@ -78,9 +78,13 @@
                     }
                 }
             }
+            var totalPagar = 0;
             $(".cartItem").each(function(ind, el){
-
+                totalPagar += parseInt($(el).find("span.ciPrecio").html().split("€")[0]);
+                console.log(totalPagar)
             });
+            $("#header .cart .pagar .cartTotal").html(totalPagar)
+
             $(".cartItem").hover(function(){
                 $(this).find("span").css("visibility","hidden");
                 $(this).find("button.deleteCart").css("visibility","visible");
@@ -94,6 +98,10 @@
                 $(this).parent(".cartItem").fadeOut(500,function(){
                     console.log(nref);
                     $(this).remove();
+                    $("#header .cart .pagar .cartTotal").html(
+                        parseInt($("#header .cart .pagar .cartTotal").html())-parseInt($(this).find("span.ciPrecio").html().split("€")[0])
+                    );
+
                     $("#header .cart").stop().slideDown();
                     if($("#header .cart").find(".cartItem").length === 0){
                         $("#header .cart .cartEmpty").show();
@@ -105,7 +113,7 @@
                     url: "<?=base_url()?>carrito/deleteFromCart",
                     data: {nref: nref}
                 }).done(function(msg){
-                    console.log("done: "+msg)
+                    console.log("done: "+msg);
                 });
 
             });
