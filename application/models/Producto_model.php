@@ -33,7 +33,8 @@ class Producto_model extends CI_Model
         return R::find("producto", "nref = ?", array($nref));
     }
 
-    public function getProductos(){
+    public function getProductos()
+    {
         return R::loadAll("producto");
     }
 
@@ -65,10 +66,9 @@ class Producto_model extends CI_Model
         R::close();
     }
 
-    public function borrarProducto($nref)
+    public function borrarProducto($id)
     {
-        $producto = R::load("producto", $nref);
-        R::trash($producto);
+        R::trash("producto", $id);
     }
 
     public function getPrecio($nref)
@@ -79,6 +79,18 @@ class Producto_model extends CI_Model
 
     public function getDatosPanel()
     {
-        return R:: findAll("producto");
+        return json_encode(R:: getAll("select * from producto order by tipo, nombre"));
+    }
+
+    public function updateProd($nref, $nombre, $tipo, $descri, $precio)
+    {
+        $producto = R::findOne("producto", "nref = ?", array($nref));
+        $producto->nombre = $nombre;
+        $producto->tipo = $tipo;
+        $producto->descri = $descri;
+        $producto->precio = $precio;
+
+        R::store($producto);
+        R::close();
     }
 }

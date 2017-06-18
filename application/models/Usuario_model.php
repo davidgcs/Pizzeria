@@ -2,7 +2,7 @@
 
 class Usuario_model extends CI_Model
 {
-    public function crearUsuario($nombre, $apellidos, $telefono, $email, $alias, $contraseña)
+    public function crearUsuario($nombre, $apellidos, $telefono, $email, $alias, $contraseña, $empleado)
     {
         if (!$this->existeUsuario($alias) && !$this->existeEmail($email)) {
 
@@ -13,6 +13,9 @@ class Usuario_model extends CI_Model
             $usuario["email"] = $email;
             $usuario["alias"] = $alias;
             $usuario["password"] = md5($contraseña);
+            $usuario["es_empleado"] = $empleado;
+            $usuario["es_admin"] = false;
+            $usuario["direccion"] = "";
             $usuario["calle"] = "";
             $usuario["numero"] = "";
             $usuario["ciudad"] = "";
@@ -220,11 +223,6 @@ class Usuario_model extends CI_Model
         return R::findOne("usuario", "alias = ?", array($alias))["id"];
     }
 
-    public function getDatosPanel()
-    {
-        return R:: getAll("select id, alias, email, nombre, apellidos, telefono, es_empleado from usuario where es_admin = 0");
-    }
-
     public function editPersonalInfo($aliasUsuarioActual,$newNombre,$newApellidos,$newTelefono){
         $user = R::load("usuario",$this->getUserId($aliasUsuarioActual));
         $user["nombre"]=$newNombre;
@@ -252,6 +250,41 @@ class Usuario_model extends CI_Model
         $user["ciudad"]=$newCiudad;
         $user["cp"]=$newCP;
         R::store($user);
+    }
+    
+    public function getDatosPanel()
+    {
+
+        return json_encode(R:: getAll("select id, alias, email, nombre, apellidos, direccion, cp, localidad, telefono, IF(es_empleado = 1, 'SI', 'NO') AS es_empleado from usuario where es_admin = 0 order by apellidos, nombre"));
+    }
+
+    public function getUsuJson($alias)
+    {
+        return '{"datosUsu": ' . json_encode(R:: getAll("select id, alias, email, nombre, apellidos, direccion, cp, localidad, telefono, IF(es_empleado = 1, 'SI', 'NO') AS es_empleado from usuario where alias = ?", array($alias))) . "}";
+    }
+
+    public function setEmpleado($alias, $esEmp)
+    {
+        $usuario = R::findOne('usuario', 'alias = ?', array($alias));
+        $usuario->es_empleado = $esEmp;
+
+        return R::store($usuario);
+    }
+
+    public function borraUsu($id)
+    {
+        R:: trash('usuario', $id);
+    }
+
+    public function getNomApe($id)
+    {
+        $usuario = R:: findOne("usuario", "id = ?", array($id));
+        return $usuario['nombre']." ".$usuario['apellidos'];
+    }
+
+    public  function getIdAlias($alias) {
+        $usuario = R:: findOne("usuario", "alias = ?", array($alias));
+        return $usuario['id'];
     }
 
 }

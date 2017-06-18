@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/bootstrap-theme.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/jquery-ui.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/normalize.css">
+    <link rel="stylesheet" href="<?= base_url() ?>assets/css/material-icons.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/pizzeria.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/css/main.css">
     <link rel="icon" href="<?= base_url() ?>assets/images/LogoCircular.png"/>
