@@ -1,14 +1,186 @@
+/*anulacion main.css*/
 body, input, select, textarea {
-    color: #3c3c3c;
+    line-height: 1em;
 }
+
 .sidebar-nav {
     background: #272727;
 }
+
 /*cabeceras sidebars*/
-.sidebar-nav h5 b{
+.sidebar-nav h5 b {
     color: #ff0000;
 }
-nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover {
     color: #fff;
     background-color: #808080;
+}
+
+/*tabla adm*/
+.tabla-adm {
+    color: #3c3c3c;
+    letter-spacing: 0;
+}
+
+.gj-grid-md-table {
+    border: 0;
+}
+
+#barra-superior {
+    width: 100%;
+}
+
+#barra-superior input {
+    width: 250px;
+    float: left;
+    margin: 0 0 3px 0;
+    border: 0.5px solid #ccc;
+    height: 40px;
+    color: #fff;
+}
+
+#barra-superior button {
+    float: left;
+    margin: 0px 0 5px 15px;
+    height: 40px;
+}
+
+#barra-superior #btnAdd {
+    float: right;
+    margin: 0 0 3px 0;
+}
+
+table thead tr, table tfoot tr {
+    background-color: rgba(29, 36, 42, 0.85);
+}
+
+.gj-grid-md-table th {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+table tbody tr:nth-child(2n+1),  table tbody tr{
+    background-color: rgba(144, 144, 144, 0.3);
+}
+
+.btn {
+    font-size: 10px;
+}
+.gj-button, .gj-button-md {
+    color: #fff;
+}
+.gj-grid-md-table td {
+    padding: 0 0 0 18px;
+}
+.gj-grid-md-table .sinPadding {
+    padding: 0;
+}
+#dialogUser, #dialogCreaUser, #dialogEditProd, #dialogCreaProd, .dialogAdmin {
+    background-color: #323232;
+}
+.gj-dialog-md-body button {
+    margin-top: 15px;
+}
+.gj-dialog-md-header h4 {
+    font-size: 15px;
+}
+
+.gj-dialog-md-header {
+    padding: 10px 24px 0;
+}
+
+.gj-dialog-md-header button {
+    height:auto;
+    box-shadow: none;
+    margin-top: 0;
+}
+#idEmp, #idUsuEmp, #idTipoProd, #idTipoCreaProd, .selectAuto {
+    width: auto;
+    height: 30px;
+    color: #fff;
+}
+#labelEmp, #labelPed {
+    font-size: large;
+    width: 125px;
+    float: left;
+    margin-left: 25px;
+    margin-top: 4px;
+}
+#btnSave{
+    float: left;
+    font-size: 14px;
+    margin: 10px 25% 10px 25%;
+}
+#dialogUser form, #dialogCreaUser form, #dialogCreaProd form, .dialogAdmin form{
+    margin-bottom: 10px;
+}
+#detallesUser, #detallesProd, #detallesMensaje {
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    background: #323232;
+}
+#detallesUser p, #detallesUser span, #detallesProd p, #detallesProd span, #detallesMensaje p, #detallesMensaje span{
+    color: #fff;
+}
+.details li {
+    list-style: none;
+}
+.details .glyphicon {
+    width: 50px;
+}
+#detallesUser li, #detallesProd li, #detallesMensaje li {
+    margin-bottom:10px;
+}
+#detallesUser p, #detallesProd p, #detallesMensaje p {
+    margin-bottom: 1.5em;
+}
+#detallesUser button, #detallesProd button, #detallesMensaje button {
+    color: #fff;
+    opacity: 1;
+    box-shadow: none;
+    height: 25px;
+}
+#detallesUser h2, #detallesProd h2, #detallesMensaje h2 {
+    width: 90%;
+    float: left;
+    margin-bottom: 10px;
+}
+
+#dialogCreaUser input, #dialogEditProd input, #dialogEditProd select, #dialogCreaProd input, #dialogCreaProd select, .dialogAdmin input, .dialogAdmin select{
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+#btnSaveCrearUsu, #btnSaveEditProd, #btnSaveCrearProd {
+    float: left;
+    font-size: 14px;
+    margin: 10px 0 10px 179px;
+}
+
+#dialogCreaUser #labelUsuEmp, #dialogEditProd #labelTipoProd, #dialogCreaProd #labelTipoProd, #dialogEditProd #labelPrecioProd, #dialogCreaProd #labelPrecioProd, .dialogAdmin #labelPed {
+    width: auto;
+    margin-right: 10px;
+    float: left;
+}
+#dialogCreaUser label, #dialogEditProd label, #dialogCreaProd label, .dialogAdmin label{
+    margin: 0;
+}
+#idUsuEmp {
+    margin-bottom: 9px;
+}
+#dialogEditProd input, #dialogEditProd select, #dialogEditProd textarea, #dialogCreaProd input, #dialogCreaProd select, #dialogCreaProd textarea, .dialogAdmin input, .dialogAdmin select, .dialogAdmin textarea {
+    color :#fff;
+}
+#btnSaveEditProd{
+    margin: 10px 0 10px 165px;
+}
+#btnSaveCrearProd{
+    margin: 10px 0 10px 174px
+}
+#idPrecioProd, #idPrecioCreaProd, .inputPrecio {
+    width: 75px;
+    text-align: center;
 }
