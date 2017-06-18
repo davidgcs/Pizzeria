@@ -58,7 +58,7 @@ h1{
 /*Carrito*/
 #header a.cartIcon i{
     position: absolute;
-    right: 22%;
+    right: 40%;
     top: 0;
     padding: 15px;
     font-size: 1.3em;
@@ -75,7 +75,7 @@ a.cartIcon:hover, a.cartIcon:focus {
     color: #FFF !important;
 }
 #header .cart{
-    height: 500px;
+    height: 600px;
     width: 400px;
     display: none;
     background-color: #23527c;
@@ -86,6 +86,7 @@ a.cartIcon:hover, a.cartIcon:focus {
     z-index: 120;
     padding: 20px;
     border-radius: 20px;
+    overflow: overlay;
 }
 #header .cart .cartItem{
     display: block;
@@ -120,6 +121,11 @@ a.cartIcon:hover, a.cartIcon:focus {
     top: 25%;
     left: 30%;
     animation-duration: 500ms;
+}
+header p.cartEmpty{
+    text-align: center;
+    font-size: 20px;
+    top: 20px;
 }
 
 .iconClicked{

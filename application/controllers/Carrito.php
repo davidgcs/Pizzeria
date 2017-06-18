@@ -19,7 +19,26 @@ class Carrito extends CI_Controller{
         $producto = $this->producto_model->getProducto($nref);
 
         array_push($_SESSION['carrito'], $producto);
-        echo $nref;
+        $_SESSION['carrito'] = array_values($_SESSION['carrito']);
+        echo json_encode($producto);
+    }
+
+    public function deleteFromCart(){
+        if(!isset($_SESSION)){
+            session_start();
+        }
+        if(isset($_SESSION['carrito'])) {
+            $nref = $_POST['nref'];
+
+            foreach ($_SESSION['carrito'] as $k => $producto){
+                echo "$nref ------> ".json_encode(array_values($producto)[0]['nref']);
+                if(array_values($producto)[0]['nref'] == $nref){
+                    unset($_SESSION['carrito'][$k]);
+                }
+            }
+
+            $_SESSION['carrito'] = array_values($_SESSION['carrito']);
+        }
     }
 }
 ?>
