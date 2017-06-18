@@ -112,6 +112,36 @@ if(!isset($_SESSION)){
                 $("#cartItem" + productoId + " .ciCantidad").html("x"+addedCarrito[productoId]);
                 $("#cartItem" + productoId + " .ciPrecio").html((producto[pIndex].precio*addedCarrito[productoId])+"€");
             }
+
+            $(".cartItem").hover(function(){
+                $(this).find("span").css("visibility","hidden");
+                $(this).find("button.deleteCart").css("visibility","visible");
+            }, function(){
+                $(this).find("span").css("visibility","visible");
+                $(this).find("button.deleteCart").css("visibility","hidden");
+            });
+
+            $("#header .deleteCart").on("click", function () {
+                var nref = "";
+                nref = $(this).parent(".cartItem").data("nref");
+                $(this).parent(".cartItem").fadeOut(500,function(){
+                    console.log(nref);
+                    $(this).remove();
+                    $("#header .cart").stop().slideDown();
+                    if($("#header .cart").find(".cartItem").length === 0){
+                        $("#header .cart .cartEmpty").show();
+                    }
+                });
+
+                $.ajax({
+                    method: "POST",
+                    url: "<?=base_url()?>carrito/deleteFromCart",
+                    data: {nref: nref}
+                }).done(function(msg){
+                    console.log("done: "+msg)
+                });
+
+            });
         });
 
     }
