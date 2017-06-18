@@ -32,7 +32,10 @@
     <a class="cartIcon" href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
     <div class="cart" id="cart">
         <p class="cartEmpty">El carrito está vacío</p>
-        <div class="pagar">Pagar</div>
+        <div class="pagar">
+            <span>Total: <b class="cartTotal">0</b>€</span>
+            <button class="btnPagar btn btn-success">Pagar</button>
+        </div>
     </div>
     <h5 id="saludo"><?php if(isset($_SESSION['logeado']) && $_SESSION["logeado"]==true) echo $_SESSION["usuarioActual"]?></h5> <a href="<?= base_url() ?>usuario/login"><i class="<?php echo (isset($_SESSION['logeado']) && $_SESSION["logeado"]==true) ? 'fa fa-user-circle' : 'fa fa-sign-in';?>"></i></a>
     <script>
@@ -75,6 +78,9 @@
                     }
                 }
             }
+            $(".cartItem").each(function(ind, el){
+
+            });
             $(".cartItem").hover(function(){
                 $(this).find("span").css("visibility","hidden");
                 $(this).find("button.deleteCart").css("visibility","visible");
@@ -102,6 +108,10 @@
                     console.log("done: "+msg)
                 });
 
+            });
+            $("#header .cart").on("scroll",function(){
+                console.log($(this).find(".pagar").length);
+               $(this).find(".pagar").css("transform","translateY("+($("#header .cart").scrollTop())+"px)");
             });
         });
     </script>
