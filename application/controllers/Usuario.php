@@ -95,7 +95,7 @@ class Usuario extends CI_Controller{
         //llamar al modelo
         $this->load->model('usuario_model');
         //llamar al metodo de crear usuario en el modelo (Este método ya comprueba que no exista)
-        $usuarioCreado = $this->usuario_model->crearUsuario($nombre, $apellidos, $telefono, $email, $alias, $contraseña);
+        $usuarioCreado = $this->usuario_model->crearUsuario($nombre, $apellidos, $telefono, $email, $alias, $contraseña, false);
         //si no existe crear el usuario
         if ($usuarioCreado) {
             $datos['head']['css'] = array("assets/css/usuario/login_style.css");

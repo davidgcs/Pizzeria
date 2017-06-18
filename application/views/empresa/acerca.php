@@ -80,8 +80,7 @@
                                         <h3 class="name">Daniel Dominguez</h3>
                                         <p class="profession">Product Manager</p>
 
-                                        <p class="text-center">"I'm the new Sinatra, and since I made it here I can make
-                                            it anywhere, yeah, they love me everywhere"</p>
+                                        <p class="text-center">"Una vez intenté ligar con una programadora, pero no se de-java."</p>
                                     </div>
                                 </div>
                             </div> <!-- end front panel -->
@@ -131,14 +130,13 @@
                                 </div>
                                 <div class="user">
                                     <img class="img-circle"
-                                         src="http://img.desmotivaciones.es/201202/hombreinglescalvo300x350.jpg"/>
+                                         src="<?= base_url() ?>assets/images/david.jpg"/>
                                 </div>
                                 <div class="content">
                                     <div class="main">
-                                        <h3 class="name">David Gomez</h3>
+                                        <h3 class="name">David Gómez</h3>
                                         <p class="profession">Web Developer</p>
-                                        <p class="text-center">"Lamborghini Mercy <br>Your chick she so thirsty <br>I'm
-                                            in that two seat Lambo"</p>
+                                        <p class="text-center">Soy programador. asdsahhre kmasdiomjnn dehoi ui " " hds " ddsadjh,kkpok´ññkj dsad</p>
                                     </div>
                                 </div>
                             </div> <!-- end front panel -->

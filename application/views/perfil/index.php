@@ -25,6 +25,9 @@
     .error{
         border: 1px solid darkred !important;
     }
+    #footer{
+        position: relative !important;
+    }
 </style>
 <script>
 

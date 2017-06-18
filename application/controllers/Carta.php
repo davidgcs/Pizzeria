@@ -15,6 +15,8 @@ class Carta extends CI_Controller
         $datos['body']['pizza'] = $this->producto_model->getProductosTipo("pizza");
         $datos['head']['css'] = array("assets/css/carta/producto.css", "assets/css/carta/banner.css");
         $datos['head']['js'] = array("assets/js/carta/producto.js", "assets/js/carta/banner.js");
+        $this->load->model ( 'usuario_model' );
+        $datos['body']['ingredientes']=$this->usuario_model->getIngredientes();
         enmarcar($this, "carta/pizzas", $datos);
     }
 
