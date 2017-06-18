@@ -31,7 +31,7 @@
     </nav>
     <a class="cartIcon" href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
     <div class="cart" id="cart">
-
+        <p class="cartEmtpy">El carrito está vacío</p>
     </div>
     <h5 id="saludo"><?php if(isset($_SESSION['logeado']) && $_SESSION["logeado"]==true) echo $_SESSION["usuarioActual"]?></h5> <a href="<?= base_url() ?>usuario/login"><i class="<?php echo (isset($_SESSION['logeado']) && $_SESSION["logeado"]==true) ? 'fa fa-user-circle' : 'fa fa-sign-in';?>"></i></a>
     <script>
@@ -40,11 +40,8 @@
             var baseUrl = "<?=base_url()?>";
             var addedCarrito = {};
             console.log(productos);
-            if(productos == []){
-                var $cartItem = $("<div class='cartItem' id='cartItem" + productoId + "'></div>");
-                $cartItem.append("<img src='" + baseUrl + "assets/images/" + producto.imgsrc + "' alt='" + producto.nombre + "'>");
+            if(productos.length === 0){
 
-                $cartItem.appendTo("#cart");
             }
             else {
                 $(productos).each(function (ind, el) {
@@ -71,11 +68,9 @@
                 });
             }
             $(".cartItem").hover(function(){
-//                $(this).find("img").css("visibility","hidden");
                 $(this).find("span").css("visibility","hidden");
                 $(this).find("button.deleteCart").css("visibility","visible");
             }, function(){
-//                $(this).find("img").css("visibility","visible");
                 $(this).find("span").css("visibility","visible");
                 $(this).find("button.deleteCart").css("visibility","hidden");
             });
