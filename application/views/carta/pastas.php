@@ -13,6 +13,7 @@ if(!isset($_SESSION)){
                     <img src="<?= base_url() ?>assets/images/<?= $producto['imgsrc'] ?>" alt="<?= $producto['nombre'] ?>">
                     <h5 hidden><?= $producto['nombre'] ?></h5>
                     <p hidden><?= $producto['descri'] ?></p>
+                    <p hidden style="top: 58% !important;"><?= $producto['precio'] ?> €</p>
                 </div>
                 <button onclick="addCarrito(<?= $producto['nref'] ?>)" id="btn<?= $producto['nref'] ?>">Añadir</button>
             </li>
