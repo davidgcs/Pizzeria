@@ -1,9 +1,7 @@
 <?php
 
-class Usuario extends CI_Controller
-{
-    public function crearPost()
-    {
+class Usuario extends CI_Controller{
+    public function crearPost(){
         $this->load->model('usuario_model');
         $alias = $_POST ['alias'];
         $nombre = $_POST ['nombre'];
@@ -11,20 +9,14 @@ class Usuario extends CI_Controller
         $this->usuario_model->crearUsuario($alias, $nombre, $apellido);
     }
 
-    public function editar()
-    {
-    }
-
-    public function logout()
-    {
+    public function logout(){
         session_start();
         $_SESSION['logeado'] = false;
         session_destroy();
         header("Location: " . base_url());
     }
 
-    public function login()
-    {
+    public function login(){
         session_start();
         //comprobamos login de admin
         if (isset($_SESSION['logeadoADM']) && $_SESSION["logeadoADM"] == true) {
@@ -43,8 +35,7 @@ class Usuario extends CI_Controller
         }
     }
 
-    public function loginPost()
-    {
+    public function loginPost(){
         //recoger variables del post
         $usuario = $_POST['u'];
         $contraseña = $_POST['p'];
@@ -85,16 +76,14 @@ class Usuario extends CI_Controller
         }
     }
 
-    public function registrar()
-    {
+    public function registrar(){
         $datos['head']['css'] = array("assets/css/usuario/login_style.css");
         //$datos['head']['js'] = array("assets/js/usuario/prefixfree.min.js");
         array_push($datos['head']['css'], "assets/css/usuario/registrar.css");
         enmarcar($this, "forms/registro", $datos);
     }
 
-    public function registrarPost()
-    {
+    public function registrarPost(){
         //recoger variables del post
         $nombre = $_POST['nombre'];
         $apellidos = $_POST['apellidos'];
@@ -119,8 +108,7 @@ class Usuario extends CI_Controller
         }
     }
 
-    public function compruebaAlias()
-    {
+    public function compruebaAlias(){
         extract($_REQUEST);
         $alias = $_REQUEST['alias'];
 
@@ -134,8 +122,7 @@ class Usuario extends CI_Controller
         }
     }
 
-    public function compruebaMail()
-    {
+    public function compruebaMail(){
         extract($_REQUEST);
         $email = $_REQUEST['email'];
 
@@ -147,6 +134,52 @@ class Usuario extends CI_Controller
         } else {
             devuelveDato("N");
         }
+    }
+
+    public function editPersonalInfo(){
+        if(!isset($_SESSION))session_start();
+        $aliasUsuarioActual = $_POST['aliasUsuarioActual'];
+        $newNombre = $_POST['newNombre'];
+        $newApellidos = $_POST['newApellidos'];
+        $newTelefono =$_POST['newTelefono'];
+
+        $this->load->model('usuario_model');
+        $this->usuario_model->editPersonalInfo($aliasUsuarioActual,$newNombre,$newApellidos,$newTelefono);
+
+        $_SESSION["editOK"]=true;
+        header("Location:".base_url()."perfil");
+    }
+
+    public function editPassword(){
+        if(!isset($_SESSION))session_start();
+        $aliasUsuarioActual = $_POST['aliasUsuarioActual'];
+        $oldPassword = $_POST['oldPassword'];
+        $newPassword = $_POST['newPassword'];
+        $newPasswordR = $_POST['newPasswordR'];
+
+        $this->load->model('usuario_model');
+        if($this->usuario_model->editPassword($aliasUsuarioActual,$oldPassword,$newPassword,$newPasswordR)){
+            $_SESSION["editOK"]=true;
+        }
+        else{
+            $_SESSION["editOK"]=false;
+        }
+        header("Location:".base_url()."perfil");
+    }
+
+    public function editDirection(){
+        if(!isset($_SESSION))session_start();
+        $aliasUsuarioActual = $_POST['aliasUsuarioActual'];
+        $newCalle = $_POST['newCalle'];
+        $newNumero = $_POST['newNumero'];
+        $newCiudad = $_POST['newCiudad'];
+        $newCP = $_POST['newCP'];
+
+        $this->load->model('usuario_model');
+        $this->usuario_model->editDirection($aliasUsuarioActual,$newCalle,$newNumero,$newCiudad,$newCP);
+
+        $_SESSION["editOK"]=true;
+        header("Location:".base_url()."perfil");
     }
 
 }
