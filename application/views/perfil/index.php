@@ -22,19 +22,23 @@
     ul.nav.nav-tabs{
         padding: 100px 100px 0 100px;
     }
+    .error{
+        border: 1px solid darkred !important;
+    }
 </style>
 <script>
-    document.getElementById("f1").onsubmit=function{
 
-    };
 
-    document.getElementById("f2").onsubmit=function{
-
-    };
-
-    document.getElementById("f3").onsubmit=function{
-
-    };
+    function checkPhone(evt){
+        if(document.getElementById("tel").value.length < 9 || isNaN(document.getElementById("tel").value)){
+            document.getElementById("tel").className += " error";
+            evt.preventDefault();
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
 </script>
 <div class="container" style="margin: 5% 3%">
 
@@ -46,11 +50,11 @@
 
     <div class="tab-content">
         <div id="info" class="tab-pane fade in active">
-            <form id="f1" action="usuario/editPersonalInfo" method="post">
+            <form id="f1" onsubmit="return checkPhone()" action="usuario/editPersonalInfo" method="post">
                 <h3>DATOS PERSONALES</h3>
                 Nombre: <input type="text" name="newNombre" value="<?= $body["usuarioActual"]["nombre"] ?>">
                 Apellidos: <input type="text" name="newApellidos" value="<?= $body["usuarioActual"]["apellidos"] ?>">
-                Teléfono: <input type="text" maxlength="9" name="newTelefono" value="<?= $body["usuarioActual"]["telefono"] ?>">
+                Teléfono: <input id="tel" type="text" maxlength="9" name="newTelefono" value="<?= $body["usuarioActual"]["telefono"] ?>">
                 <input type="hidden" name="aliasUsuarioActual" value="<?= $body["usuarioActual"]["alias"]?>">
                 <button class="btn btn-primary" type="submit">Cambiar</button>
             </form>
