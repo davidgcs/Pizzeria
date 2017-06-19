@@ -77,10 +77,10 @@
             }
             var totalPagar = 0;
             $(".cartItem").each(function(ind, el){
-                totalPagar += parseInt($(el).find("span.ciPrecio").html().split("€")[0]);
+                totalPagar += parseFloat($(el).find("span.ciPrecio").html().split("€")[0]);
                 console.log(totalPagar)
             });
-            $("#header .cart .pagar .cartTotal").html(parseFloat(totalPagar).toFixed(2));
+            $("#header .cart .pagar .cartTotal").html(totalPagar.toFixed(2));
 
             $(".cartItem").hover(function(){
                 $(this).find("span").css("visibility","hidden");

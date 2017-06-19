@@ -1,8 +1,13 @@
 <div class="container">
     <h1>¡El último paso!</h1>
+    <h4>Tu pedido:</h4>
+    <div id="pedido">
+
+    </div>
+    <p>Total: <b class="cartTotal">0</b>€</p>
     <form id="f3" action="#" method="post">
         <?php if(sizeof($body) === 0):?>
-            <h6>Introduce tu dirección</h6>
+            <h4>Introduce tu dirección</h4>
             Calle: <input type="text" name="newCalle" value="">
             Número: <input type="text" name="newNumero" value="">
             Ciudad: <input type="text" name="newCiudad" value="">
@@ -23,12 +28,12 @@
         var baseUrl = "<?=base_url()?>";
         var addedCarrito = {};
         console.log(productos);
-        if(productos.length === 0){
+        if (productos.length === 0) {
             $("#header .cart .btnPagar").addClass("disabled");
         }
         else {
             $("#header p.cartEmpty").hide();
-            for(var i = 0; i<Object.keys(productos).length; i++){
+            for (var i = 0; i < Object.keys(productos).length; i++) {
                 console.log(i);
                 var producto = productos[i];
                 var pIndex = Object.keys(producto)[0];
@@ -41,24 +46,23 @@
                     $cartItem.append("<span class='ciNombre'>" + producto[pIndex].nombre.toLowerCase() + "</span>");
                     $cartItem.append("<span class='ciCantidad'>x" + addedCarrito[productoId] + "</span>");
                     $cartItem.append("<span class='ciPrecio'>" + producto[pIndex].precio + "€ </span>");
-                    $cartItem.data("nref",producto[pIndex].nref);
+                    $cartItem.data("nref", producto[pIndex].nref);
 
-                    $cartItem.append("<button class='deleteCart btn btn-danger'>Eliminar</button>");
-
-                    $cartItem.appendTo("#cart");
+                    $cartItem.appendTo("#pedido");
                 }
                 else {
                     addedCarrito[productoId] += 1;
-                    $("#cartItem" + productoId + " .ciCantidad").html("x"+addedCarrito[productoId]);
-                    $("#cartItem" + productoId + " .ciPrecio").html((producto[pIndex].precio*addedCarrito[productoId])+"€");
+                    $("#cartItem" + productoId + " .ciCantidad").html("x" + addedCarrito[productoId]);
+                    $("#cartItem" + productoId + " .ciPrecio").html((producto[pIndex].precio * addedCarrito[productoId]) + "€");
                 }
             }
         }
         var totalPagar = 0;
-        $(".cartItem").each(function(ind, el){
+        $("#pedido .cartItem").each(function(ind, el){
             totalPagar += parseInt($(el).find("span.ciPrecio").html().split("€")[0]);
             console.log(totalPagar)
         });
-        $("#header .cart .pagar .cartTotal").html(parseFloat(totalPagar).toFixed(2));
+        $(".container .cartTotal").html(parseFloat(totalPagar).toFixed(2));
+    });
 </script>
 

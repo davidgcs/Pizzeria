@@ -1,3 +1,49 @@
 .container *{
     margin-bottom: 20px;
 }
+#header a.cartIcon i{
+    /*display: none;*/
+}
+#pedido{
+    margin-bottom: 0;
+}
+#pedido .cartItem{
+    margin: 0;
+    padding: 20px;
+    border-bottom: 1px solid white;
+    position: relative;
+    background: #2e3842; /* For browsers that do not support gradients */
+    background: -webkit-radial-gradient(#25609a, #2e3842); /* Safari 5.1 to 6.0 */
+    background: -o-radial-gradient(#25609a, #2e3842); /* For Opera 11.6 to 12.0 */
+    background: -moz-radial-gradient(#25609a, #2e3842); /* For Firefox 3.6 to 15 */
+    background: radial-gradient(#25609a, #2e3842);
+}
+#pedido .cartItem img{
+    width: 150px;
+    height: 150px;
+}
+#pedido .cartItem span{
+    color: #FFF;
+    text-transform: capitalize;
+    position: absolute;
+    top: 36%;
+    left: 30%;
+    animation-duration: 500ms;
+}
+#pedido .cartItem span.ciCantidad{
+    left: 60%;
+}
+#pedido .cartItem span.ciPrecio{
+    left: 80%;
+}
+.container p{
+    color: #FFF;
+    border-bottom: 1px solid white;
+    position: relative;
+    background: #2e3842; /* For browsers that do not support gradients */
+    background: -webkit-radial-gradient(#25609a, #2e3842); /* Safari 5.1 to 6.0 */
+    background: -o-radial-gradient(#25609a, #2e3842); /* For Opera 11.6 to 12.0 */
+    background: -moz-radial-gradient(#25609a, #2e3842); /* For Firefox 3.6 to 15 */
+    background: radial-gradient(#25609a, #2e3842);
+    text-align: center;
+}
