@@ -24,8 +24,7 @@ if(!isset($_SESSION)){
                 <div class="imagenTitulo" style="">
                     <img src="<?= base_url() ?>assets/images/<?= $producto['imgsrc'] ?>" alt="<?= $producto['nombre'] ?>">
                     <h5 hidden><?= $producto['nombre'] ?></h5>
-                    <p hidden><?= $producto['descri'] ?></p>
-                    <p class="precio" hidden><?= $producto['precio'] ?> €</p>
+                    <p hidden><?= $producto['descri'] ."<br>". $producto['precio']."€"?></p>
                 </div>
                 <?php if($producto['nref']=="pizpers"):?>
                     <button id="btn<?= $producto['nref'] ?>" data-toggle="modal" data-target="#myModal">Añadir</button>

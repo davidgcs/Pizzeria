@@ -49,6 +49,7 @@ class Usuario extends CI_Controller{
             $_SESSION['es_admin'] = $this->usuario_model->esAdministrador($aliasLogin);
             $_SESSION['es_empleado'] = $this->usuario_model->esEmpleado($aliasLogin);
             $_SESSION['usuarioActual'] = $aliasLogin; //indicamos cual es el alias del usuario de la sesión actual.
+            $_SESSION['idUsuarioActual'] = $this->usuario_model->getIdAlias($aliasLogin); //indicamos cual es el alias del usuario de la sesión actual.
             $_SESSION['errorLogin'] = false;
 
             //comprobamos si es admin o empleado

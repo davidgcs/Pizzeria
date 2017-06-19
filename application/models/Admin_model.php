@@ -1,19 +1,19 @@
 <?php
 class Admin_model extends CI_Model {
 
-    public function exportUsuarios(){
+    public function csvUsuarios(){
         $this->array_to_csv_download(R::getAll("select * from usuario"),"usuarios");
     }
 
-    public function exportProductos(){
+    public function csvProductos(){
         $this->array_to_csv_download(R::getAll("select * from producto"),"productos");
     }
 
-    public function exportPedidos(){
+    public function csvPedidos(){
         $this->array_to_csv_download(R::getAll("select * from lineapedido, pedido where pedido_id = pedido.id"),"pedidos");
     }
 
-    public function exportMensajes(){
+    public function csvMensajes(){
         $this->array_to_csv_download(R::getAll("select * from mensaje"),"mensajes");
     }
 

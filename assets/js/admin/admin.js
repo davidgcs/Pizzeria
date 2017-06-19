@@ -5,9 +5,13 @@ $(document).ready(function () {
     //variable global para controlar barra superior
     var tipoDatos = '';
 
+    $("#optADM li").on("click", function () {
+
+    });
+
     //refrescar lista
     $("#btnActualizar").on("click", function () {
-        switch (tipoDatos){
+        switch (tipoDatos) {
             case "usu":
                 listarUsuarios();
                 break;
@@ -24,7 +28,7 @@ $(document).ready(function () {
             var query, result;
             query = $('#inpt-buscar').val();
             result = $.grep(data, function (e) {
-                switch (tipoDatos){
+                switch (tipoDatos) {
                     case "usu":
                         return e.nombre.indexOf(query) > -1 || e.email.indexOf(query) > -1 || e.telefono.indexOf(query) > -1 || e.alias.indexOf(query) > -1;
                         break;
@@ -39,7 +43,7 @@ $(document).ready(function () {
 
     //dialog añadir
     $("#btnAdd").on("click", function () {
-        switch (tipoDatos){
+        switch (tipoDatos) {
             case "usu":
                 iniDialogCreaUser();
                 break;
@@ -380,6 +384,7 @@ $(document).ready(function () {
     });
 
     var dataLineaEditProd;
+
     function editLineaPro(e) {
         dataLineaEditProd = e.data;
 
@@ -426,7 +431,7 @@ $(document).ready(function () {
     //detalles producto
     function detallesLineaPro(datos) {
         //asignamos datos al modal
-        $("#nomProd").html('<span class="glyphicon glyphicon-info-sign"></span>' + datos.nombre + ' <small>('+datos.nref+')</small>');
+        $("#nomProd").html('<span class="glyphicon glyphicon-info-sign"></span>' + datos.nombre + ' <small>(' + datos.nref + ')</small>');
         $("#tipoProd").html('<span class="glyphicon glyphicon-grain"></span>' + datos.tipo);
         $("#precioProd").html('<span class="glyphicon glyphicon-euro"></span>' + datos.precio);
         $("#descriProd").html('<span class="glyphicon glyphicon-comment"></span>' + datos.descri);
@@ -502,12 +507,5 @@ $(document).ready(function () {
             alert("Complete todos los datos");
         }
     });
-    
-    //exportar datos
-    $("#optExp").on("click", function () {
-        //llamada ajax al php
-
-    });
-
 });
 

@@ -340,7 +340,7 @@ class Usuario_model extends CI_Model
         return $usuario['nombre']." ".$usuario['apellidos'];
     }
 
-    public  function getIdAlias($alias) {
+    public function getIdAlias($alias) {
         $usuario = R:: findOne("usuario", "alias = ?", array($alias));
         return $usuario['id'];
     }

@@ -251,4 +251,25 @@ class Admin extends CI_Controller
         $this->load->model("pedido_model");
         devuelveDato($this->pedido_model->lineasPedido($id));
     }
+
+    public function csvDB()
+    {
+        extract($_REQUEST);
+        $tipo = $_REQUEST['tipo'];
+        $this->load->model("admin_model");
+        switch ($tipo){
+            case "prod":
+                $this->admin_model->csvProductos();
+                break;
+            case "usu":
+                $this->admin_model->csvUsuarios();
+                break;
+            case "men":
+                $this->admin_model->csvMensajes();
+                break;
+            case "ped":
+                $this->admin_model->csvPedidos();
+                break;
+        }
+    }
 }

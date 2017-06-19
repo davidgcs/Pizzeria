@@ -362,4 +362,14 @@ $(document).ready(function () {
         $("#detallesMensaje").modal("hide");
     });
 
+    //exportar datos
+    $("#optExp").on("click", function () {
+        var url_exportDB = url_index + "admin/csvDB?tipo="+tipoDatos;
+        $.ajax({
+            url: url_exportDB
+        }).done(function () {
+            console.log("Exportado");
+        });
+    });
+
 });
