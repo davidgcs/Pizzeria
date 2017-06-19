@@ -229,4 +229,20 @@ class Admin extends CI_Controller
         $this->load->model("empresa_model");
         $this->empresa_model->borraMensaje($id);
     }
+
+    public function detallesPedido()
+    {
+        extract($_REQUEST);
+        $id = $_REQUEST['id'];
+        $this->load->model("pedido_model");
+        devuelveDato($this->pedido_model->detallesPedido($id));
+    }
+
+    public function lineasPedido()
+    {
+        extract($_REQUEST);
+        $id = $_REQUEST['id'];
+        $this->load->model("pedido_model");
+        devuelveDato($this->pedido_model->lineasPedido($id));
+    }
 }

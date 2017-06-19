@@ -3,6 +3,10 @@ body, input, select, textarea {
     line-height: 1em;
 }
 
+.tituloADM {
+    font-size: 32px;
+}
+
 .sidebar-nav {
     background: #272727;
 }
@@ -124,7 +128,7 @@ button{
 #dialogUser form, #dialogCreaUser form, #dialogCreaProd form, .dialogAdmin form{
     margin-bottom: 10px;
 }
-#detallesUser, #detallesProd, #detallesMensaje {
+#detallesUser, #detallesProd, #detallesMensaje, #detallesPedido {
     width: 50%;
     height: 50%;
     position: absolute;
@@ -132,28 +136,28 @@ button{
     left: 25%;
     background: #323232;
 }
-#detallesUser p, #detallesUser span, #detallesProd p, #detallesProd span, #detallesMensaje p, #detallesMensaje span{
+#detallesUser p, #detallesUser span, #detallesProd p, #detallesProd span, #detallesMensaje p, #detallesMensaje span, #detallesPedido p, #detallesPedido span{
     color: #fff;
 }
 .details li {
     list-style: none;
 }
-.details .glyphicon {
+.details .glyphicon, .details .fa {
     width: 50px;
 }
-#detallesUser li, #detallesProd li, #detallesMensaje li {
+#detallesUser li, #detallesProd li, #detallesMensaje li, #detallesPedido li {
     margin-bottom:10px;
 }
-#detallesUser p, #detallesProd p, #detallesMensaje p {
+#detallesUser p, #detallesProd p, #detallesMensaje p, #detallesPedido p {
     margin-bottom: 1.5em;
 }
-#detallesUser button, #detallesProd button, #detallesMensaje button {
+#detallesUser button, #detallesProd button, #detallesMensaje button, #detallesPedido button {
     color: #fff;
     opacity: 1;
     box-shadow: none;
     height: 25px;
 }
-#detallesUser h2, #detallesProd h2, #detallesMensaje h2 {
+#detallesUser h2, #detallesProd h2, #detallesMensaje h2, #detallesPedido h2 {
     width: 90%;
     float: left;
     margin-bottom: 10px;
@@ -193,4 +197,30 @@ button{
 #idPrecioProd, #idPrecioCreaProd, .inputPrecio {
     width: 75px;
     text-align: center;
+}
+#detallesPedido {
+    height: 75%;
+    top: 12%;
+}
+#detallesPedido h3 {
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin: 0;
+    border-bottom: 1px solid #fff;
+}
+#lineasPed {
+    margin: 20px;
+}
+.saltoLin {
+    border-top: 1px dashed #fff;
+    margin-top: 10px;
+}
+.panel-adm {
+    letter-spacing: 1px;
+}
+.panel-adm h5 {
+    letter-spacing: 2px;
+}
+#optADM li {
+    padding-left: 0;
 }

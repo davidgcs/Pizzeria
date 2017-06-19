@@ -79,9 +79,9 @@ $(document).ready(function () {
                     columns: [
                         {width: 80, field: 'alias', title: 'Cliente', sortable: true},
                         {width: 200, field: 'nombre_empleado', title: "Empleado", sortable: true},
-                        {width: 80, field: 'fecha', title: 'fecha', sortable: true},
+                        {width: 80, field: 'fecha', title: 'Fecha', sortable: true},
                         {width: 80, field: 'estado', title: 'Estado', sortable: true},
-                        {width: 80, field: 'precio_total', title: 'Precio', sortable: true},
+                        {width: 80, field: 'precio_total', title: 'Precio', tmpl: '{precio_total}€', sortable: true},
                         {
                             width: 10,
                             title: 'Acción',
@@ -189,9 +189,84 @@ $(document).ready(function () {
         dialogEditPed.close();
     });
 
-    function detallesLineaPed(record) {
+    function detallesLineaPed(datos) {
+        //nombre y alias del usu, fecha, nombre empleado, estado, precio
+        var nombreCliente, aliasCliente, emailCliente, telfCliente, fecha, nombreEmpleado, estado, precio;
+        var contenidoUlLineasPedido = '';
+        //llamamos a la BBDD a por datos
+        var url_detallesPedido = url_index + "admin/detallesPedido?id=" + datos.id;
+        $.ajax({
+            url: url_detallesPedido
+        })
+            .done(function (jsonDetalles) {
+                var datosJSON = JSON.parse(jsonDetalles);
+                nombreCliente = datosJSON.nombreCliente;
+                aliasCliente = datosJSON.aliasCliente;
+                emailCliente = datosJSON.emailCliente;
+                telfCliente = datosJSON.telfCliente
+                nombreEmpleado = datosJSON.nombreEmpleado;
+                fecha = datos.fecha;
+                estado = datos.estado;
+                precio = datos.precio_total;
+
+                //llamamos a las lineas de pedido
+                //lineas pedido: nombre y nref producto, cantidad, precio
+                var nombre, nref, cantidad, precioProd;
+                var url_lineasPedido = url_index + "admin/lineasPedido?id=" + datos.id;
+                $.ajax({
+                    url: url_lineasPedido
+                })
+                    .done(function (jsonLineas) {
+                        //recorremos lineas y rellenamos el ul
+                        var datosLineas = JSON.parse(jsonLineas);
+                        for (linea in datosLineas) {
+                            for (nombreDato in datosLineas[linea]) {
+                                switch (nombreDato) {
+                                    case "nombreProducto":
+                                        nombre = datosLineas[linea][nombreDato];
+                                        break;
+                                    case "nref":
+                                        nref = datosLineas[linea][nombreDato];
+                                        break;
+                                    case "cantidad":
+                                        cantidad = datosLineas[linea][nombreDato];
+                                        break;
+                                    case "precio":
+                                        precioProd = datosLineas[linea][nombreDato];
+                                        break;
+                                    default:
+                                        break;
+                                }
+                            }
+                            //creamos contenido ul
+                            contenidoUlLineasPedido += '' +
+                                '<li><p id="nombreLin"><span class="glyphicon glyphicon-cutlery"></span>'+ cantidad +' x '+nombre+' ('+nref+')</p></li>' +
+                                '<li><p id="precioLin"><span class="fa fa-money"></span>'+(precioProd * cantidad) +'€</p></li>' +
+                                '<li class="saltoLin"></li>';
+                        }
+
+                        //ponemos fecha y alias en la cabecera h2
+                        $("#fechaAliasPedido").text(fecha + " ("+aliasCliente+")");
+                        $("#nombreClientePed").html('<span class="glyphicon glyphicon-user"></span>'+nombreCliente);
+                        $("#emailPed").html('<span class="glyphicon glyphicon-envelope"></span>'+emailCliente);
+                        $("#telfPed").html('<span class="glyphicon glyphicon-earphone"></span>'+telfCliente);
+                        $("#estadoPed").html('<span class="glyphicon glyphicon-cog"></span>Estado: '+estado);
+                        $("#precioPed").html('<span class="glyphicon glyphicon-usd"></span>TOTAL: '+precio+'€');
+
+                        //append al ul
+                        $("#lineasPed").append(contenidoUlLineasPedido);
+
+                        //mostramos modal
+                        $("#detallesPedido").modal("show");
+                    });
+            });
+
         console.log("EN PROCESO");
     }
+
+    $("#detallesPedido button").on("click", function () {
+        $("#detallesPedido").modal("hide");
+    });
 
     //MENSAJES
     $("#optMen").on("click", function () {

@@ -99,4 +99,48 @@ class Pedido_model extends CI_Model
         }
 
     }
+
+    public function detallesPedido($id)
+    {
+        //nombre y alias del usu, fecha, nombre empleado, estado, precio
+        $pedido = R::load("pedido", $id);
+
+        $cliente = R::load("usuario", $pedido->id_cliente);
+
+        $nomApeCliente = $cliente->nombre . " " . $cliente->apellidos;
+        $aliasCliente = $cliente->alias;
+        $emailCliente = $cliente->email;
+        $telfCliente= $cliente->telefono;
+
+
+        $empleado = R::load("usuario", $pedido->id_empleado);
+        if ($empleado != null) {
+            $nomEmple = $empleado->nombre . " " . $empleado->apellidos;
+        } else {
+            $nomEmple = "Pedido sin asignar";
+        }
+
+        return json_encode(array(
+            "nombreCliente" => $nomApeCliente,
+            "aliasCliente" => $aliasCliente,
+            "nombreEmpleado" => $nomEmple,
+            "emailCliente" => $emailCliente,
+            "telfCliente" => $telfCliente
+        ));
+    }
+
+    public function lineasPedido($id)
+    {
+        //lineas pedido: nombre y nref producto, cantidad
+        $lineasPedido = R::find("lineapedido", "pedido_id = ?", array($id));
+
+        $respuesta = array();
+
+        foreach ($lineasPedido as $lin) {
+            $producto = R::findOne("producto", "nref = ?", array($lin->nref_producto));
+            $respuesta[$lin->id] = array("nombreProducto" => $producto->nombre, "nref" => $lin->nref_producto, "cantidad" => $lin->cantidad, "precio" => $producto->precio);
+        }
+
+        return json_encode($respuesta);
+    }
 }
