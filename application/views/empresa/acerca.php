@@ -73,7 +73,7 @@
                                 </div>
                                 <div class="user">
                                     <img class="img-circle"
-                                         src="https://1.bp.blogspot.com/-aruLLVlXyJM/V_t-TxTncZI/AAAAAAAAJ3k/hnQKKVmKuOY_awf1nHGTsukGfw4qrde-gCLcB/s400/2.jpg"/>
+                                         src="<?=base_url()?>assets/images/dani.jpg"/>
                                 </div>
                                 <div class="content">
                                     <div class="main">
