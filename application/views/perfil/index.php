@@ -128,6 +128,21 @@
             </form>
         </div>
     </div>
+    <div id="detallesPedido" class="modal">
+        <div class="container" style="border-bottom:1px solid white">
+            <h2 id="fechaAliasPedido"></h2>
+            <button type="button" class="close">X</button>
+        </div>
+        <hr>
+        <ul class="container details">
+            <li><p id="estadoPed"><span class="glyphicon glyphicon-cog"></span></p></li>
+            <li><h3><span class="glyphicon glyphicon-th-list"></span>Lista de productos:</h3></li>
+            <ul id="lineasPed" class="container">
+                <!--nombreproducto, nrefproducto, cantidad-->
+            </ul>
+            <li><p id="precioPed"><span class="glyphicon glyphicon-euro"></span></p></li>
+        </ul>
+    </div>
     <?php if(isset($_SESSION['editOK'])&&$_SESSION['editOK']==true):?>
         <label id="ok">Los cambios se han guardado con éxito.</label>
     <?php elseif (isset($_SESSION['editOK'])&&$_SESSION['editOK']==false): ?>
