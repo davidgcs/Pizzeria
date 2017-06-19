@@ -293,7 +293,7 @@ class Usuario_model extends CI_Model
     public function editPassword($aliasUsuarioActual,$oldPassword,$newPassword,$newPasswordR){
         $user = R::load("usuario",$this->getUserId($aliasUsuarioActual));
         if(md5($oldPassword)==$user["password"] && $newPassword == $newPasswordR){
-            $user["password"]=$newPassword;
+            $user["password"]=md5($newPassword);
             R::store($user);
             return true;
         }
