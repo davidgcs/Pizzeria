@@ -34,7 +34,7 @@
         <p class="cartEmpty">El carrito está vacío</p>
         <div class="pagar">
             <span>Total: <b class="cartTotal">0</b>€</span>
-            <button class="btnPagar btn btn-success">Pagar</button>
+            <button class="btnPagar btn btn-success">Procesar</button>
         </div>
     </div>
     <h5 id="saludo"><?php if(isset($_SESSION['logeado']) && $_SESSION["logeado"]==true) echo $_SESSION["usuarioActual"]?></h5> <a href="<?= base_url() ?>usuario/login"><i class="<?php echo (isset($_SESSION['logeado']) && $_SESSION["logeado"]==true) ? 'fa fa-user-circle' : 'fa fa-sign-in';?>"></i></a>
