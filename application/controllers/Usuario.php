@@ -11,7 +11,7 @@ class Usuario extends CI_Controller{
 
     public function logout(){
         session_start();
-        $_SESSION['logeado'] = false;
+        $_SESSION = [];
         session_destroy();
         header("Location: " . base_url());
     }
