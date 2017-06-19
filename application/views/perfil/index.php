@@ -52,7 +52,7 @@
 <div class="container" style="margin: 5% 3%">
 
     <h3>Pedidos</h3>
-    <p class="description">En esta tabla se muestran los pedidos realizados. En verde se verán los pedidos en camino, en amarillo los pedidos en curso y en azul los pedidos que ya han terminado.</p>
+    <p class="description">En esta tabla se muestran los pedidos realizados. En verde se verán los pedidos en camino, en amarillo los pedidos en curso, en azul los pedidos registrados y en rojo los pedidos ya entregados.</p>
     <table class="table">
         <thead>
         <tr>
@@ -66,8 +66,10 @@
         <?php foreach($body['pedidos'] as $p): ?>
         <?php switch($p["estado"]){
             case "asignado":
-            case "registrado":
                 echo '<tr class="warning">';
+                break;
+            case "registrado":
+                echo '<tr class="info">';
                 break;
             case "cerrado":
                 echo '<tr class="danger">';
