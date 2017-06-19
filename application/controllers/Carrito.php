@@ -84,7 +84,7 @@ class Carrito extends CI_Controller{
         $lineasPedido = [];
 
         foreach ($_SESSION['carrito'] as $k=>$producto){
-                $idLineaPedido = $this->lineapedido_model->crearLineaPedido($producto['nref'], 1, $producto['precio']);
+                $idLineaPedido = $this->lineapedido_model->crearLineaPedido(array_values($producto)[0]['nref'], 1, array_values($producto)[0]['precio']);
                 $lineaPedido = $this->lineapedido_model->getLineaPedido($idLineaPedido);
                 array_push($lineasPedido, $lineaPedido);
         }
@@ -95,7 +95,8 @@ class Carrito extends CI_Controller{
         } else{
             $this->pedido_model->registrarPedido(0,$lineasPedido);
         }
-
+        
+        header("Location: ".base_url()."usuario/perfil");
     }
 }
 ?>
