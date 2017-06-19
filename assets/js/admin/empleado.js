@@ -49,7 +49,7 @@ $(document).ready(function () {
     });
 
     $("#optPed").on("click", function () {
-        tipoDatos = "usu";
+        tipoDatos = "ped";
         $("#optADM li").attr("class", "");
         $(this).attr("class", "active");
 
@@ -260,8 +260,6 @@ $(document).ready(function () {
                         $("#detallesPedido").modal("show");
                     });
             });
-
-        console.log("EN PROCESO");
     }
 
     $("#detallesPedido button").on("click", function () {
@@ -270,7 +268,7 @@ $(document).ready(function () {
 
     //MENSAJES
     $("#optMen").on("click", function () {
-        tipoDatos = "usu";
+        tipoDatos = "men";
         $("#optADM li").attr("class", "");
         $(this).attr("class", "active");
 

@@ -32,6 +32,11 @@ class Pedido_model extends CI_Model
         return $idPedido;
     }
 
+    public function getPedidoPerfil($id)
+    {
+        return R:: find("pedido", "id_cliente = ?", array($id));
+    }
+
     public function setPedido($idPedido, $idEmpleado, $estado)
     {
         $pedido = R::findOne("pedido", "id = ?", array($idPedido));
@@ -54,6 +59,9 @@ class Pedido_model extends CI_Model
 
     public function creaPedidosTest()
     {
+        //borramos tablas pedido y lineapedido
+        R::wipe("pedido");
+        R::wipe("lineapedido");
         $this->load->model("lineapedido_model");
         $idsLp = array($this->lineapedido_model->crearLineaPedido("pizbarb", 1, 15));
         array_push($idsLp, $this->lineapedido_model->crearLineaPedido("pizques", 2, 30));

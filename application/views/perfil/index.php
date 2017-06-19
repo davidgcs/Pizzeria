@@ -52,32 +52,37 @@
 <div class="container" style="margin: 5% 3%">
 
     <h3>Pedidos</h3>
-    <p class="description">En esta tabla se muestran los pedidos realizados. En verde se verán los pedidos en camino, en amarillo los pedidos en curso y en azul los pedidos que ya han terminado.</p>
+    <p class="description">En esta tabla se muestran los pedidos realizados. En verde se verán los pedidos en camino, en amarillo los pedidos en curso, en azul los pedidos registrados y en rojo los pedidos ya entregados.</p>
     <table class="table">
         <thead>
         <tr>
-            <th>Firstname</th>
-            <th>Lastname</th>
-            <th>Email</th>
+            <th>Fecha</th>
+            <th>Precio</th>
+            <th>Acción</th>
         </tr>
         </thead>
         <tbody>
-        <tr class="success">
-            <td>Success</td>
-            <td>Doe</td>
-            <td>john@example.com</td>
-        </tr>
 
-        <tr class="info">
-            <td>Info</td>
-            <td>Dooley</td>
-            <td>july@example.com</td>
+        <?php foreach($body['pedidos'] as $p): ?>
+        <?php switch($p["estado"]){
+            case "asignado":
+                echo '<tr class="warning">';
+                break;
+            case "registrado":
+                echo '<tr class="info">';
+                break;
+            case "cerrado":
+                echo '<tr class="danger">';
+                break;
+            case "preparado":
+                echo '<tr class="success">';
+                break;
+        } ?>
+            <td><?=$p["fecha"]?></td>
+            <td><?=$p["precio_total"]?></td>
+            <td><button type="button" class="btn-info"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></td>
         </tr>
-        <tr class="warning">
-            <td>Warning</td>
-            <td>Refs</td>
-            <td>bo@example.com</td>
-        </tr>
+        <?php endforeach; ?>
 
         </tbody>
     </table>
