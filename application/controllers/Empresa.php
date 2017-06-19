@@ -9,7 +9,8 @@ class Empresa extends CI_Controller
 
     public function contacto()
     {
-        enmarcar($this, 'empresa/contacto');
+        $datos['head']['css'] = array("assets/css/empresa/contacto.css");
+        enmarcar($this, 'empresa/contacto', $datos);
     }
 
     public function enviarMensaje()

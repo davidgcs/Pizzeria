@@ -40,7 +40,7 @@ if(!isset($_SESSION)){
             console.log(productoId);
 
             $("#header .cart .pagar .cartTotal").html(
-                parseInt($("#header .cart .pagar .cartTotal").html())+parseInt(producto[pIndex].precio)
+                (parseFloat($("#header .cart .pagar .cartTotal").html())+parseFloat(producto[pIndex].precio)).toFixed(2)
             );
 
             if ($("#header .cart #cartItem"+productoId).length === 0) {
@@ -80,7 +80,7 @@ if(!isset($_SESSION)){
                     console.log(nref);
                     $(this).remove();
                     $("#header .cart .pagar .cartTotal").html(
-                        parseInt($("#header .cart .pagar .cartTotal").html())-parseInt($(this).find("span.ciPrecio").html().split("€")[0])
+                        (parseFloat($("#header .cart .pagar .cartTotal").html())-parseFloat($(this).find("span.ciPrecio").html().split("€")[0])).toFixed(2)
                     );
                     $("#header .cart").stop().slideDown();
                     if($("#header .cart").find(".cartItem").length === 0){
