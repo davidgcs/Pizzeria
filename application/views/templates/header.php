@@ -83,7 +83,7 @@
                 totalPagar += parseInt($(el).find("span.ciPrecio").html().split("€")[0]);
                 console.log(totalPagar)
             });
-            $("#header .cart .pagar .cartTotal").html(totalPagar)
+            $("#header .cart .pagar .cartTotal").html(parseFloat(totalPagar).toFixed(2));
 
             $(".cartItem").hover(function(){
                 $(this).find("span").css("visibility","hidden");
@@ -99,7 +99,7 @@
                     console.log(nref);
                     $(this).remove();
                     $("#header .cart .pagar .cartTotal").html(
-                        parseInt($("#header .cart .pagar .cartTotal").html())-parseInt($(this).find("span.ciPrecio").html().split("€")[0])
+                        (parseFloat($("#header .cart .pagar .cartTotal").html())-parseFloat($(this).find("span.ciPrecio").html().split("€")[0])).toFixed(2)
                     );
 
                     $("#header .cart").stop().slideDown();

@@ -2,7 +2,11 @@
 class Carrito extends CI_Controller{
 
     public function index(){
-        header("Location: ".base_url());
+        pagar();
+    }
+
+    public function pagar(){
+
     }
 
     public function addToCart(){
