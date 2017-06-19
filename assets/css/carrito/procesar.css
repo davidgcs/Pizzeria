@@ -5,7 +5,7 @@ h3{
     margin-top: 80px;
 }
 #header a.cartIcon i{
-    /*display: none;*/
+    display: none;
 }
 #pedido{
     margin-bottom: 0;

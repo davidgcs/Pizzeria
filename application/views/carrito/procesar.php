@@ -74,6 +74,10 @@
         $(".container #radioRecoger input").change(function(){
             $("form#formDireccion").stop().slideToggle();
         });
+
+        $(".container .btnFinalizar").on("click",function(){
+            window.location.href=baseUrl+"carrito/crearPedido";
+        });
     });
 </script>
 

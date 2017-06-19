@@ -71,5 +71,31 @@ class Carrito extends CI_Controller{
         array_push($_SESSION['carrito'], $producto);
         print_r($_SESSION['carrito']);
     }
+
+    public function crearPedido(){
+        if(!isset($_SESSION)){
+            session_start();
+        }
+        if(!isset($_SESSION['carrito'])){
+            $_SESSION['carrito']=[];
+        }
+        $this->load->model("lineapedido_model");
+
+        $lineasPedido = [];
+
+        foreach ($_SESSION['carrito'] as $k=>$producto){
+                $idLineaPedido = $this->lineapedido_model->crearLineaPedido($producto['nref'], 1, $producto['precio']);
+                $lineaPedido = $this->lineapedido_model->getLineaPedido($idLineaPedido);
+                array_push($lineasPedido, $lineaPedido);
+        }
+
+        $this->load->model("pedido_model");
+        if(isset($_SESSION['idUsuarioActual'])) {
+            $this->pedido_model->registrarPedido($_SESSION['idUsuarioActual'],$lineasPedido);
+        } else{
+            $this->pedido_model->registrarPedido(0,$lineasPedido);
+        }
+
+    }
 }
 ?>
