@@ -6,14 +6,16 @@ class Carrito extends CI_Controller{
     }
 
     public function procesar(){
+        if(!isset($_SESSION))session_start();
         $datos['head']['css']=array("assets/css/carrito/procesar.css");
+        $datos["body"] = [];
         if(isset($_SESSION["usuarioActual"])){
             $this->load->model ( 'usuario_model' );
             $perfilUsuario = $this->usuario_model->getPerfil($_SESSION["usuarioActual"]);
             $datos["body"]["usuarioActual"] = $perfilUsuario;
         }
 
-        enmarcar($this, "carrito/procesar");
+        enmarcar($this, "carrito/procesar",$datos);
     }
 
     public function addToCart(){

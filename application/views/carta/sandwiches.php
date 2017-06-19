@@ -39,9 +39,11 @@ if(!isset($_SESSION)){
             var productoId = producto[pIndex].id;
             console.log(productoId);
 
+            $("#header .cart .btnPagar").removeClass("disabled");
             $("#header .cart .pagar .cartTotal").html(
                 (parseFloat($("#header .cart .pagar .cartTotal").html())+parseFloat(producto[pIndex].precio)).toFixed(2)
             );
+            $("#header .cart").stop().slideDown();
 
             if ($("#header .cart #cartItem"+productoId).length === 0) {
                 addedCarrito[productoId] = 1;
@@ -85,6 +87,7 @@ if(!isset($_SESSION)){
                     $("#header .cart").stop().slideDown();
                     if($("#header .cart").find(".cartItem").length === 0){
                         $("#header .cart .cartEmpty").show();
+                        $("#header .cart .btnPagar").addClass("disabled");
                     }
                 });
 

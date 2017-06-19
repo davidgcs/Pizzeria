@@ -10,9 +10,9 @@ class Lineapedido_model extends CI_Model
     public function crearLineaPedido($nrefProducto, $cantidad, $precio)
     {
         $lineaPedido = R::dispense("lineapedido");
-        $lineaPedido->nrefProducto = $nrefProducto;
+        $lineaPedido->nref_producto = $nrefProducto;
         $lineaPedido->cantidad = $cantidad;
-        $lineaPedido->precioUnitario = $precio;
+        $lineaPedido->precio_unitario = $precio;
         return R::store($lineaPedido);
         R::close();
     }

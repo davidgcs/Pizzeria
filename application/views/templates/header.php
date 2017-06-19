@@ -45,15 +45,12 @@
             var addedCarrito = {};
             console.log(productos);
             if(productos.length === 0){
-
+                $("#header .cart .btnPagar").addClass("disabled");
             }
             else {
                 $("#header p.cartEmpty").hide();
-//                $(productos).each(function (ind, el) {
                 for(var i = 0; i<Object.keys(productos).length; i++){
                     console.log(i);
-//                    var prod = el[Object.keys(el)[0]];
-//                    var producto = el[Object.keys(el)[0]];
                     var producto = productos[i];
                     var pIndex = Object.keys(producto)[0];
                     var productoId = producto[pIndex].id;
