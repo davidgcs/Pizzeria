@@ -95,8 +95,9 @@ class Carrito extends CI_Controller{
         } else{
             $this->pedido_model->registrarPedido(0,$lineasPedido);
         }
-        
-        header("Location: ".base_url()."usuario/perfil");
+
+        $_SESSION['carrito'] = [];
+        header("Location: ".base_url()."/perfil");
     }
 }
 ?>
