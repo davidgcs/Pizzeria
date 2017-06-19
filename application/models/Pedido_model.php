@@ -54,6 +54,9 @@ class Pedido_model extends CI_Model
 
     public function creaPedidosTest()
     {
+        //borramos tablas pedido y lineapedido
+        R::wipe("pedido");
+        R::wipe("lineapedido");
         $this->load->model("lineapedido_model");
         $idsLp = array($this->lineapedido_model->crearLineaPedido("pizbarb", 1, 15));
         array_push($idsLp, $this->lineapedido_model->crearLineaPedido("pizques", 2, 30));

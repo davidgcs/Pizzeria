@@ -71,9 +71,6 @@ table tbody tr:nth-child(2n+1),  table tbody tr{
     font-size: 10px;
 }
 
-button{
-    line-height: 10px !important;
-}
 .gj-button, .gj-button-md {
     color: #fff;
 }
@@ -168,7 +165,7 @@ button{
     margin-bottom: 10px;
 }
 
-#btnSaveCrearUsu, #btnSaveEditProd, #btnSaveCrearProd {
+#btnSaveCrearUsu, #btnSaveEditProd, #btnSaveCrearProd, #btnSavePed {
     float: left;
     font-size: 14px;
     margin: 10px 0 10px 179px;
@@ -192,7 +189,10 @@ button{
     margin: 10px 0 10px 165px;
 }
 #btnSaveCrearProd{
-    margin: 10px 0 10px 174px
+    margin: 10px 0 10px 174px;
+}
+#btnSavePed {
+    margin: 10px 0 10px 26%;
 }
 #idPrecioProd, #idPrecioCreaProd, .inputPrecio {
     width: 75px;
