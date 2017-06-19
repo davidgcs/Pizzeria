@@ -62,25 +62,24 @@
         </tr>
         </thead>
         <tbody>
-        <?=$body['pedidos']?>
-        <?php foreach($body['pedidos'] as $p): ?>
-<!--        --><?php //switch($p["estado"]){
-//            case "asignado":
-//            case "registrado":
-//                echo '<tr class="warning">';
-//                break;
-//            case "cerrado":
-//                echo '<tr class="danger">';
-//                break;
-//            case "preparado":
-//                echo '<tr class="success">';
-//                break;
-//        } ?>
-<!--            <td>--><?//=$p["fecha"]?><!--</td>-->
-<!--            <td>--><?//=$p["precio_total"]?><!--</td>-->
-<!--            <td><button type="button" class="btn-info"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></td>-->
-<!--        </tr>-->
 
+        <?php foreach($body['pedidos'] as $p): ?>
+        <?php switch($p["estado"]){
+            case "asignado":
+            case "registrado":
+                echo '<tr class="warning">';
+                break;
+            case "cerrado":
+                echo '<tr class="danger">';
+                break;
+            case "preparado":
+                echo '<tr class="success">';
+                break;
+        } ?>
+            <td><?=$p["fecha"]?></td>
+            <td><?=$p["precio_total"]?></td>
+            <td><button type="button" class="btn-info"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></td>
+        </tr>
         <?php endforeach; ?>
 
         </tbody>

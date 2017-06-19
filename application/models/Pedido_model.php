@@ -32,6 +32,11 @@ class Pedido_model extends CI_Model
         return $idPedido;
     }
 
+    public function getPedidoPerfil($id)
+    {
+        return R:: find("pedido", "id_cliente = ?", array($id));
+    }
+
     public function setPedido($idPedido, $idEmpleado, $estado)
     {
         $pedido = R::findOne("pedido", "id = ?", array($idPedido));
