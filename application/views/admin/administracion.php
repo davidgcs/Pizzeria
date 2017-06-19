@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <h1>PANEL DE CONTROL PIZHUB</h1>
+            <h1 class="tituloADM">PANEL DE CONTROL PIZHUB</h1>
         </div>
     </div>
     <div class="row">
@@ -166,6 +166,24 @@
                 <button type="button" id="btnSavePed" class="btn">Guardar</button>
             </div>
         </form>
+    </div>
+    <div id="detallesPedido" class="modal">
+        <div class="container" style="border-bottom:1px solid white">
+            <h2 id="fechaAliasPedido"></h2>
+            <button type="button" class="close">X</button>
+        </div>
+        <hr>
+        <ul class="container details">
+            <li><p id="nombreClientePed"><span class="glyphicon glyphicon-user"></span></p></li>
+            <li><p id="emailPed"><span class="glyphicon glyphicon-envelope"></span></p></li>
+            <li><p id="telfPed"><span class="glyphicon glyphicon-earphone"></span></p></li>
+            <li><p id="estadoPed"><span class="glyphicon glyphicon-cog"></span></p></li>
+            <li><h3><span class="glyphicon glyphicon-th-list"></span>Lista de productos:</h3></li>
+            <ul id="lineasPed" class="container">
+                <!--nombreproducto, nrefproducto, cantidad-->
+            </ul>
+            <li><p id="precioPed"><span class="glyphicon glyphicon-euro"></span></p></li>
+        </ul>
     </div>
     <!--MENSAJES-->
     <div id="detallesMensaje" class="modal">
