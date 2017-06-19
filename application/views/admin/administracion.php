@@ -19,7 +19,8 @@
                     <li id="optPro"><a href="#"><i class="glyphicon glyphicon-cutlery"></i>&nbsp;Productos</a></li>
                     <li id="optPed"><a href="#"><i class="glyphicon glyphicon-list-alt"></i>&nbsp;Pedidos</a></li>
                     <li id="optMen"><a href="#"><i class="glyphicon glyphicon-envelope"></i>&nbsp;Mensajes</a></li>
-                    <li id="optOut"><a href="<?=base_url()?>admin/logout"><i class="glyphicon glyphicon-off"></i>&nbsp;Logout</a></li>
+                    <li id="optMen"><a href="#"><i class="fa fa-database"></i>&nbsp;Exportar</a></li>
+                    <li id="optExp"><a href="<?=base_url()?>admin/logout"><i class="glyphicon glyphicon-off"></i>&nbsp;Logout</a></li>
                 </ul>
             </div>
         </div>
