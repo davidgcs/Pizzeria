@@ -1,11 +1,14 @@
 <div class="container">
     <h1>¡El último paso!</h1>
-    <h4>Tu pedido:</h4>
-    <div id="pedido">
-
-    </div>
+    <h3>Tu pedido:</h3>
+    <div id="pedido"></div>
     <p>Total: <b class="cartTotal">0</b>€</p>
-    <form id="f3" action="#" method="post">
+    <h3>¿Te lo llevamos o vienes tú?</h3>
+    <div id="radioRecoger">
+        <input type="radio" name="recoger" id="recSi" value="recSi" checked><label for="recSi">Yo lo recojo</label>
+        <input type="radio" name="recoger" id="recNo" value="recNo"><label for="recNo">!Traedmelo, por favor!</label>
+    </div>
+    <form id="formDireccion" action="#" method="post">
         <?php if(sizeof($body) === 0):?>
             <h4>Introduce tu dirección</h4>
             Calle: <input type="text" name="newCalle" value="">
@@ -19,8 +22,13 @@
             Ciudad: <input type="text" name="newCiudad" value="<?= $body["usuarioActual"]["ciudad"] ?>">
             Cod. Postal: <input type="text" maxlength="5" name="newCP" value="<?= $body["usuarioActual"]["cp"] ?>">
         <?php endif; ?>
-        <button class="btn btn-success" type="submit">¡Pedir!</button>
     </form>
+    <h3>¿Como quieres pagar?</h3>
+    <div id="radioPago">
+        <input type="radio" name="pago" id="pagoOnline" value="online" disabled><label class="disabled"for="pagoOnline">Pago Online</label>
+        <input type="radio" name="pago" id="pagoEfectivo" value="efectivo" checked><label for="pagoEfectivo">Pago Efectivo</label>
+    </div>
+    <button class="btnFinalizar btn btn-success">Finalizar</button>
 </div>
 <script>
     $(document).ready(function() {
@@ -63,6 +71,9 @@
             console.log(totalPagar)
         });
         $(".container .cartTotal").html(parseFloat(totalPagar).toFixed(2));
+        $(".container #radioRecoger input").change(function(){
+            $("form#formDireccion").stop().slideToggle();
+        });
     });
 </script>
 

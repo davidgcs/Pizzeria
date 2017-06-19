@@ -1,6 +1,9 @@
 .container *{
     margin-bottom: 20px;
 }
+h3{
+    margin-top: 80px;
+}
 #header a.cartIcon i{
     /*display: none;*/
 }
@@ -46,4 +49,21 @@
     background: -moz-radial-gradient(#25609a, #2e3842); /* For Firefox 3.6 to 15 */
     background: radial-gradient(#25609a, #2e3842);
     text-align: center;
+}
+#radioRecoger input, #radioPago input{
+    margin-left: 20%;
+}
+label.disabled{
+    color: #8b8b8b;
+}
+#radioRecoger label, #radioPago label{
+    margin-left: 1%;
+    display: inline;
+}
+#formDireccion{
+    display: none;
+}
+
+.btnFinalizar{
+    margin-top: 30px;
 }
