@@ -502,11 +502,12 @@ $(document).ready(function () {
             alert("Complete todos los datos");
         }
     });
+    
+    //exportar datos
+    $("#optExp").on("click", function () {
+        //llamada ajax al php
 
-    //PEDIDOS
-
-
-    //MENSAJES
+    });
 
 });
 
