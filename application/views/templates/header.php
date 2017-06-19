@@ -117,9 +117,14 @@
                 });
 
             });
+
             $("#header .cart").on("scroll",function(){
                 console.log($(this).find(".pagar").length);
                $(this).find(".pagar").css("transform","translateY("+($("#header .cart").scrollTop())+"px)");
+            });
+
+            $("#header .cart .btnPagar").on("click",function(){
+                window.location.href = baseUrl+"carrito/procesar";
             });
         });
     </script>
