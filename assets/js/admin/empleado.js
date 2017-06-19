@@ -5,6 +5,28 @@ $(document).ready(function () {
     //variable global para controlar barra superior
     var tipoDatos = '';
 
+    var tipoDatosADM = '';
+
+    $("#optADM li").on("click", function () {
+        var idLi = $(this).attr("id");
+
+        switch (idLi) {
+            case "optUsu":
+                tipoDatosADM = "usu";
+                break;
+            case "optMen":
+                tipoDatosADM = "men";
+                break;
+            case "optProd":
+                tipoDatosADM = "prod";
+                break;
+            case "optPed":
+                tipoDatosADM = "ped";
+                break;
+
+        }
+    });
+
     //refrescar lista
     $("#btnActualizar").on("click", function () {
         switch (tipoDatos) {
@@ -364,7 +386,7 @@ $(document).ready(function () {
 
     //exportar datos
     $("#optExp").on("click", function () {
-        var url_exportDB = url_index + "admin/csvDB?tipo="+tipoDatos;
+        var url_exportDB = url_index + "admin/csvDB?tipo="+tipoDatosADM;
         $.ajax({
             url: url_exportDB
         }).done(function () {

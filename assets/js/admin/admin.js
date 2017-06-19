@@ -5,10 +5,6 @@ $(document).ready(function () {
     //variable global para controlar barra superior
     var tipoDatos = '';
 
-    $("#optADM li").on("click", function () {
-
-    });
-
     //refrescar lista
     $("#btnActualizar").on("click", function () {
         switch (tipoDatos) {
