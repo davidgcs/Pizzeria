@@ -41,7 +41,6 @@ class Admin extends CI_Controller
         $beans = ["pedido"];
         $this->load->model("admin_model");
         $this->admin_model->export($beans);
-
     }
 
     public function getDatosPanel($rol)

@@ -1,13 +1,22 @@
 <?php
 class Admin_model extends CI_Model {
 
-    public function export($beans){
-        $this->array_to_csv_download(R::getAll("select * from pedido"),"pedido");
-        $this->array_to_csv_download(R::getAll("select * from ingredientes"),"ingredientes");
-        $this->array_to_csv_download(R::getAll("select * from lineapedido"),"lineapedido");
-        $this->array_to_csv_download(R::getAll("select * from producto"),"producto");
-        $this->array_to_csv_download(R::getAll("select * from usuario"),"usuario");
+    public function exportUsuarios(){
+        $this->array_to_csv_download(R::getAll("select * from usuario"),"usuarios");
     }
+
+    public function exportProductos(){
+        $this->array_to_csv_download(R::getAll("select * from producto"),"productos");
+    }
+
+    public function exportPedidos(){
+        $this->array_to_csv_download(R::getAll("select * from lineapedido, pedido where pedido_id = pedido.id"),"pedidos");
+    }
+
+    public function exportMensajes(){
+        $this->array_to_csv_download(R::getAll("select * from mensaje"),"mensajes");
+    }
+
     function array_to_csv_download($array,$name) {
 
         // filename for download
