@@ -58,6 +58,7 @@
         <tr>
             <th>Fecha</th>
             <th>Precio</th>
+            <th>Estado</th>
             <th>Acción</th>
         </tr>
         </thead>
@@ -80,7 +81,8 @@
         } ?>
             <td><?=$p["fecha"]?></td>
             <td><?=$p["precio_total"]?></td>
-            <td><button type="button" class="btn-info"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></td>
+            <td><?=$p["estado"]?></td>
+            <td><button onclick="verPedido(<?=$p["id"]?>)" id="mostrarDatosPedido" type="button" class="btn-info"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></td>
         </tr>
         <?php endforeach; ?>
 
@@ -134,4 +136,23 @@
     <?php endif;?>
 
     <?php $_SESSION['editOK']=null;?>
+
+    <script>
+        $("#mostrarDatosPedido")
+        function verPedido(idPedido) {
+            //obtenemos datos del php
+            var url_esEmpleado = url_index + "admin/esEmpleado?alias=" + e.data.record.alias;
+
+            $.ajax({
+                url: url_esEmpleado
+            })
+                .done(function (esEmpleado) {
+
+                    //abrimos dialog con datos
+                    $('#aliasEmp').val(e.data.record.alias);
+                    $('#idEmp').val(esEmpleado);
+                    $('#dialogUser').dialog('open');
+                });
+        }
+    </script>
 </div>
