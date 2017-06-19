@@ -56,28 +56,32 @@
     <table class="table">
         <thead>
         <tr>
-            <th>Firstname</th>
-            <th>Lastname</th>
-            <th>Email</th>
+            <th>Fecha</th>
+            <th>Precio</th>
+            <th>Acción</th>
         </tr>
         </thead>
         <tbody>
-        <tr class="success">
-            <td>Success</td>
-            <td>Doe</td>
-            <td>john@example.com</td>
-        </tr>
+        <?=$body['pedidos']?>
+        <?php foreach($body['pedidos'] as $p): ?>
+<!--        --><?php //switch($p["estado"]){
+//            case "asignado":
+//            case "registrado":
+//                echo '<tr class="warning">';
+//                break;
+//            case "cerrado":
+//                echo '<tr class="danger">';
+//                break;
+//            case "preparado":
+//                echo '<tr class="success">';
+//                break;
+//        } ?>
+<!--            <td>--><?//=$p["fecha"]?><!--</td>-->
+<!--            <td>--><?//=$p["precio_total"]?><!--</td>-->
+<!--            <td><button type="button" class="btn-info"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></td>-->
+<!--        </tr>-->
 
-        <tr class="info">
-            <td>Info</td>
-            <td>Dooley</td>
-            <td>july@example.com</td>
-        </tr>
-        <tr class="warning">
-            <td>Warning</td>
-            <td>Refs</td>
-            <td>bo@example.com</td>
-        </tr>
+        <?php endforeach; ?>
 
         </tbody>
     </table>
