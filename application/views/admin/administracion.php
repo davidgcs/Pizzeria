@@ -156,8 +156,8 @@
         <input type="hidden" id="idPed"/>
         <form>
             <div>
-                <label for="estadoPed" id="labelPed" class="labelSelect">Estado:</label>
-                <select id="estadoPed" class="selectAuto">
+                <label for="estadoPedEdit" id="labelPed" class="labelSelect">Estado:</label>
+                <select id="estadoPedEdit" class="selectAuto">
                     <option value="registrado">Registrado</option>
                     <option value="asignado">Asignado</option>
                     <option value="preparado">Preparado</option>

@@ -179,7 +179,7 @@ $(document).ready(function () {
         dataLineaEditPed = e.data;
         //abrimos dialog con datos de la tabla
         $('#idPed').val(e.data.record.id);
-        $('#estadoPed').val(e.data.record.estado);
+        $('#estadoPedEdit').val(e.data.record.estado);
         $('#dialogPed').dialog('open');
     }
 
@@ -188,7 +188,7 @@ $(document).ready(function () {
     $("#btnSavePed").on("click", function () {
         //actualizamos en la BBDD
         var idPed = $('#idPed').val();
-        var estadoPed = $('#estadoPed').val();
+        var estadoPed = $('#estadoPedEdit').val();
         var url_updatePed = url_index + "admin/setPedido?id=" + idPed + "&estado=" + estadoPed;
         $.ajax({
             url: url_updatePed
