@@ -37,6 +37,12 @@ class Admin extends CI_Controller
         header("Location: " . base_url());
     }
 
+    public function export(){
+        $beans = ["pedido"];
+        $this->load->model("admin_model");
+        $this->admin_model->export($beans);
+    }
+
     public function getDatosPanel($rol)
     {
         //sea admin o empleado siempre gestiona pedidos y mensajes
