@@ -66,6 +66,10 @@ table tbody tr:nth-child(2n+1),  table tbody tr{
 .btn {
     font-size: 10px;
 }
+
+button{
+    line-height: 10px !important;
+}
 .gj-button, .gj-button-md {
     color: #fff;
 }
@@ -87,6 +91,12 @@ table tbody tr:nth-child(2n+1),  table tbody tr{
 
 .gj-dialog-md-header {
     padding: 10px 24px 0;
+}
+
+#footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 .gj-dialog-md-header button {

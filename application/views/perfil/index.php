@@ -28,6 +28,13 @@
     #footer{
         position: relative !important;
     }
+
+    p.description{
+        color: #FFF;
+    }
+    table{
+        color: #2e3842;
+    }
 </style>
 <script>
 
@@ -43,6 +50,37 @@
 
 </script>
 <div class="container" style="margin: 5% 3%">
+
+    <h3>Pedidos</h3>
+    <p class="description">En esta tabla se muestran los pedidos realizados. En verde se verán los pedidos en camino, en amarillo los pedidos en curso y en azul los pedidos que ya han terminado.</p>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Email</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="success">
+            <td>Success</td>
+            <td>Doe</td>
+            <td>john@example.com</td>
+        </tr>
+
+        <tr class="info">
+            <td>Info</td>
+            <td>Dooley</td>
+            <td>july@example.com</td>
+        </tr>
+        <tr class="warning">
+            <td>Warning</td>
+            <td>Refs</td>
+            <td>bo@example.com</td>
+        </tr>
+
+        </tbody>
+    </table>
 
     <ul class="nav nav-tabs">
         <li class="active"><a data-toggle="tab" href="#info">Información Personal</a></li>
