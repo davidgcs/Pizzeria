@@ -362,10 +362,4 @@ $(document).ready(function () {
         $("#detallesMensaje").modal("hide");
     });
 
-    //exportar datos
-    $("#optExp").on("click", function () {
-        //llamada ajax al php
-        
-    });
-
 });
