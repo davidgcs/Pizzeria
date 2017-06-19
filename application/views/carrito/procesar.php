@@ -1,9 +1,7 @@
 <div class="container">
     <h1>¡El último paso!</h1>
     <h3>Tu pedido:</h3>
-    <div id="pedido">
-
-    </div>
+    <div id="pedido"></div>
     <p>Total: <b class="cartTotal">0</b>€</p>
     <h3>¿Te lo llevamos o vienes tú?</h3>
     <div id="radioRecoger">
