@@ -200,9 +200,10 @@ $(document).ready(function () {
                     "email": dataLineaEditUsu.record.email,
                     "nombre": dataLineaEditUsu.record.nombre,
                     "apellidos": dataLineaEditUsu.record.apellidos,
-                    "direccion": dataLineaEditUsu.record.direccion,
                     "cp": dataLineaEditUsu.record.cp,
-                    "localidad": dataLineaEditUsu.record.localidad,
+                    "calle": dataLineaEditUsu.record.calle,
+                    "numero": dataLineaEditUsu.record.numero,
+                    "ciudad": dataLineaEditUsu.record.ciudad,
                     "telefono": dataLineaEditUsu.record.telefono,
                     "es_empleado": esEmpleGrid
                 });
@@ -219,7 +220,7 @@ $(document).ready(function () {
         $("#mailUsu").html('<span class="glyphicon glyphicon-envelope"></span>' + datos.email);
         $("#aliasUsu").html('<span class="glyphicon glyphicon-user"></span>' + datos.alias);
         $("#telfUsu").html('<span class="glyphicon glyphicon-earphone"></span>' + datos.telefono);
-        $("#direUsu").html('<span class="glyphicon glyphicon-map-marker"></span>' + datos.direccion + (datos.cp === '' ? '' : ', ' + datos.cp) + (datos.localidad === '' ? '' : ', ' + datos.localidad));
+        $("#direUsu").html('<span class="glyphicon glyphicon-map-marker"></span>' + datos.calle + (datos.numero === '' ? '' : ', ' + datos.numero) + (datos.cp === '' ? '' : ', ' + datos.cp) + (datos.ciudad === '' ? '' : ', ' + datos.ciudad));
         //mostramos modal
         $("#detallesUser").modal('show');
     }

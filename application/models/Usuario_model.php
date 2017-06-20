@@ -313,7 +313,7 @@ class Usuario_model extends CI_Model
 
     public function getDatosPanel()
     {
-        return json_encode(R:: getAll("select id, alias, email, nombre, apellidos, direccion, cp, localidad, telefono, IF(es_empleado = 1, 'SI', 'NO') AS es_empleado from usuario where es_admin = 0 order by apellidos, nombre"));
+        return json_encode(R:: getAll("select id, alias, email, nombre, apellidos, cp, calle, numero, ciudad, telefono, IF(es_empleado = 1, 'SI', 'NO') AS es_empleado from usuario where es_admin = 0 order by apellidos, nombre"));
     }
 
     public function getUsuJson($alias)

@@ -55,13 +55,13 @@
         <form>
             <div>
                 <label for="idNombreUsu">Nombre:</label>
-                <input type="text" id="idNombreUsu">
+                <input type="text" id="idNombreUsu" maxlength="30">
                 <label for="idApellidosUsu">Apellidos:</label>
-                <input type="text" id="idApellidosUsu">
+                <input type="text" id="idApellidosUsu" maxlength="30">
                 <label for="idTelefonoUsu">Teléfono:</label>
-                <input type="text" id="idTelefonoUsu">
+                <input type="text" id="idTelefonoUsu" minlength="9" maxlength="9">
                 <label for="idAliasUsu">Alias:</label>
-                <input type="text" id="idAliasUsu">
+                <input type="text" id="idAliasUsu"  maxlength="15">
                 <label for="idEmailUsu">Email:</label>
                 <input type="text" id="idEmailUsu">
                 <label for="idPassUsu">Contraseña</label>
@@ -105,7 +105,7 @@
                     <option value="pasta">Pasta</option>
                 </select>
                 <label for="idPrecioProd" id="labelPrecioProd">Precio:</label>
-                <input type="text" id="idPrecioProd">
+                <input type="text" id="idPrecioProd" maxlength="4">
                 <label for="idDescriProd">Descripción:</label>
                 <textarea id="idDescriProd" rows="5"></textarea>
                 <input type="hidden" id="idImgProd">
@@ -142,7 +142,7 @@
                     <option value="pasta">Pasta</option>
                 </select>
                 <label for="idPrecioCreaProd" id="labelPrecioProd">Precio:</label>
-                <input type="text" id="idPrecioCreaProd">
+                <input type="text" id="idPrecioCreaProd" maxlength="4">
                 <label for="idDescriCreaProd">Descripcion:</label>
                 <textarea id="idDescriCreaProd" rows="5"></textarea>
             </div>

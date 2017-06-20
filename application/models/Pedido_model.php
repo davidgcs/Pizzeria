@@ -34,7 +34,7 @@ class Pedido_model extends CI_Model
 
     public function getPedidoPerfil($id)
     {
-        return R:: find("pedido", "id_cliente = ?", array($id));
+        return R:: find("pedido", "id_cliente = ? order by FIELD(estado, 'registrado', 'asignado', 'preparado', 'cerrado')", array($id));
     }
 
     public function setPedido($idPedido, $idEmpleado, $estado)
@@ -100,6 +100,10 @@ class Pedido_model extends CI_Model
         $pedido = R::load("pedido", $id);
 
         if ($pedido->id_empleado === $idEmpleado || $pedido->id_empleado === "") {
+            //borrar lineas del pedido
+            $this->load->model("lineapedido_model");
+            $this->lineapedido_model->borraLineasDePedido($id);
+
             R::trash($pedido);
             return true;
         } else {

@@ -26,6 +26,12 @@ class Lineapedido_model extends CI_Model
         R::trash($lineaPedido);
     }
 
+    public function borraLineasDePedido($id)
+    {
+        $lineas = R::find("lineapedido", "pedido_id = ?", array($id));
+        R::trashAll($lineas);
+    }
+
     /*public function getLineaPedidoDetalles($id)
     {
         //lineas pedido: nombre y nref producto, cantidad

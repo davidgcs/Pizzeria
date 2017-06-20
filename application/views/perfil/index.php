@@ -146,7 +146,7 @@
             <td><?= $p["precio_total"] ?></td>
             <td><?= $p["estado"] ?></td>
             <td>
-                <button onclick="verPedido(<?= $p["id"] ?>)" id="mostrarDatosPedido" type="button" class="btn-info"><i
+                <button onclick="verPedido(<?= $p["id"] ?>)" id="mostrarDatosPedido" type="button" class="btn-info" title="Detalles del pedido"><i
                             class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
             </td>
             </tr>

@@ -25,7 +25,7 @@
     </form>
     <h3>¿Como quieres pagar?</h3>
     <div id="radioPago">
-        <input type="radio" name="pago" id="pagoOnline" value="online" disabled><label class="disabled"for="pagoOnline">Pago Online</label>
+        <input type="radio" name="pago" id="pagoOnline" value="online" title="No disponible aún :(" disabled><label class="disabled" for="pagoOnline" title="No disponible aún :(">Pago Online</label>
         <input type="radio" name="pago" id="pagoEfectivo" value="efectivo" checked><label for="pagoEfectivo">Pago Efectivo</label>
     </div>
     <button class="btnFinalizar btn btn-success">Finalizar</button>
