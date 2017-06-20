@@ -61,7 +61,8 @@ $(document).ready(function () {
 
 
     //PEDIDOS
-    var data, dialogEditPed;
+    var data = '';
+    var dialogEditPed;
     //inicializar dialogs
     dialogEditPed = $('#dialogPed').dialog({
         title: 'Editar Pedido',

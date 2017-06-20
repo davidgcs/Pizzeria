@@ -50,7 +50,8 @@ $(document).ready(function () {
     });
 
     //USUARIOS
-    var data, dialogEditUsu, dialogCreaUser;
+    var data = '';
+    var dialogEditUsu, dialogCreaUser;
     //inicializar dialogs
     dialogEditUsu = $('#dialogUser').dialog({
         title: 'Editar Usuario',
