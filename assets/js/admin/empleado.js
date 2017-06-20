@@ -272,10 +272,11 @@ $(document).ready(function () {
                         $("#nombreClientePed").html('<span class="glyphicon glyphicon-user"></span>'+nombreCliente);
                         $("#emailPed").html('<span class="glyphicon glyphicon-envelope"></span>'+emailCliente);
                         $("#telfPed").html('<span class="glyphicon glyphicon-earphone"></span>'+telfCliente);
-                        $("#estadoPed").html('<span class="glyphicon glyphicon-cog"></span>Estado: '+estado);
+                        $("#estadoPed").html('<span class="glyphicon glyphicon-cog"></span>'+estado +'<span class="fa fa-user-o"></span>'+nombreEmpleado);
                         $("#precioPed").html('<span class="glyphicon glyphicon-usd"></span>TOTAL: '+precio+'€');
 
                         //append al ul
+                        $("#lineasPed").html("");
                         $("#lineasPed").append(contenidoUlLineasPedido);
 
                         //mostramos modal

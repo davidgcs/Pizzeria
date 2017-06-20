@@ -151,4 +151,28 @@ class Pedido_model extends CI_Model
 
         return json_encode($respuesta);
     }
+
+    public function detallesPedidoPerfil($id)
+    {
+        ///fecha, estado, precio_total, empleado
+        $pedido = R::load("pedido", $id);
+
+        $fecha = $pedido->fecha;
+        $estado = $pedido->estado;
+        $precio = $pedido->precio_total;
+
+        $empleado = R::load("usuario", $pedido->id_empleado);
+        if ($empleado != null) {
+            $nomEmple = $empleado->nombre . " " . $empleado->apellidos;
+        } else {
+            $nomEmple = "Pedido sin asignar";
+        }
+
+        return json_encode(array(
+            "nombreEmpleado" => $nomEmple,
+            "fecha" => $fecha,
+            "estado" => $estado,
+            "precio_total" => $precio
+        ));
+    }
 }

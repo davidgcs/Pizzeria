@@ -29,7 +29,10 @@
             </li>
         </ul>
     </nav>
-    <a class="cartIcon" href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+    <?php if(!(isset($_SESSION['logeadoADM']) && $_SESSION["logeadoADM"]==true)):?>
+        <a class="cartIcon" href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+    <?php endif;?>
+    <!--<a class="cartIcon" href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>-->
     <div class="cart" id="cart">
         <p class="cartEmpty">El carrito está vacío</p>
         <div class="pagar">
@@ -37,7 +40,15 @@
             <button class="btnPagar btn btn-success">Procesar</button>
         </div>
     </div>
-    <h5 id="saludo"><?php if(isset($_SESSION['logeado']) && $_SESSION["logeado"]==true) echo $_SESSION["usuarioActual"]?></h5> <a href="<?= base_url() ?>usuario/login"><i class="<?php echo (isset($_SESSION['logeado']) && $_SESSION["logeado"]==true) ? 'fa fa-user-circle' : 'fa fa-sign-in';?>"></i></a>
+    <h5 id="saludo">
+        <?php if(isset($_SESSION['logeado']) && $_SESSION["logeado"]==true) echo $_SESSION["usuarioActual"]?>
+        <?php if(isset($_SESSION['logeadoADM']) && $_SESSION["logeadoADM"]==true) echo $_SESSION['nomApeUsuAdm']?>
+    </h5>
+    <a href="<?= base_url() ?>usuario/login">
+        <i class="<?php echo (isset($_SESSION['logeado']) && $_SESSION["logeado"]==true) ? 'fa fa-user-circle' : 'fa fa-sign-in';?>">
+
+        </i>
+    </a>
     <script>
         $(document).ready(function() {
             var productos =<?= json_encode(isset($_SESSION['carrito']) ? $_SESSION['carrito'] : [])?>;

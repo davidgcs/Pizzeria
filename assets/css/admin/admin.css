@@ -94,11 +94,10 @@ table tbody tr:nth-child(2n+1),  table tbody tr{
     padding: 10px 24px 0;
 }
 
-#footer{
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+#footer, .cartIcon {
+    display: none;
 }
+
 
 .gj-dialog-md-header button {
     height:auto;
@@ -223,4 +222,9 @@ table tbody tr:nth-child(2n+1),  table tbody tr{
 }
 #optADM li {
     padding-left: 0;
+}
+
+#estadoPed .fa {
+    margin-left: 50px;
+    width: 50px;
 }

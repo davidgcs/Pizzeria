@@ -61,6 +61,7 @@ class Usuario extends CI_Controller
             if ($_SESSION['es_empleado'] == true || $_SESSION['es_admin'] == true) {
                 $_SESSION['logeado'] = false;
                 $_SESSION['logeadoADM'] = true;
+                $_SESSION['nomApeUsuAdm'] = $this->usuario_model->getNomApe($_SESSION['idUsuarioActual']);
                 header("Location: " . base_url() . "admin");
             } else {
                 //login de cliente

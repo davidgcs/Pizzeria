@@ -12,5 +12,13 @@ class Perfil extends CI_Controller {
 
         enmarcar($this, "perfil/index",$datos);
     }
+
+    public function detallesPedido()
+    {
+        extract($_REQUEST);
+        $id = $_REQUEST['id'];
+        $this->load->model("pedido_model");
+        devuelveDato($this->pedido_model->detallesPedidoPerfil($id));
+    }
 }
 ?>
