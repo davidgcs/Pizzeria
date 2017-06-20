@@ -97,7 +97,7 @@ class Carrito extends CI_Controller{
         }
 
         $_SESSION['carrito'] = [];
-        header("Location: ".base_url()."/perfil");
+        header("Location: ".base_url()."perfil");
     }
 }
 ?>

@@ -387,12 +387,10 @@ $(document).ready(function () {
 
     //exportar datos
     $("#optExp").on("click", function () {
-        var url_exportDB = url_index + "admin/csvDB?tipo="+tipoDatosADM;
-        $.ajax({
-            url: url_exportDB
-        }).done(function () {
-            console.log("Exportado");
-        });
+        if (tipoDatosADM != "") {
+            var url_exportDB = url_index + "admin/csvDB?tipo="+tipoDatosADM;
+            window.location.href=url_exportDB;
+        }
     });
 
 });
